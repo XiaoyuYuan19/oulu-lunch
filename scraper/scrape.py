@@ -15,6 +15,7 @@ import yaml
 ROOT = Path(__file__).resolve().parent.parent
 CONFIG = ROOT / "scraper" / "restaurants.yaml"
 OUTPUT = ROOT / "docs" / "data.json"
+TRANSLATION_CACHE = ROOT / "scraper" / "translation_cache.json"
 
 JAMIX_API = "https://fi.jamix.cloud/apps/menuservice/rest/haku/menu/{cust}/{kitchen}?lang=fi"
 HEADERS = {"User-Agent": "oulu-lunch-pwa/1.0 python-requests"}
@@ -197,24 +198,57 @@ except Exception:
     _Translation = None
 
 
+def _default_tr(fi: str) -> dict[str, str]:
+    return {"zh": fi, "en_search": "", "role": "side"}
+
+
+def _load_cache() -> dict[str, dict[str, str]]:
+    if not TRANSLATION_CACHE.exists():
+        return {}
+    try:
+        return json.loads(TRANSLATION_CACHE.read_text(encoding="utf-8"))
+    except Exception as e:
+        print(f"warn: 翻译缓存读取失败 ({e!r})，从空开始", file=sys.stderr)
+        return {}
+
+
+def _save_cache(cache: dict[str, dict[str, str]]) -> None:
+    TRANSLATION_CACHE.parent.mkdir(parents=True, exist_ok=True)
+    TRANSLATION_CACHE.write_text(
+        json.dumps(cache, ensure_ascii=False, indent=2, sort_keys=True),
+        encoding="utf-8",
+    )
+
+
 def translate_batch(fi_names: list[str]) -> dict[str, dict[str, str]]:
-    """大批量分成 BATCH_SIZE 块跑，避开 Gemini 输出 token 上限。"""
+    """大批量分成 BATCH_SIZE 块跑，避开 Gemini 输出 token 上限。
+    命中翻译缓存的菜直接复用；只对新菜调 Gemini；本次成功的回写缓存。"""
     if not fi_names:
         return {}
+
     api_key = os.environ.get("GEMINI_API_KEY") or os.environ.get("GOOGLE_API_KEY")
+    skip_reason = None
     if not api_key:
-        print("warn: GEMINI_API_KEY 未设置，跳过翻译", file=sys.stderr)
-        return {}
-    if not _PYDANTIC_OK:
-        print("warn: pydantic 未导入，跳过翻译", file=sys.stderr)
-        return {}
+        skip_reason = "GEMINI_API_KEY 未设置"
+    elif not _PYDANTIC_OK:
+        skip_reason = "pydantic 未导入"
+
+    cache = _load_cache()
+    if skip_reason:
+        print(f"warn: {skip_reason}，跳过翻译（用缓存兜底）", file=sys.stderr)
+        return {fi: cache.get(fi, _default_tr(fi)) for fi in fi_names}
+
+    new_names = [fi for fi in fi_names if fi not in cache]
+    print(f"  缓存命中 {len(fi_names) - len(new_names)} / 待翻译 {len(new_names)}", file=sys.stderr)
+    if not new_names:
+        return {fi: cache[fi] for fi in fi_names}
 
     try:
         from google import genai
         from google.genai import types
     except Exception as e:
         print(f"warn: google-genai import 失败: {e!r}", file=sys.stderr)
-        return {}
+        return {fi: cache.get(fi, _default_tr(fi)) for fi in fi_names}
 
     client = genai.Client(api_key=api_key)
     config = types.GenerateContentConfig(
@@ -255,7 +289,7 @@ def translate_batch(fi_names: list[str]) -> dict[str, dict[str, str]]:
             print(f"    JSON parse 失败 {e!r}; 尾 150: {text[-150:]!r}", file=sys.stderr)
             return []
 
-    batches = [fi_names[i:i + BATCH_SIZE] for i in range(0, len(fi_names), BATCH_SIZE)]
+    batches = [new_names[i:i + BATCH_SIZE] for i in range(0, len(new_names), BATCH_SIZE)]
     print(f"  分 {len(batches)} 批 × ≤{BATCH_SIZE}", file=sys.stderr)
 
     all_arr: list = []
@@ -279,10 +313,11 @@ def translate_batch(fi_names: list[str]) -> dict[str, dict[str, str]]:
             arr = list(arr) + [{}] * (len(batch) - len(arr))
         all_arr.extend(arr)
 
-    print(f"  模型: {chosen_model}, 合计 {len(all_arr)}/{len(fi_names)} 条", file=sys.stderr)
+    print(f"  模型: {chosen_model}, 新翻 {len(all_arr)}/{len(new_names)} 条", file=sys.stderr)
 
-    out: dict[str, dict[str, str]] = {}
-    for i, fi in enumerate(fi_names):
+    # 合并到缓存
+    new_translations = 0
+    for i, fi in enumerate(new_names):
         if i < len(all_arr) and isinstance(all_arr[i], dict) and all_arr[i]:
             item = all_arr[i]
             zh = (item.get("zh") or fi).strip()
@@ -290,10 +325,15 @@ def translate_batch(fi_names: list[str]) -> dict[str, dict[str, str]]:
             role = (item.get("role") or "").strip().lower()
             if role not in VALID_ROLES:
                 role = "side"
-            out[fi] = {"zh": zh, "en_search": en, "role": role}
-        else:
-            out[fi] = {"zh": fi, "en_search": "", "role": "side"}
-    return out
+            if zh and zh != fi:  # 只缓存真翻译成功的
+                cache[fi] = {"zh": zh, "en_search": en, "role": role}
+                new_translations += 1
+
+    if new_translations:
+        _save_cache(cache)
+        print(f"  ✓ 写入缓存 +{new_translations} 条（总 {len(cache)}）", file=sys.stderr)
+
+    return {fi: cache.get(fi, _default_tr(fi)) for fi in fi_names}
 
 
 # --- 图片：Pexels ----------------------------------------------------------
