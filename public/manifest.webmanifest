@@ -1,0 +1,15 @@
+{
+  "name": "Oulu 午饭",
+  "short_name": "午饭",
+  "description": "Oulu 学生餐厅每日菜单（芬中对照 + 时间 + 价格）",
+  "start_url": ".",
+  "scope": ".",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#f8fafc",
+  "theme_color": "#0f172a",
+  "lang": "zh-CN",
+  "icons": [
+    { "src": "icons/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }
+  ]
+}
