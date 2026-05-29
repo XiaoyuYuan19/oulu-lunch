@@ -380,7 +380,7 @@ def fetch_images(en_queries: list[str], per_query: int = 5) -> dict[str, list[st
     return out
 
 
-def bucket_items(items: list[dict], tr_map: dict, fi_to_image: dict) -> dict[str, list[dict]]:
+def bucket_items(items: list[dict], tr_map: dict, fi_to_images: dict) -> dict[str, list[dict]]:
     buckets = {k: [] for k in ("main", "staple", "sauce", "salad", "dessert", "side")}
     for it in items:
         tr = tr_map.get(it["fi"], {})
@@ -394,7 +394,9 @@ def bucket_items(items: list[dict], tr_map: dict, fi_to_image: dict) -> dict[str
             "source": it["source_meal"],
         }
         if role == "main":
-            entry["image_url"] = fi_to_image.get(it["fi"], "")
+            urls = fi_to_images.get(it["fi"], [])
+            entry["image_urls"] = urls
+            entry["image_url"] = urls[0] if urls else ""  # 旧前端兼容
         buckets.setdefault(role, []).append(entry)
     return buckets
 
@@ -452,15 +454,18 @@ def main() -> int:
     print(f"抓图 {len(main_queries)} 个查询 ({len(main_fi_order)} 道主菜)…", file=sys.stderr)
     candidates = fetch_images(main_queries)
 
+    # 每道主菜：首选避让全局已用 URL（避免不同菜撞图）；候选列表全部保留供前端切图
     used_urls: set[str] = set()
-    fi_to_image: dict[str, str] = {}
+    fi_to_images: dict[str, list[str]] = {}
     for fi in main_fi_order:
         en = tr_map.get(fi, {}).get("en_search", "")
         cands = candidates.get(en, [])
-        pick = next((u for u in cands if u not in used_urls), cands[0] if cands else "")
-        if pick:
-            used_urls.add(pick)
-        fi_to_image[fi] = pick
+        primary = next((u for u in cands if u not in used_urls), cands[0] if cands else "")
+        if primary:
+            used_urls.add(primary)
+        # primary 在前，其余按 Pexels 顺序跟随
+        ordered = [primary] + [u for u in cands if u and u != primary]
+        fi_to_images[fi] = [u for u in ordered if u]
 
     output = {
         "updated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
@@ -471,7 +476,7 @@ def main() -> int:
     for r, by_date in per_r:
         days_out: dict[str, dict] = {}
         for d in dates:
-            days_out[str(d)] = bucket_items(by_date.get(d, []), tr_map, fi_to_image)
+            days_out[str(d)] = bucket_items(by_date.get(d, []), tr_map, fi_to_images)
         output["restaurants"].append({
             "name": r["name"],
             "hours": r.get("hours", ""),

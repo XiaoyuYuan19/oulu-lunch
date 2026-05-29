@@ -78,9 +78,35 @@
       ).join('');
     }
 
-    function renderMain(d) {
-      const media = d.image_url
-        ? `<img src="${d.image_url}" alt="" loading="lazy" class="w-28 h-28 sm:w-32 sm:h-32 object-cover bg-slate-100 flex-shrink-0">`
+    function imgKey(restName, ymd, fi) { return `img:${restName}|${ymd}|${fi}`; }
+    function currentImgIdx(restName, ymd, fi, n) {
+      const raw = localStorage.getItem(imgKey(restName, ymd, fi));
+      const i = raw == null ? 0 : (+raw || 0);
+      return n > 0 ? ((i % n) + n) % n : 0;
+    }
+    function bumpImgIdx(restName, ymd, fi, n) {
+      const cur = currentImgIdx(restName, ymd, fi, n);
+      localStorage.setItem(imgKey(restName, ymd, fi), String((cur + 1) % n));
+    }
+
+    function renderMain(d, ctx) {
+      const urls = (d.image_urls && d.image_urls.length) ? d.image_urls
+                  : (d.image_url ? [d.image_url] : []);
+      const idx = currentImgIdx(ctx.restName, ctx.ymd, d.fi, urls.length);
+      const url = urls[idx] || '';
+      const canSwap = urls.length > 1;
+      const refreshBtn = canSwap
+        ? `<button type="button" data-refresh="${encodeURIComponent(d.fi)}"
+              class="absolute top-1 right-1 w-7 h-7 flex items-center justify-center
+                     rounded-full bg-black/55 text-white text-sm backdrop-blur
+                     active:scale-95 transition"
+              aria-label="换一张图">↻</button>
+           <span class="absolute bottom-1 right-1 text-[10px] px-1.5 py-0.5 rounded-full bg-black/50 text-white">${idx+1}/${urls.length}</span>`
+        : '';
+      const media = url
+        ? `<div class="relative w-28 h-28 sm:w-32 sm:h-32 flex-shrink-0">
+             <img src="${url}" alt="" loading="lazy" class="w-full h-full object-cover bg-slate-100">${refreshBtn}
+           </div>`
         : `<div class="w-28 h-28 sm:w-32 sm:h-32 bg-slate-50 flex items-center justify-center text-5xl flex-shrink-0">${d.emoji || '🍽️'}</div>`;
       const tags = tagsHtml(d.tags);
       return `
@@ -108,7 +134,7 @@
         </div>`;
     }
 
-    function mainsSection(label, price, kelaIncluded, items, accentCls) {
+    function mainsSection(label, price, kelaIncluded, items, accentCls, ctx) {
       if (!items || !items.length) return '';
       return `
         <div class="border-t border-slate-100">
@@ -117,7 +143,7 @@
             <span class="text-base font-bold">${price} €</span>
             <span class="text-[11px] text-slate-400 ml-auto">${kelaIncluded ? 'KELA 补贴 · 含沙拉/面包/餐饮' : '加价 · 不享 KELA'}</span>
           </div>
-          <div>${items.map(renderMain).join('')}</div>
+          <div>${items.map(d => renderMain(d, ctx)).join('')}</div>
         </div>`;
     }
 
@@ -132,13 +158,14 @@
                        day.salad?.length || day.dessert?.length || day.side?.length);
       const carbsAndSides = [...(day.staple || []), ...(day.side || [])];
 
+      const ctx = { restName: r.name, ymd };
       const basicBlock = (r.price_basic && (basicMains.length || !premiumMains.length))
         ? mainsSection('基础餐', r.price_basic, true,
-            basicMains, 'text-emerald-700')
+            basicMains, 'text-emerald-700', ctx)
         : '';
       const premiumBlock = (r.price_fusion && premiumMains.length)
         ? mainsSection('特殊餐', r.price_fusion, false,
-            premiumMains, 'text-purple-700')
+            premiumMains, 'text-purple-700', ctx)
         : '';
       const noPremiumNote = (r.price_fusion && !premiumMains.length)
         ? `<div class="px-4 py-2 text-[11px] text-slate-400 border-t border-slate-100">
@@ -156,12 +183,15 @@
         : '';
 
       return `
-        <section class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
+        <section data-rest="${r.name}" class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
           <header class="px-4 py-3">
             <div class="flex items-start justify-between gap-3">
               <div class="min-w-0">
                 <h2 class="text-lg font-bold">${r.name}</h2>
-                <p class="text-xs text-slate-500 mt-0.5">午餐 ${r.hours || '—'}${r.location ? ` · ${r.location}` : ''}</p>
+                <div class="flex flex-wrap items-center gap-x-3 gap-y-1 mt-1 text-sm text-slate-700">
+                  <span class="inline-flex items-center gap-1 font-semibold tabular-nums">🕒 ${r.hours || '—'}</span>
+                  ${r.location ? `<span class="inline-flex items-center gap-1 font-medium">📍 ${r.location}</span>` : ''}
+                </div>
                 ${closedHint}
               </div>
               ${statusHtml}
@@ -214,6 +244,29 @@
         <p class="text-center text-xs text-slate-400 pt-2">数据：Juvenes / Jamix · 翻译：Gemini · 图：Pexels</p>`;
       main.innerHTML = html || '<div class="text-center text-slate-400 py-16">尚无数据，等 GitHub Action 跑一次</div>';
     }
+
+    // 全局点击代理：处理"换图"按钮
+    document.addEventListener('click', (e) => {
+      const btn = e.target.closest('[data-refresh]');
+      if (!btn) return;
+      e.preventDefault();
+      e.stopPropagation();
+      const fi = decodeURIComponent(btn.dataset.refresh);
+      // 找当前餐厅
+      const section = btn.closest('section[data-rest]');
+      if (!section || !DATA) return;
+      const restName = section.dataset.rest;
+      const r = (DATA.restaurants || []).find(x => x.name === restName);
+      if (!r) return;
+      const day = r.by_date?.[String(CURRENT_YMD)] || {};
+      const dish = (day.main || []).find(m => m.fi === fi);
+      if (!dish) return;
+      const urls = (dish.image_urls && dish.image_urls.length) ? dish.image_urls
+                  : (dish.image_url ? [dish.image_url] : []);
+      if (urls.length < 2) return;
+      bumpImgIdx(restName, CURRENT_YMD, fi, urls.length);
+      renderBody();
+    });
 
     async function load() {
       const main = document.getElementById('restaurants');
