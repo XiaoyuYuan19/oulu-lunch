@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-29T19:22:34+00:00",
+  "updated_at": "2026-05-29T19:26:39+00:00",
   "dates": [
     20260529,
     20260601,
@@ -23,7 +23,7 @@
       },
       "closed": null,
       "provider": "jamix",
-      "external_url": null,
+      "external_url": "https://juvenes.fi/kerttu/",
       "by_date": {
         "20260529": {
           "main": [
@@ -952,7 +952,7 @@
       },
       "closed": "29.5-9.8.2026",
       "provider": "jamix",
-      "external_url": null,
+      "external_url": "https://juvenes.fi/mara/",
       "by_date": {
         "20260529": {
           "main": [],
@@ -1014,7 +1014,7 @@
       },
       "closed": "29.6-9.8.2026",
       "provider": "jamix",
-      "external_url": null,
+      "external_url": "https://juvenes.fi/foobar/",
       "by_date": {
         "20260529": {
           "main": [
@@ -1906,7 +1906,7 @@
       },
       "closed": "29.6-2.8.2026",
       "provider": "jamix",
-      "external_url": null,
+      "external_url": "https://juvenes.fi/medisiina/",
       "by_date": {
         "20260529": {
           "main": [
