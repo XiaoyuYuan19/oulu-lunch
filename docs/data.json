@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-29T15:29:19+00:00",
+  "updated_at": "2026-05-29T15:35:56+00:00",
   "dates": [
     20260529,
     20260601,
@@ -173,7 +173,7 @@
               "zh": "双层芝士汉堡",
               "emoji": "🍽️",
               "tags": [],
-              "is_premium": false,
+              "is_premium": true,
               "source": "MY POPUP GRILL",
               "image_url": "https://images.pexels.com/photos/20722047/pexels-photo-20722047.jpeg?auto=compress&cs=tinysrgb&h=350"
             },
@@ -184,7 +184,7 @@
               "tags": [
                 "无乳糖"
               ],
-              "is_premium": false,
+              "is_premium": true,
               "source": "MY POPUP GRILL KASVIS",
               "image_url": "https://images.pexels.com/photos/5041475/pexels-photo-5041475.jpeg?auto=compress&cs=tinysrgb&h=350"
             },
@@ -193,7 +193,7 @@
               "zh": "披萨",
               "emoji": "🍕",
               "tags": [],
-              "is_premium": false,
+              "is_premium": true,
               "source": "PIZZA",
               "image_url": "https://images.pexels.com/photos/30504705/pexels-photo-30504705.jpeg?auto=compress&cs=tinysrgb&h=350"
             }
@@ -223,7 +223,7 @@
                 "无蛋",
                 "素"
               ],
-              "is_premium": false,
+              "is_premium": true,
               "source": "MY POPUP GRILL"
             }
           ],
@@ -311,7 +311,7 @@
               "zh": "双层芝士汉堡",
               "emoji": "🍽️",
               "tags": [],
-              "is_premium": false,
+              "is_premium": true,
               "source": "MY POPUP GRILL",
               "image_url": "https://images.pexels.com/photos/20722047/pexels-photo-20722047.jpeg?auto=compress&cs=tinysrgb&h=350"
             },
@@ -322,7 +322,7 @@
               "tags": [
                 "无乳糖"
               ],
-              "is_premium": false,
+              "is_premium": true,
               "source": "MY POPUP GRILL KASVIS",
               "image_url": "https://images.pexels.com/photos/5041475/pexels-photo-5041475.jpeg?auto=compress&cs=tinysrgb&h=350"
             },
@@ -331,7 +331,7 @@
               "zh": "披萨",
               "emoji": "🍕",
               "tags": [],
-              "is_premium": false,
+              "is_premium": true,
               "source": "PIZZA",
               "image_url": "https://images.pexels.com/photos/30504705/pexels-photo-30504705.jpeg?auto=compress&cs=tinysrgb&h=350"
             }
@@ -374,7 +374,7 @@
                 "无蛋",
                 "素"
               ],
-              "is_premium": false,
+              "is_premium": true,
               "source": "MY POPUP GRILL"
             }
           ],
@@ -478,7 +478,7 @@
               "zh": "双层芝士汉堡",
               "emoji": "🍽️",
               "tags": [],
-              "is_premium": false,
+              "is_premium": true,
               "source": "MY POPUP GRILL",
               "image_url": "https://images.pexels.com/photos/20722047/pexels-photo-20722047.jpeg?auto=compress&cs=tinysrgb&h=350"
             },
@@ -489,7 +489,7 @@
               "tags": [
                 "无乳糖"
               ],
-              "is_premium": false,
+              "is_premium": true,
               "source": "MY POPUP GRILL KASVIS",
               "image_url": "https://images.pexels.com/photos/5041475/pexels-photo-5041475.jpeg?auto=compress&cs=tinysrgb&h=350"
             },
@@ -498,7 +498,7 @@
               "zh": "披萨",
               "emoji": "🍕",
               "tags": [],
-              "is_premium": false,
+              "is_premium": true,
               "source": "PIZZA",
               "image_url": "https://images.pexels.com/photos/30504705/pexels-photo-30504705.jpeg?auto=compress&cs=tinysrgb&h=350"
             }
@@ -542,7 +542,7 @@
                 "无蛋",
                 "素"
               ],
-              "is_premium": false,
+              "is_premium": true,
               "source": "MY POPUP GRILL"
             }
           ],
@@ -614,7 +614,7 @@
               "zh": "双层芝士汉堡",
               "emoji": "🍽️",
               "tags": [],
-              "is_premium": false,
+              "is_premium": true,
               "source": "MY POPUP GRILL",
               "image_url": "https://images.pexels.com/photos/20722047/pexels-photo-20722047.jpeg?auto=compress&cs=tinysrgb&h=350"
             },
@@ -625,7 +625,7 @@
               "tags": [
                 "无乳糖"
               ],
-              "is_premium": false,
+              "is_premium": true,
               "source": "MY POPUP GRILL KASVIS",
               "image_url": "https://images.pexels.com/photos/5041475/pexels-photo-5041475.jpeg?auto=compress&cs=tinysrgb&h=350"
             }
@@ -669,7 +669,7 @@
                 "无蛋",
                 "素"
               ],
-              "is_premium": false,
+              "is_premium": true,
               "source": "MY POPUP GRILL"
             }
           ],
@@ -1392,6 +1392,47 @@
               "is_premium": false,
               "source": "LOUNAS",
               "image_url": "https://images.pexels.com/photos/26341210/pexels-photo-26341210.jpeg?auto=compress&cs=tinysrgb&h=350"
+            },
+            {
+              "fi": "Kalkkuna-kasviskastiketta",
+              "zh": "火鸡蔬菜酱",
+              "emoji": "🍗",
+              "tags": [
+                "无麸质",
+                "无奶",
+                "无蛋",
+                "心脏",
+                "含有机"
+              ],
+              "is_premium": false,
+              "source": "LOUNAS",
+              "image_url": "https://images.pexels.com/photos/30622221/pexels-photo-30622221.jpeg?auto=compress&cs=tinysrgb&h=350"
+            },
+            {
+              "fi": "BBQ-broilerpizzaa",
+              "zh": "烧烤鸡肉披萨",
+              "emoji": "🍽️",
+              "tags": [
+                "无乳糖",
+                "无蛋"
+              ],
+              "is_premium": true,
+              "source": "FUSION",
+              "image_url": "https://images.pexels.com/photos/9792460/pexels-photo-9792460.jpeg?auto=compress&cs=tinysrgb&h=350"
+            },
+            {
+              "fi": "Parsakeittoa",
+              "zh": "芦笋汤",
+              "emoji": "🍽️",
+              "tags": [
+                "无麸质",
+                "无乳糖",
+                "无蛋",
+                "含有机"
+              ],
+              "is_premium": false,
+              "source": "SALAD AND SOUP",
+              "image_url": "https://images.pexels.com/photos/8696758/pexels-photo-8696758.jpeg?auto=compress&cs=tinysrgb&h=350"
             }
           ],
           "staple": [
@@ -1453,50 +1494,10 @@
             }
           ],
           "salad": [],
-          "dessert": [],
-          "side": [
-            {
-              "fi": "Paahdettuja kasviksia",
-              "zh": "烤蔬菜",
-              "emoji": "🌱",
-              "tags": [
-                "无麸质",
-                "无奶",
-                "无蛋",
-                "素",
-                "心脏"
-              ],
-              "is_premium": false,
-              "source": "LOUNAS"
-            },
-            {
-              "fi": "Kalkkuna-kasviskastiketta",
-              "zh": "Kalkkuna-kasviskastiketta",
-              "emoji": "🍗",
-              "tags": [
-                "无麸质",
-                "无奶",
-                "无蛋",
-                "心脏",
-                "含有机"
-              ],
-              "is_premium": false,
-              "source": "LOUNAS"
-            },
-            {
-              "fi": "BBQ-broilerpizzaa",
-              "zh": "BBQ-broilerpizzaa",
-              "emoji": "🍽️",
-              "tags": [
-                "无乳糖",
-                "无蛋"
-              ],
-              "is_premium": true,
-              "source": "FUSION"
-            },
+          "dessert": [
             {
               "fi": "Pannukakkua",
-              "zh": "Pannukakkua",
+              "zh": "芬兰薄煎饼",
               "emoji": "🥞",
               "tags": [
                 "无乳糖"
@@ -1506,7 +1507,7 @@
             },
             {
               "fi": "Mansikkahilloa",
-              "zh": "Mansikkahilloa",
+              "zh": "草莓酱",
               "emoji": "🍽️",
               "tags": [
                 "无麸质",
@@ -1516,32 +1517,30 @@
               ],
               "is_premium": false,
               "source": "JÄLKIRUOKA"
-            },
+            }
+          ],
+          "side": [
             {
-              "fi": "Parsakeittoa",
-              "zh": "Parsakeittoa",
-              "emoji": "🍽️",
+              "fi": "Paahdettuja kasviksia",
+              "zh": "烤蔬菜",
+              "emoji": "🌱",
               "tags": [
                 "无麸质",
-                "无乳糖",
+                "无奶",
                 "无蛋",
-                "含有机"
+                "素",
+                "心脏"
               ],
               "is_premium": false,
-              "source": "SALAD AND SOUP"
+              "source": "LOUNAS"
             }
           ]
         },
         "20260601": {
-          "main": [],
-          "staple": [],
-          "sauce": [],
-          "salad": [],
-          "dessert": [],
-          "side": [
+          "main": [
             {
               "fi": "Mac&cheese Luomutofusta",
-              "zh": "Mac&cheese Luomutofusta",
+              "zh": "有机豆腐通心粉奶酪",
               "emoji": "🍽️",
               "tags": [
                 "无乳糖",
@@ -1550,8 +1549,70 @@
                 "含有机"
               ],
               "is_premium": false,
-              "source": "KASVISLOUNAS"
+              "source": "KASVISLOUNAS",
+              "image_url": "https://images.pexels.com/photos/5182122/pexels-photo-5182122.jpeg?auto=compress&cs=tinysrgb&h=350"
             },
+            {
+              "fi": "Broiler-kasvistortillat",
+              "zh": "鸡肉蔬菜玉米饼",
+              "emoji": "🌱",
+              "tags": [
+                "无奶",
+                "无蛋",
+                "心脏"
+              ],
+              "is_premium": false,
+              "source": "LOUNAS",
+              "image_url": "https://images.pexels.com/photos/28959271/pexels-photo-28959271.jpeg?auto=compress&cs=tinysrgb&h=350"
+            },
+            {
+              "fi": "Pyttipannua",
+              "zh": "瑞典肉丁土豆煎",
+              "emoji": "🍽️",
+              "tags": [
+                "无麸质",
+                "无奶",
+                "无蛋",
+                "心脏"
+              ],
+              "is_premium": false,
+              "source": "LOUNAS",
+              "image_url": "https://images.pexels.com/photos/7425467/pexels-photo-7425467.jpeg?auto=compress&cs=tinysrgb&h=350"
+            }
+          ],
+          "staple": [],
+          "sauce": [
+            {
+              "fi": "Tomaatti-korianteri salsaa",
+              "zh": "番茄香菜莎莎酱",
+              "emoji": "🍽️",
+              "tags": [
+                "无麸质",
+                "无奶",
+                "无蛋",
+                "素",
+                "心脏"
+              ],
+              "is_premium": false,
+              "source": "LOUNAS"
+            }
+          ],
+          "salad": [],
+          "dessert": [
+            {
+              "fi": "Mansikkarahkaa",
+              "zh": "草莓夸克甜点",
+              "emoji": "🍽️",
+              "tags": [
+                "无麸质",
+                "无乳糖",
+                "无蛋"
+              ],
+              "is_premium": false,
+              "source": "JÄLKIRUOKA"
+            }
+          ],
+          "side": [
             {
               "fi": "Paahdettuja kasviksia",
               "zh": "烤蔬菜",
@@ -1565,62 +1626,54 @@
               ],
               "is_premium": false,
               "source": "KASVISLOUNAS"
-            },
-            {
-              "fi": "Broiler-kasvistortillat",
-              "zh": "Broiler-kasvistortillat",
-              "emoji": "🌱",
-              "tags": [
-                "无奶",
-                "无蛋",
-                "心脏"
-              ],
-              "is_premium": false,
-              "source": "LOUNAS"
-            },
-            {
-              "fi": "Tomaatti-korianteri salsaa",
-              "zh": "Tomaatti-korianteri salsaa",
-              "emoji": "🍽️",
-              "tags": [
-                "无麸质",
-                "无奶",
-                "无蛋",
-                "素",
-                "心脏"
-              ],
-              "is_premium": false,
-              "source": "LOUNAS"
-            },
-            {
-              "fi": "Pyttipannua",
-              "zh": "Pyttipannua",
-              "emoji": "🍽️",
-              "tags": [
-                "无麸质",
-                "无奶",
-                "无蛋",
-                "心脏"
-              ],
-              "is_premium": false,
-              "source": "LOUNAS"
-            },
-            {
-              "fi": "Mansikkarahkaa",
-              "zh": "Mansikkarahkaa",
-              "emoji": "🍽️",
-              "tags": [
-                "无麸质",
-                "无乳糖",
-                "无蛋"
-              ],
-              "is_premium": false,
-              "source": "JÄLKIRUOKA"
             }
           ]
         },
         "20260602": {
-          "main": [],
+          "main": [
+            {
+              "fi": "Bataatti-tuorejuustokeittoa",
+              "zh": "红薯奶油芝士汤",
+              "emoji": "🍽️",
+              "tags": [
+                "无麸质",
+                "无乳糖",
+                "无蛋",
+                "心脏",
+                "含有机"
+              ],
+              "is_premium": false,
+              "source": "KASVISLOUNAS",
+              "image_url": "https://images.pexels.com/photos/32986464/pexels-photo-32986464.jpeg?auto=compress&cs=tinysrgb&h=350"
+            },
+            {
+              "fi": "Kylmäsavulohi-cappellipastapaistosta",
+              "zh": "冷熏三文鱼细面焗饭",
+              "emoji": "🍽️",
+              "tags": [
+                "无乳糖",
+                "心脏"
+              ],
+              "is_premium": false,
+              "source": "LOUNAS",
+              "image_url": "https://images.pexels.com/photos/11663125/pexels-photo-11663125.jpeg?auto=compress&cs=tinysrgb&h=350"
+            },
+            {
+              "fi": "Viherpippurihärkää",
+              "zh": "青胡椒牛肉",
+              "emoji": "🍽️",
+              "tags": [
+                "无麸质",
+                "无乳糖",
+                "无蛋",
+                "心脏",
+                "含有机"
+              ],
+              "is_premium": false,
+              "source": "LOUNAS",
+              "image_url": "https://images.pexels.com/photos/26341190/pexels-photo-26341190.jpeg?auto=compress&cs=tinysrgb&h=350"
+            }
+          ],
           "staple": [
             {
               "fi": "Täysjyväriisiä",
@@ -1639,22 +1692,21 @@
           ],
           "sauce": [],
           "salad": [],
-          "dessert": [],
-          "side": [
+          "dessert": [
             {
-              "fi": "Bataatti-tuorejuustokeittoa",
-              "zh": "Bataatti-tuorejuustokeittoa",
+              "fi": "Mansikkarahkaa",
+              "zh": "草莓夸克甜点",
               "emoji": "🍽️",
               "tags": [
                 "无麸质",
                 "无乳糖",
-                "无蛋",
-                "心脏",
-                "含有机"
+                "无蛋"
               ],
               "is_premium": false,
-              "source": "KASVISLOUNAS"
-            },
+              "source": "JÄLKIRUOKA"
+            }
+          ],
+          "side": [
             {
               "fi": "Paahdettuja kasviksia",
               "zh": "烤蔬菜",
@@ -1668,48 +1720,25 @@
               ],
               "is_premium": false,
               "source": "KASVISLOUNAS"
-            },
+            }
+          ]
+        },
+        "20260603": {
+          "main": [
             {
-              "fi": "Kylmäsavulohi-cappellipastapaistosta",
-              "zh": "Kylmäsavulohi-cappellipastapaistosta",
-              "emoji": "🍽️",
+              "fi": "Kasvislasagnettea",
+              "zh": "蔬菜千层面",
+              "emoji": "🌱",
               "tags": [
-                "无乳糖",
-                "心脏"
-              ],
-              "is_premium": false,
-              "source": "LOUNAS"
-            },
-            {
-              "fi": "Viherpippurihärkää",
-              "zh": "Viherpippurihärkää",
-              "emoji": "🍽️",
-              "tags": [
-                "无麸质",
                 "无乳糖",
                 "无蛋",
                 "心脏",
                 "含有机"
               ],
               "is_premium": false,
-              "source": "LOUNAS"
+              "source": "KASVISLOUNAS",
+              "image_url": "https://images.pexels.com/photos/7368053/pexels-photo-7368053.jpeg?auto=compress&cs=tinysrgb&h=350"
             },
-            {
-              "fi": "Mansikkarahkaa",
-              "zh": "Mansikkarahkaa",
-              "emoji": "🍽️",
-              "tags": [
-                "无麸质",
-                "无乳糖",
-                "无蛋"
-              ],
-              "is_premium": false,
-              "source": "JÄLKIRUOKA"
-            }
-          ]
-        },
-        "20260603": {
-          "main": [
             {
               "fi": "Broilerpyöryköitä",
               "zh": "鸡肉丸子",
@@ -1755,23 +1784,38 @@
               "source": "LOUNAS"
             }
           ],
-          "sauce": [],
-          "salad": [],
-          "dessert": [],
-          "side": [
+          "sauce": [
             {
-              "fi": "Kasvislasagnettea",
-              "zh": "Kasvislasagnettea",
-              "emoji": "🌱",
+              "fi": "Currykastiketta",
+              "zh": "咖喱酱",
+              "emoji": "🍛",
               "tags": [
+                "无麸质",
                 "无乳糖",
                 "无蛋",
                 "心脏",
                 "含有机"
               ],
               "is_premium": false,
-              "source": "KASVISLOUNAS"
-            },
+              "source": "LOUNAS"
+            }
+          ],
+          "salad": [],
+          "dessert": [
+            {
+              "fi": "Omena-kaurapaistosta",
+              "zh": "苹果燕麦烤点",
+              "emoji": "🍽️",
+              "tags": [
+                "无麸质",
+                "无乳糖",
+                "无蛋"
+              ],
+              "is_premium": false,
+              "source": "JÄLKIRUOKA"
+            }
+          ],
+          "side": [
             {
               "fi": "Paahdettuja kasviksia",
               "zh": "烤蔬菜",
@@ -1785,37 +1829,39 @@
               ],
               "is_premium": false,
               "source": "KASVISLOUNAS"
-            },
-            {
-              "fi": "Currykastiketta",
-              "zh": "Currykastiketta",
-              "emoji": "🍛",
-              "tags": [
-                "无麸质",
-                "无乳糖",
-                "无蛋",
-                "心脏",
-                "含有机"
-              ],
-              "is_premium": false,
-              "source": "LOUNAS"
-            },
-            {
-              "fi": "Omena-kaurapaistosta",
-              "zh": "Omena-kaurapaistosta",
-              "emoji": "🍽️",
-              "tags": [
-                "无麸质",
-                "无乳糖",
-                "无蛋"
-              ],
-              "is_premium": false,
-              "source": "JÄLKIRUOKA"
             }
           ]
         },
         "20260604": {
-          "main": [],
+          "main": [
+            {
+              "fi": "Jauheliha-makaronilaatikko",
+              "zh": "肉末通心粉盒",
+              "emoji": "🥩",
+              "tags": [
+                "无乳糖",
+                "心脏",
+                "含有机"
+              ],
+              "is_premium": false,
+              "source": "LOUNAS",
+              "image_url": "https://images.pexels.com/photos/34363091/pexels-photo-34363091.jpeg?auto=compress&cs=tinysrgb&h=350"
+            },
+            {
+              "fi": "Juustoista kirjolohikeittoa",
+              "zh": "芝士虹鳟鱼汤",
+              "emoji": "🧀",
+              "tags": [
+                "无麸质",
+                "无乳糖",
+                "无蛋",
+                "心脏"
+              ],
+              "is_premium": false,
+              "source": "LOUNAS",
+              "image_url": "https://images.pexels.com/photos/27207214/pexels-photo-27207214.jpeg?auto=compress&cs=tinysrgb&h=350"
+            }
+          ],
           "staple": [
             {
               "fi": "Täysjyväriisiä",
@@ -1834,7 +1880,20 @@
           ],
           "sauce": [],
           "salad": [],
-          "dessert": [],
+          "dessert": [
+            {
+              "fi": "Omena-kaurapaistosta",
+              "zh": "苹果燕麦烤点",
+              "emoji": "🍽️",
+              "tags": [
+                "无麸质",
+                "无乳糖",
+                "无蛋"
+              ],
+              "is_premium": false,
+              "source": "JÄLKIRUOKA"
+            }
+          ],
           "side": [
             {
               "fi": "Paahdettuja kasviksia",
@@ -1849,43 +1908,6 @@
               ],
               "is_premium": false,
               "source": "KASVISLOUNAS"
-            },
-            {
-              "fi": "Jauheliha-makaronilaatikko",
-              "zh": "Jauheliha-makaronilaatikko",
-              "emoji": "🥩",
-              "tags": [
-                "无乳糖",
-                "心脏",
-                "含有机"
-              ],
-              "is_premium": false,
-              "source": "LOUNAS"
-            },
-            {
-              "fi": "Juustoista kirjolohikeittoa",
-              "zh": "Juustoista kirjolohikeittoa",
-              "emoji": "🧀",
-              "tags": [
-                "无麸质",
-                "无乳糖",
-                "无蛋",
-                "心脏"
-              ],
-              "is_premium": false,
-              "source": "LOUNAS"
-            },
-            {
-              "fi": "Omena-kaurapaistosta",
-              "zh": "Omena-kaurapaistosta",
-              "emoji": "🍽️",
-              "tags": [
-                "无麸质",
-                "无乳糖",
-                "无蛋"
-              ],
-              "is_premium": false,
-              "source": "JÄLKIRUOKA"
             }
           ]
         }
