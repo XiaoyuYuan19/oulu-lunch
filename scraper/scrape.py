@@ -486,3 +486,5 @@ def main() -> int:
 
 if __name__ == "__main__":
     raise SystemExit(main())
+
+# trigger: manual rerun 2026-05-29T15:28:27Z
