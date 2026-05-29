@@ -62,13 +62,21 @@
       const media = d.image_url
         ? `<img src="${d.image_url}" alt="" class="w-12 h-12 rounded-lg object-cover flex-shrink-0">`
         : `<span class="text-3xl leading-none flex-shrink-0 w-12 text-center">${d.emoji || '🍽️'}</span>`;
+      const cat = d.category
+        ? `<span class="text-[10px] px-1.5 py-0.5 bg-amber-50 text-amber-700 rounded">${d.category}</span>`
+        : '';
+      const tags = (d.tags || []).map(t =>
+        `<span class="text-[10px] px-1.5 py-0.5 bg-slate-100 text-slate-600 rounded">${t}</span>`
+      ).join('');
+      const meta = (cat || tags)
+        ? `<div class="mt-1 flex gap-1 flex-wrap">${cat}${tags}</div>` : '';
       return `
         <li class="px-4 py-3 flex items-start gap-3">
           ${media}
           <div class="flex-1 min-w-0">
             <div class="font-medium text-slate-900 break-words">${d.zh || d.fi}</div>
             <div class="text-xs text-slate-500 mt-0.5 break-words">${d.fi}</div>
-            ${d.tags && d.tags.length ? `<div class="mt-1 flex gap-1 flex-wrap">${d.tags.map(t=>`<span class="text-[10px] px-1.5 py-0.5 bg-slate-100 text-slate-600 rounded">${t}</span>`).join('')}</div>` : ''}
+            ${meta}
           </div>
         </li>`;
     }

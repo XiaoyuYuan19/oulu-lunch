@@ -1,30 +1,31 @@
-# 在 lounaat.info 上搜你常吃的餐厅，把页面 URL 贴到 url 字段。
-# 例：https://www.lounaat.info/lounas/foobar/oulu
+# Juvenes 在 Oulu 的学生餐厅。菜单数据来自 Jamix Cloud（juvenes.fi 后端）。
+# customer_id 是 Juvenes 公司 ID（不要改）；kitchen_id 通过查
+#   https://fi.jamix.cloud/apps/menuservice/rest/haku/menu/93077/<kitchen_id>?lang=fi
+# 的 kitchenName 字段确认。
 #
-# hours 是给前端显示"营业中"用的（HH:MM-HH:MM，工作日有效）。
-# price 是 lunch 价（学生餐 ~2.95€，非学生 ~7-9€）。
-# location 可选，会显示在餐厅名下面。
-#
-# 下面四家是 Oulu Linnanmaa 校园常见的占位；请在 lounaat.info 自行核对 URL 后保存。
+# 改餐厅：注释掉/删掉不要的；新加的把 kitchen_id 填对就行。
+
+provider: jamix
+customer_id: 93077
 
 restaurants:
   - name: Foobar
-    url: https://www.lounaat.info/lounas/foobar/oulu
+    kitchen_id: 69
     hours: "10:30-14:30"
     price: "2.95"
     location: Linnanmaa
-  - name: Voltti
-    url: https://www.lounaat.info/lounas/voltti/oulu
+  - name: Kerttu
+    kitchen_id: 70
     hours: "10:30-14:30"
     price: "2.95"
     location: Linnanmaa
+  - name: Medisiina
+    kitchen_id: 75
+    hours: "10:30-14:30"
+    price: "2.95"
+    location: Kontinkangas (医学院)
   - name: Mara
-    url: https://www.lounaat.info/lounas/mara/oulu
+    kitchen_id: 49
     hours: "10:30-14:30"
-    price: "2.95"
-    location: Linnanmaa
-  - name: Konehuone
-    url: https://www.lounaat.info/lounas/konehuone/oulu
-    hours: "10:30-14:00"
     price: "2.95"
     location: Linnanmaa

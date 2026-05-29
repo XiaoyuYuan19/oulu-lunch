@@ -1,4 +1,4 @@
-"""每天抓 lounaat.info 上 Oulu 学生餐厅菜单 + Claude Haiku 翻译 → 写 public/data.json。"""
+"""抓 Juvenes 学生餐厅菜单（Jamix Cloud JSON API）+ Gemini 翻译 → public/data.json。"""
 from __future__ import annotations
 
 import json
@@ -7,49 +7,74 @@ import re
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 import requests
 import yaml
-from bs4 import BeautifulSoup
 
 ROOT = Path(__file__).resolve().parent.parent
 CONFIG = ROOT / "scraper" / "restaurants.yaml"
 OUTPUT = ROOT / "public" / "data.json"
 
-HEADERS = {
-    "User-Agent": "oulu-lunch-pwa/1.0 (+https://github.com/) python-requests",
-    "Accept-Language": "fi,en;q=0.8",
-}
+JAMIX_API = "https://fi.jamix.cloud/apps/menuservice/rest/haku/menu/{cust}/{kitchen}?lang=fi"
+HEADERS = {"User-Agent": "oulu-lunch-pwa/1.0 python-requests"}
+TZ_HELSINKI = ZoneInfo("Europe/Helsinki")
 
 EMOJI_RULES: list[tuple[str, str]] = [
-    (r"\b(lohi|kala|silakka|seiti|tonnikala|kuha|made|muikku)", "🐟"),
+    (r"\b(lohi|kala|silakka|seiti|tonnikala|kuha|made|muikku|katkarapu)", "🐟"),
     (r"\b(kana|broileri|kalkkuna)", "🍗"),
-    (r"\b(nauta|härkä|jauheliha|naudan|paahtopaisti)", "🥩"),
+    (r"\b(nauta|härkä|jauheliha|naudan|paahtopaisti|härän)", "🥩"),
     (r"\b(sika|possu|kassler|pekoni|porsaan)", "🥓"),
-    (r"\b(makkara)", "🌭"),
+    (r"\b(makkara|nakki)", "🌭"),
     (r"\b(keitto|sose)", "🍲"),
-    (r"\b(pasta|spagetti|lasagne|makaroni)", "🍝"),
+    (r"\b(pasta|spagetti|lasagne|makaroni|tortellini|gnocchi)", "🍝"),
     (r"\b(pizza)", "🍕"),
-    (r"\b(riisi)", "🍚"),
-    (r"\b(peruna|perunamuusi|perunoita)", "🥔"),
+    (r"\b(riisi|risotto)", "🍚"),
+    (r"\b(peruna|perunamuusi|perunoita|lohko)", "🥔"),
     (r"\b(pyörykä|pyörykät|lihapulla)", "🍡"),
-    (r"\b(curry)", "🍛"),
-    (r"\b(wok|nuudeli|nuudelit|noodle)", "🍜"),
-    (r"\b(salaatti)", "🥗"),
-    (r"\b(kasvis|vegaani|vegetaarinen|vege|kasvi)", "🌱"),
+    (r"\b(curry|tikka|masala)", "🍛"),
+    (r"\b(wok|nuudeli|nuudelit|noodle|ramen)", "🍜"),
+    (r"\b(salaatti|salad)", "🥗"),
+    (r"\b(kasvis|vegaani|vegetaarinen|vege|kasvi|tofu|seitan)", "🌱"),
     (r"\b(juusto)", "🧀"),
     (r"\b(muna|munakas|kananmuna)", "🥚"),
-    (r"\b(leipä|sämpylä)", "🍞"),
-    (r"\b(jälkiruoka|kakku|piirakka)", "🍰"),
+    (r"\b(leipä|sämpylä|patonki)", "🍞"),
+    (r"\b(pannukakku|lettu)", "🥞"),
+    (r"\b(jälkiruoka|kakku|piirakka|pulla|munkki)", "🍰"),
+    (r"\b(hilloa|hillo|marmeladi)", "🍓"),
 ]
 
 DIET_TAGS = {
-    "L": "无乳糖", "VL": "极低乳糖", "G": "无麸质", "M": "无奶",
-    "VEG": "素", "VE": "全素", "K": "本地", "*": "心脏标志",
+    "L": "无乳糖", "VL": "极低乳糖", "G": "无麸质", "M": "无奶", "Mu": "无蛋",
+    "VEG": "素", "VE": "全素", "K": "本地", "SIS.LUOMUA": "含有机", "*": "心脏",
 }
 
-DIET_CODE_RE = re.compile(r"\(([A-Z, *\.]+)\)\s*$")
-PRICE_LEAD_RE = re.compile(r"^\s*\d+[,.]\d{2}\s*€?\s*")
+CATEGORY_MAP = {
+    "KASVISLOUNAS": "素菜",
+    "KEITTOLOUNAS": "汤",
+    "KOTIRUOKA": "家常菜",
+    "KEVYTLOUNAS": "轻食",
+    "PÄIVÄN LOUNAS": "今日特餐",
+    "PÄIVÄN ATERIA": "今日套餐",
+    "LIHAINEN LOUNAS": "肉菜",
+    "LOUNAS": "午餐",
+    "KALARUOKA": "鱼",
+    "PUUROLOUNAS": "粥",
+    "JÄLKIRUOKA": "甜点",
+    "SALAATTI": "沙拉",
+    "LISÄKE": "配菜",
+    "LEIPÄ": "面包",
+    "DESSERT": "甜点",
+    "FUSION": "融合料理",
+    "SALAD AND SOUP": "汤/沙拉",
+    "SALAD": "沙拉",
+    "SOUP": "汤",
+    "MAIN": "主菜",
+    "MAIN COURSE": "主菜",
+    "BREAKFAST": "早餐",
+    "VEGETARIAN": "素菜",
+    "VEGAN": "全素",
+}
 
 
 def emoji_for(fi: str) -> str:
@@ -60,51 +85,64 @@ def emoji_for(fi: str) -> str:
     return "🍽️"
 
 
-def parse_dish_line(raw: str) -> tuple[str, list[str]]:
-    """从一行原文里抠出菜名 + 饮食标签。"""
-    text = re.sub(r"\s+", " ", raw).strip()
-    text = PRICE_LEAD_RE.sub("", text)
-    tags: list[str] = []
-    m = DIET_CODE_RE.search(text)
-    if m:
-        for code in re.split(r"[, .]+", m.group(1)):
-            code = code.strip()
-            if code in DIET_TAGS:
-                tags.append(DIET_TAGS[code])
-        text = DIET_CODE_RE.sub("", text).strip()
-    return text, tags
+def parse_diets(s: str | None) -> list[str]:
+    if not s:
+        return []
+    codes = [c.strip() for c in re.split(r"[,/]", s) if c.strip()]
+    return [DIET_TAGS[c] for c in codes if c in DIET_TAGS]
 
 
-def fetch_menu(url: str) -> list[tuple[str, list[str]]]:
+def map_category(fi: str | None) -> str:
+    if not fi:
+        return ""
+    up = fi.strip().upper()
+    return CATEGORY_MAP.get(up, fi.strip().title())
+
+
+def today_yyyymmdd() -> int:
+    now = datetime.now(TZ_HELSINKI)
+    return now.year * 10000 + now.month * 100 + now.day
+
+
+INLINE_DIET_RE = re.compile(
+    r"[\s,]*(?:\b(?:G|M|L|VL|VE|VEG|Mu|K)\b[\s,/]*)+\*?\s*$",
+    re.IGNORECASE,
+)
+
+
+def clean_name(name: str) -> str:
+    name = INLINE_DIET_RE.sub("", name).strip()
+    name = re.sub(r"\s+", " ", name).strip(" ,*")
+    return name
+
+
+def fetch_dishes(customer_id: int, kitchen_id: int, today: int) -> list[dict]:
+    url = JAMIX_API.format(cust=customer_id, kitchen=kitchen_id)
     r = requests.get(url, headers=HEADERS, timeout=20)
     r.raise_for_status()
-    soup = BeautifulSoup(r.text, "html.parser")
+    data = r.json()
 
-    # 找今天的菜单块
-    today_block = None
-    for sel in [".menu.today", ".today .menu", "article .today", ".day.today", ".menu"]:
-        today_block = soup.select_one(sel)
-        if today_block:
-            break
-    if not today_block:
-        return []
-
-    items: list[tuple[str, list[str]]] = []
-    candidates = today_block.select("li.dish") or today_block.select("li") or today_block.select(".meal, .menu-item")
-    for it in candidates:
-        if it.find("ul"):
-            continue
-        text = it.get_text(" ", strip=True)
-        if not text:
-            continue
-        name, tags = parse_dish_line(text)
-        if len(name) < 4 or name[0].isdigit():
-            continue
-        if any(name == n for n, _ in items):
-            continue
-        items.append((name, tags))
-        if len(items) >= 12:  # 防御性截断
-            break
+    items: list[dict] = []
+    seen: set[str] = set()
+    for kitchen in data:
+        for mt in kitchen.get("menuTypes", []):
+            for menu in mt.get("menus", []):
+                for day in menu.get("days", []):
+                    if day.get("date") != today:
+                        continue
+                    for opt in day.get("mealoptions", []):
+                        category = map_category(opt.get("name"))
+                        for mi in opt.get("menuItems", []):
+                            raw = (mi.get("name") or "").strip()
+                            name = clean_name(raw)
+                            if not name or name in seen:
+                                continue
+                            seen.add(name)
+                            items.append({
+                                "fi": name,
+                                "category": category,
+                                "tags": parse_diets(mi.get("diets")),
+                            })
     return items
 
 
@@ -133,19 +171,21 @@ def translate_batch(fi_names: list[str]) -> dict[str, str]:
     )
     text = (resp.text or "").strip()
     zh_lines = [l.strip() for l in text.splitlines() if l.strip()]
-    # 容错：行数对不上时尽量按位置对齐
-    return {fi: zh_lines[i] if i < len(zh_lines) else fi for i, fi in enumerate(fi_names)}
+    return {fi: (zh_lines[i] if i < len(zh_lines) else fi) for i, fi in enumerate(fi_names)}
 
 
 def main() -> int:
     with open(CONFIG, encoding="utf-8") as f:
         cfg = yaml.safe_load(f)
+    customer_id = cfg["customer_id"]
+    today = today_yyyymmdd()
+    print(f"date={today}", file=sys.stderr)
 
-    per_restaurant: list[tuple[dict, list[tuple[str, list[str]]]]] = []
+    per_restaurant: list[tuple[dict, list[dict]]] = []
     for r in cfg["restaurants"]:
-        print(f"→ {r['name']} ({r['url']})", file=sys.stderr)
+        print(f"→ {r['name']} (k={r['kitchen_id']})", file=sys.stderr)
         try:
-            dishes = fetch_menu(r["url"])
+            dishes = fetch_dishes(customer_id, r["kitchen_id"], today)
             print(f"   {len(dishes)} 道菜", file=sys.stderr)
         except Exception as e:
             print(f"   fetch failed: {e}", file=sys.stderr)
@@ -155,34 +195,36 @@ def main() -> int:
     all_names: list[str] = []
     seen: set[str] = set()
     for _, dishes in per_restaurant:
-        for name, _ in dishes:
-            if name not in seen:
-                seen.add(name)
-                all_names.append(name)
+        for d in dishes:
+            if d["fi"] not in seen:
+                seen.add(d["fi"])
+                all_names.append(d["fi"])
 
     print(f"翻译 {len(all_names)} 道菜…", file=sys.stderr)
     zh_map = translate_batch(all_names)
 
     output = {
         "updated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
+        "date": today,
         "restaurants": [],
     }
     for r, dishes in per_restaurant:
         items = [
             {
-                "fi": name,
-                "zh": zh_map.get(name, name),
-                "emoji": emoji_for(name),
-                "tags": tags,
+                "fi": d["fi"],
+                "zh": zh_map.get(d["fi"], d["fi"]),
+                "emoji": emoji_for(d["fi"]),
+                "category": d["category"],
+                "tags": d["tags"],
             }
-            for name, tags in dishes
+            for d in dishes
         ]
         output["restaurants"].append({
             "name": r["name"],
             "hours": r.get("hours", ""),
             "price": r.get("price", ""),
             "location": r.get("location", ""),
-            "url": r.get("url", ""),
+            "kitchen_id": r["kitchen_id"],
             "dishes": items,
         })
 
