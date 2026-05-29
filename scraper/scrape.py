@@ -161,25 +161,35 @@ def translate_batch(fi_names: list[str]) -> dict[str, dict[str, str]]:
     try:
         from google import genai
         from google.genai import types
+        from pydantic import BaseModel
     except Exception as e:
         print(f"warn: google-genai import 失败: {e!r}", file=sys.stderr)
         return {}
 
+    class Translation(BaseModel):
+        zh: str
+        en_search: str
+
     client = genai.Client(api_key=api_key)
     numbered = "\n".join(f"{i+1}. {n}" for i, n in enumerate(fi_names))
     prompt = (
-        "下面是芬兰菜名。对每个输出 JSON 数组项，包含两个字段：\n"
-        '  "zh": 简短自然的中文菜名（不要编号/原文/解释）\n'
-        '  "en_search": 2-3 个英文检索关键词，用于在 Pexels 图库搜到代表性食物图，'
-        "倾向用通用菜式描述（如 \"pea soup\"、\"meatballs in cream sauce\"），"
-        "而不是音译。\n"
-        "顺序必须与编号一致。只输出 JSON 数组。\n\n"
+        "下面是带编号的芬兰菜名。对每一条输出一个对象：\n"
+        '  zh = 简短自然的中文菜名（不带编号/原文/解释）\n'
+        '  en_search = 2-3 个英文检索关键词，能在 Pexels 图库搜到一张代表该菜的图，'
+        '用通用菜式描述（如 "pea soup", "meatballs in cream sauce", "pancake jam"），'
+        "不要音译。\n"
+        "返回 JSON 数组，长度与编号数完全一致，顺序对齐。\n\n"
         f"{numbered}"
+    )
+
+    config = types.GenerateContentConfig(
+        response_mime_type="application/json",
+        response_schema=list[Translation],
+        temperature=0.2,
     )
 
     text = ""
     last_err: Exception | None = None
-    config = types.GenerateContentConfig(response_mime_type="application/json")
     for model in GEMINI_MODELS:
         try:
             resp = client.models.generate_content(
@@ -200,8 +210,12 @@ def translate_batch(fi_names: list[str]) -> dict[str, dict[str, str]]:
     try:
         arr = json.loads(text)
     except json.JSONDecodeError as e:
-        print(f"warn: JSON parse 失败 ({e!r}), 第一段: {text[:200]!r}", file=sys.stderr)
+        print(f"warn: JSON parse 失败 ({e!r}), 头200字: {text[:200]!r}", file=sys.stderr)
         return {}
+
+    print(f"  返回 {len(arr)} 条 / 输入 {len(fi_names)} 条", file=sys.stderr)
+    if len(arr) != len(fi_names):
+        print(f"  ⚠ 长度不一致，会按位置对齐, 头200字: {text[:200]!r}", file=sys.stderr)
 
     out: dict[str, dict[str, str]] = {}
     for i, fi in enumerate(fi_names):
