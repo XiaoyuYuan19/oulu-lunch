@@ -5,7 +5,7 @@ import json
 import os
 import re
 import sys
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
@@ -104,6 +104,17 @@ def today_yyyymmdd() -> int:
     return now.year * 10000 + now.month * 100 + now.day
 
 
+def upcoming_workdays(n: int = 5) -> list[int]:
+    """从今天起接下来 n 个工作日（YYYYMMDD int）。周末跳过。"""
+    out: list[int] = []
+    cur = datetime.now(TZ_HELSINKI).date()
+    while len(out) < n:
+        if cur.weekday() < 5:  # Mon=0 ... Fri=4
+            out.append(cur.year * 10000 + cur.month * 100 + cur.day)
+        cur = cur + timedelta(days=1)
+    return out
+
+
 INLINE_DIET_RE = re.compile(
     r"[\s,]*(?:\b(?:G|M|L|VL|VE|VEG|Mu|K)\b[\s,/]*)+\*?\s*$",
     re.IGNORECASE,
@@ -130,36 +141,38 @@ SIDE_RE = re.compile(
 PREMIUM_RE = re.compile(r"\b(fusion|erikois|special|à la carte)\b", re.IGNORECASE)
 
 
-def fetch_items(customer_id: int, kitchen_id: int, today: int) -> list[dict]:
-    """扁平返回今天的所有菜品：{fi, tags, source_meal, is_premium}。"""
+def fetch_items_by_date(customer_id: int, kitchen_id: int, dates: set[int]) -> dict[int, list[dict]]:
+    """按日期返回每天的所有菜品。{date: [{fi, tags, source_meal, is_premium}]}"""
     url = JAMIX_API.format(cust=customer_id, kitchen=kitchen_id)
     r = requests.get(url, headers=HEADERS, timeout=20)
     r.raise_for_status()
     data = r.json()
 
-    items: list[dict] = []
-    seen: set[str] = set()
+    by_date: dict[int, list[dict]] = {d: [] for d in dates}
+    seen_per_date: dict[int, set[str]] = {d: set() for d in dates}
+
     for kitchen in data:
         for mt in kitchen.get("menuTypes", []):
             for menu in mt.get("menus", []):
                 for day in menu.get("days", []):
-                    if day.get("date") != today:
+                    d = day.get("date")
+                    if d not in dates:
                         continue
                     for opt in day.get("mealoptions", []):
                         source = (opt.get("name") or "").strip()
                         premium = bool(PREMIUM_RE.search(source))
                         for mi in opt.get("menuItems", []):
                             name = clean_name((mi.get("name") or "").strip())
-                            if not name or name in seen:
+                            if not name or name in seen_per_date[d]:
                                 continue
-                            seen.add(name)
-                            items.append({
+                            seen_per_date[d].add(name)
+                            by_date[d].append({
                                 "fi": name,
                                 "tags": parse_diets(mi.get("diets")),
                                 "source_meal": source,
                                 "is_premium": premium,
                             })
-    return items
+    return by_date
 
 
 GEMINI_MODELS = ["gemini-2.5-flash", "gemini-2.0-flash", "gemini-1.5-flash"]
@@ -297,54 +310,78 @@ def fetch_images(en_queries: list[str], per_query: int = 5) -> dict[str, list[st
     return out
 
 
+def bucket_items(items: list[dict], tr_map: dict, fi_to_image: dict) -> dict[str, list[dict]]:
+    buckets = {k: [] for k in ("main", "staple", "sauce", "salad", "dessert", "side")}
+    for it in items:
+        tr = tr_map.get(it["fi"], {})
+        role = tr.get("role") or "side"
+        entry = {
+            "fi": it["fi"],
+            "zh": tr.get("zh") or it["fi"],
+            "emoji": emoji_for(it["fi"]),
+            "tags": it["tags"],
+            "is_premium": it["is_premium"],
+            "source": it["source_meal"],
+        }
+        if role == "main":
+            entry["image_url"] = fi_to_image.get(it["fi"], "")
+        buckets.setdefault(role, []).append(entry)
+    return buckets
+
+
 def main() -> int:
     with open(CONFIG, encoding="utf-8") as f:
         cfg = yaml.safe_load(f)
     customer_id = cfg["customer_id"]
-    today = today_yyyymmdd()
-    print(f"date={today}", file=sys.stderr)
+    dates = upcoming_workdays(5)
+    date_set = set(dates)
+    print(f"dates={dates}", file=sys.stderr)
 
-    per_restaurant: list[tuple[dict, list[dict]]] = []
+    # {restaurant_idx: {date: [items]}}
+    per_r: list[tuple[dict, dict[int, list[dict]]]] = []
     for r in cfg["restaurants"]:
         print(f"→ {r['name']} (k={r['kitchen_id']})", file=sys.stderr)
         try:
-            items = fetch_items(customer_id, r["kitchen_id"], today)
-            print(f"   {len(items)} 个菜品", file=sys.stderr)
+            by_date = fetch_items_by_date(customer_id, r["kitchen_id"], date_set)
+            total = sum(len(v) for v in by_date.values())
+            print(f"   {total} 个菜品 / {sum(1 for v in by_date.values() if v)} 天有菜", file=sys.stderr)
         except Exception as e:
             print(f"   fetch failed: {e}", file=sys.stderr)
-            items = []
-        per_restaurant.append((r, items))
+            by_date = {d: [] for d in dates}
+        per_r.append((r, by_date))
 
+    # 收集所有日所有餐厅的菜名（去重）
     all_names: list[str] = []
     seen: set[str] = set()
-    for _, items in per_restaurant:
-        for it in items:
-            if it["fi"] not in seen:
-                seen.add(it["fi"])
-                all_names.append(it["fi"])
+    for _, by_date in per_r:
+        for items in by_date.values():
+            for it in items:
+                if it["fi"] not in seen:
+                    seen.add(it["fi"])
+                    all_names.append(it["fi"])
 
-    print(f"翻译+分类 {len(all_names)} 个菜品…", file=sys.stderr)
+    print(f"翻译+分类 {len(all_names)} 个唯一菜名…", file=sys.stderr)
     tr_map = translate_batch(all_names)
 
-    # 只为主菜抓图，每个查询拉多张候选
+    # 主菜抓图（5 天合一起，去重共享）
     main_fi_order: list[str] = []
     main_queries: list[str] = []
     seen_fi: set[str] = set()
-    for _, items in per_restaurant:
-        for it in items:
-            if tr_map.get(it["fi"], {}).get("role") != "main":
-                continue
-            if it["fi"] not in seen_fi:
-                seen_fi.add(it["fi"])
-                main_fi_order.append(it["fi"])
-            en = tr_map[it["fi"]].get("en_search", "")
-            if en and en not in main_queries:
-                main_queries.append(en)
+    for _, by_date in per_r:
+        for items in by_date.values():
+            for it in items:
+                if tr_map.get(it["fi"], {}).get("role") != "main":
+                    continue
+                if it["fi"] not in seen_fi:
+                    seen_fi.add(it["fi"])
+                    main_fi_order.append(it["fi"])
+                en = tr_map[it["fi"]].get("en_search", "")
+                if en and en not in main_queries:
+                    main_queries.append(en)
 
-    print(f"抓图 {len(main_queries)} 个查询…", file=sys.stderr)
+    print(f"抓图 {len(main_queries)} 个查询 ({len(main_fi_order)} 道主菜)…", file=sys.stderr)
     candidates = fetch_images(main_queries)
 
-    # 同一道菜（fi 相同）→ 同一张图；不同菜之间避让候选
     used_urls: set[str] = set()
     fi_to_image: dict[str, str] = {}
     for fi in main_fi_order:
@@ -357,27 +394,14 @@ def main() -> int:
 
     output = {
         "updated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
-        "date": today,
+        "dates": dates,
+        "today": today_yyyymmdd(),
         "restaurants": [],
     }
-    for r, items in per_restaurant:
-        buckets: dict[str, list[dict]] = {k: [] for k in ("main", "staple", "sauce", "salad", "dessert", "side")}
-        for it in items:
-            tr = tr_map.get(it["fi"], {})
-            role = tr.get("role") or "side"
-            zh = tr.get("zh") or it["fi"]
-            entry = {
-                "fi": it["fi"],
-                "zh": zh,
-                "emoji": emoji_for(it["fi"]),
-                "tags": it["tags"],
-                "is_premium": it["is_premium"],
-                "source": it["source_meal"],
-            }
-            if role == "main":
-                entry["image_url"] = fi_to_image.get(it["fi"], "")
-            buckets.setdefault(role, []).append(entry)
-
+    for r, by_date in per_r:
+        days_out: dict[str, dict] = {}
+        for d in dates:
+            days_out[str(d)] = bucket_items(by_date.get(d, []), tr_map, fi_to_image)
         output["restaurants"].append({
             "name": r["name"],
             "hours": r.get("hours", ""),
@@ -385,12 +409,7 @@ def main() -> int:
             "price_basic": r.get("price_basic"),
             "price_fusion": r.get("price_fusion"),
             "kitchen_id": r["kitchen_id"],
-            "mains":    buckets["main"],
-            "staples":  buckets["staple"],
-            "sauces":   buckets["sauce"],
-            "salads":   buckets["salad"],
-            "desserts": buckets["dessert"],
-            "sides":    buckets["side"],
+            "by_date": days_out,
         })
 
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)

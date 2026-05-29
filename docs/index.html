@@ -21,11 +21,12 @@
   </style>
 </head>
 <body class="bg-slate-50 text-slate-900 min-h-screen">
-  <header class="sticky top-0 bg-white/90 backdrop-blur border-b border-slate-200 px-4 py-3 z-10">
-    <div class="flex items-baseline justify-between gap-3">
-      <h1 class="text-lg font-bold">🍽️ Oulu 午饭</h1>
-      <span id="date" class="text-sm text-slate-500"></span>
+  <header class="sticky top-0 bg-white/95 backdrop-blur border-b border-slate-200 z-20">
+    <div class="px-4 py-2.5 flex items-baseline justify-between gap-3">
+      <h1 class="text-base font-bold">🍽️ Oulu 午饭</h1>
+      <span id="updated" class="text-[11px] text-slate-400"></span>
     </div>
+    <nav id="dayTabs" class="flex overflow-x-auto gap-1 px-2 pb-2 -mx-px"></nav>
   </header>
 
   <main id="restaurants" class="p-4 space-y-4 pb-12">
@@ -34,9 +35,21 @@
 
   <script>
     const WEEKDAYS = ['周日','周一','周二','周三','周四','周五','周六'];
-    const now = new Date();
-    document.getElementById('date').textContent =
-      `${now.getMonth()+1}/${now.getDate()} ${WEEKDAYS[now.getDay()]}`;
+
+    function parseYmd(n) {
+      const s = String(n);
+      return new Date(+s.slice(0,4), +s.slice(4,6)-1, +s.slice(6,8));
+    }
+    function tabLabel(ymd, todayYmd) {
+      const d = parseYmd(ymd);
+      const tag = ymd === todayYmd ? '今天' :
+                  ymd === todayYmd + 1 ? '明天' : '';
+      return {
+        weekday: WEEKDAYS[d.getDay()],
+        date: `${d.getMonth()+1}/${d.getDate()}`,
+        tag,
+      };
+    }
 
     function parseHours(s) {
       if (!s) return null;
@@ -47,12 +60,13 @@
         close: (+m[3])*60 + (+(m[4]||0)),
       };
     }
-    function statusOf(hoursStr) {
+    function statusOf(hoursStr, ymd, todayYmd) {
+      // 只对"今天"显示营业中/打烊；其他日子静默
+      if (ymd !== todayYmd) return { open: false, text: '' };
       const h = parseHours(hoursStr);
-      const d = now.getDay();
-      if (d === 0 || d === 6) return { open: false, text: '周末' };
-      if (!h) return { open: false, text: '—' };
-      const cur = now.getHours()*60 + now.getMinutes();
+      if (!h) return { open: false, text: '' };
+      const n = new Date();
+      const cur = n.getHours()*60 + n.getMinutes();
       if (cur < h.open)  return { open: false, text: '尚未营业' };
       if (cur > h.close) return { open: false, text: '已打烊' };
       return { open: true, text: '营业中' };
@@ -107,15 +121,16 @@
         </div>`;
     }
 
-    function renderRestaurant(r) {
-      const s = statusOf(r.hours);
+    function renderRestaurant(r, ymd, todayYmd) {
+      const day = (r.by_date && r.by_date[String(ymd)]) || {};
+      const s = statusOf(r.hours, ymd, todayYmd);
       const badge = s.open ? 'bg-green-100 text-green-700' : 'bg-slate-100 text-slate-500';
-      const mains = r.mains || [];
+      const mains = day.main || [];
       const basicMains   = mains.filter(m => !m.is_premium);
       const premiumMains = mains.filter(m =>  m.is_premium);
-      const empty = !(mains.length || r.staples?.length || r.sauces?.length ||
-                       r.salads?.length || r.desserts?.length || r.sides?.length);
-      const carbsAndSides = [...(r.staples || []), ...(r.sides || [])];
+      const empty = !(mains.length || day.staple?.length || day.sauce?.length ||
+                       day.salad?.length || day.dessert?.length || day.side?.length);
+      const carbsAndSides = [...(day.staple || []), ...(day.side || [])];
 
       const basicBlock = (r.price_basic && (basicMains.length || !premiumMains.length))
         ? mainsSection('基础餐', r.price_basic, true,
@@ -127,8 +142,11 @@
         : '';
       const noPremiumNote = (r.price_fusion && !premiumMains.length)
         ? `<div class="px-4 py-2 text-[11px] text-slate-400 border-t border-slate-100">
-             特殊餐 ${r.price_fusion} € · 今天没有
+             特殊餐 ${r.price_fusion} € · 这天没有
            </div>`
+        : '';
+      const statusHtml = s.text
+        ? `<span class="text-[11px] px-2 py-0.5 rounded-full whitespace-nowrap ${badge}">${s.text}</span>`
         : '';
 
       return `
@@ -139,18 +157,55 @@
                 <h2 class="text-lg font-bold">${r.name}</h2>
                 <p class="text-xs text-slate-500 mt-0.5">${r.hours || '—'}${r.location ? ` · ${r.location}` : ''}</p>
               </div>
-              <span class="text-[11px] px-2 py-0.5 rounded-full whitespace-nowrap ${badge}">${s.text}</span>
+              ${statusHtml}
             </div>
           </header>
-          ${empty ? '<div class="py-6 text-sm text-slate-400 text-center border-t border-slate-100">今天没抓到菜单</div>' : ''}
+          ${empty ? '<div class="py-6 text-sm text-slate-400 text-center border-t border-slate-100">这天没抓到菜单</div>' : ''}
           ${basicBlock}
           ${premiumBlock}
           ${noPremiumNote}
           ${compactLine('配 ', carbsAndSides)}
-          ${compactLine('酱 ', r.sauces)}
-          ${compactLine('沙拉 ', r.salads)}
-          ${compactLine('甜点 ', r.desserts, {warn: true})}
+          ${compactLine('酱 ', day.sauce)}
+          ${compactLine('沙拉 ', day.salad)}
+          ${compactLine('甜点 ', day.dessert, {warn: true})}
         </section>`;
+    }
+
+    let DATA = null;
+    let CURRENT_YMD = null;
+
+    function renderTabs() {
+      const tabs = document.getElementById('dayTabs');
+      const today = DATA.today;
+      tabs.innerHTML = (DATA.dates || []).map(ymd => {
+        const lab = tabLabel(ymd, today);
+        const active = ymd === CURRENT_YMD;
+        const cls = active
+          ? 'bg-slate-900 text-white shadow-sm'
+          : 'bg-slate-100 text-slate-700 hover:bg-slate-200';
+        return `
+          <button data-ymd="${ymd}" class="flex-shrink-0 px-3 py-1.5 rounded-full transition ${cls}">
+            <span class="block text-[13px] font-semibold leading-tight">${lab.weekday}${lab.tag ? ` · ${lab.tag}` : ''}</span>
+            <span class="block text-[10px] opacity-70 leading-tight">${lab.date}</span>
+          </button>`;
+      }).join('');
+      tabs.querySelectorAll('button').forEach(b => {
+        b.addEventListener('click', () => {
+          CURRENT_YMD = +b.dataset.ymd;
+          renderTabs();
+          renderBody();
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      });
+    }
+
+    function renderBody() {
+      const main = document.getElementById('restaurants');
+      const html = (DATA.restaurants || [])
+        .map(r => renderRestaurant(r, CURRENT_YMD, DATA.today))
+        .join('') + `
+        <p class="text-center text-xs text-slate-400 pt-2">数据：Juvenes / Jamix · 翻译：Gemini · 图：Pexels</p>`;
+      main.innerHTML = html || '<div class="text-center text-slate-400 py-16">尚无数据，等 GitHub Action 跑一次</div>';
     }
 
     async function load() {
@@ -158,11 +213,17 @@
       try {
         const r = await fetch('data.json?t=' + Date.now(), { cache: 'no-store' });
         if (!r.ok) throw new Error('HTTP ' + r.status);
-        const data = await r.json();
-        const html = (data.restaurants||[]).map(renderRestaurant).join('') + `
-          <p class="text-center text-xs text-slate-400 pt-2">数据：Juvenes / Jamix · 翻译：Gemini · 图：Pexels</p>
-          <p class="text-center text-xs text-slate-400">更新于 ${data.updated_at ? new Date(data.updated_at).toLocaleString('zh-CN') : '—'}</p>`;
-        main.innerHTML = html || '<div class="text-center text-slate-400 py-16">尚无数据，等 GitHub Action 跑一次</div>';
+        DATA = await r.json();
+        CURRENT_YMD = DATA.today || (DATA.dates || [])[0];
+        // 如果今天不在 dates 列表里（周末），落到第一个
+        if (!DATA.dates || !DATA.dates.includes(CURRENT_YMD)) {
+          CURRENT_YMD = (DATA.dates || [])[0];
+        }
+        document.getElementById('updated').textContent = DATA.updated_at
+          ? '更新于 ' + new Date(DATA.updated_at).toLocaleString('zh-CN', {month:'numeric', day:'numeric', hour:'2-digit', minute:'2-digit'})
+          : '';
+        renderTabs();
+        renderBody();
       } catch (e) {
         main.innerHTML = `<div class="text-center text-red-500 py-12">加载失败：${e.message}</div>`;
       }

@@ -1,4 +1,4 @@
-const CACHE = 'oulu-lunch-v5';
+const CACHE = 'oulu-lunch-v6';
 const STATIC = ['manifest.webmanifest', 'icons/icon.svg'];
 
 self.addEventListener('install', e => {
