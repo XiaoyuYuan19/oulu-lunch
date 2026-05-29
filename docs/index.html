@@ -58,27 +58,51 @@
       return { open: true, text: '营业中' };
     }
 
-    function renderDish(d) {
-      const media = d.image_url
-        ? `<img src="${d.image_url}" alt="" loading="lazy" class="w-20 h-20 rounded-xl object-cover flex-shrink-0 bg-slate-100">`
-        : `<span class="text-4xl leading-none flex-shrink-0 w-20 h-20 flex items-center justify-center bg-slate-50 rounded-xl">${d.emoji || '🍽️'}</span>`;
-      const cat = d.category
-        ? `<span class="text-[10px] px-1.5 py-0.5 bg-amber-50 text-amber-700 rounded">${d.category}</span>`
-        : '';
-      const tags = (d.tags || []).map(t =>
+    const CATEGORY_COLOR = {
+      '素菜': 'bg-green-100 text-green-800',
+      '素食套餐': 'bg-green-100 text-green-800',
+      '汤': 'bg-sky-100 text-sky-800',
+      '汤/沙拉': 'bg-sky-100 text-sky-800',
+      '沙拉': 'bg-lime-100 text-lime-800',
+      '甜点': 'bg-pink-100 text-pink-800',
+      '融合料理': 'bg-purple-100 text-purple-800',
+    };
+    function catColor(c) { return CATEGORY_COLOR[c] || 'bg-amber-100 text-amber-800'; }
+
+    function renderComponent(c) {
+      const tags = (c.tags || []).map(t =>
         `<span class="text-[10px] px-1.5 py-0.5 bg-slate-100 text-slate-600 rounded">${t}</span>`
       ).join('');
-      const meta = (cat || tags)
-        ? `<div class="mt-1 flex gap-1 flex-wrap">${cat}${tags}</div>` : '';
       return `
-        <li class="px-4 py-3 flex items-start gap-3">
-          ${media}
-          <div class="flex-1 min-w-0">
-            <div class="font-medium text-slate-900 break-words">${d.zh || d.fi}</div>
-            <div class="text-xs text-slate-500 mt-0.5 break-words">${d.fi}</div>
-            ${meta}
+        <li class="py-1 flex items-start gap-2">
+          <span class="text-base leading-5 flex-shrink-0">${c.emoji || '·'}</span>
+          <div class="flex-1 min-w-0 text-sm">
+            <span class="text-slate-800 ${c.is_main ? 'font-semibold' : ''}">${c.zh || c.fi}</span>
+            <span class="text-[11px] text-slate-400 ml-1.5">${c.fi}</span>
+            ${tags ? `<span class="ml-1 inline-flex gap-1 flex-wrap align-middle">${tags}</span>` : ''}
           </div>
         </li>`;
+    }
+
+    function renderSetMeal(m) {
+      const title = m.main_zh || m.category || '套餐';
+      const cat = m.category || '';
+      const media = m.image_url
+        ? `<img src="${m.image_url}" alt="" loading="lazy" class="w-full h-44 object-cover bg-slate-100">`
+        : `<div class="w-full h-44 bg-slate-50 flex items-center justify-center text-5xl">🍽️</div>`;
+      const comps = (m.components || []).map(renderComponent).join('');
+      return `
+        <article class="rounded-xl overflow-hidden border border-slate-200 bg-white">
+          ${media}
+          <div class="px-3 pt-2.5 pb-3">
+            <div class="flex items-start justify-between gap-2">
+              <h3 class="font-semibold text-slate-900 leading-tight">${title}</h3>
+              ${cat ? `<span class="text-[10px] px-1.5 py-0.5 rounded-full whitespace-nowrap ${catColor(cat)}">${cat}</span>` : ''}
+            </div>
+            <div class="text-xs text-slate-500 mt-1 mb-1.5">套餐含：</div>
+            <ul class="space-y-0.5">${comps}</ul>
+          </div>
+        </article>`;
     }
 
     function renderRestaurant(r) {
@@ -86,22 +110,22 @@
       const badge = s.open
         ? 'bg-green-100 text-green-700'
         : 'bg-slate-100 text-slate-500';
-      const dishes = (r.dishes||[]).length
-        ? r.dishes.map(renderDish).join('')
-        : `<li class="px-4 py-6 text-sm text-slate-400 text-center">今天没抓到菜单</li>`;
+      const meals = (r.set_meals || []).length
+        ? r.set_meals.map(renderSetMeal).join('')
+        : `<div class="px-4 py-6 text-sm text-slate-400 text-center">今天没抓到菜单</div>`;
       return `
         <section class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
           <header class="px-4 py-3 border-b border-slate-100 flex items-start justify-between gap-3">
             <div class="min-w-0">
               <h2 class="font-semibold truncate">${r.name}</h2>
               <p class="text-xs text-slate-500 mt-0.5">
-                ${r.hours || '—'} · €${r.price ?? '—'}
+                ${r.hours || '—'} · €${r.price ?? '—'} / 份
                 ${r.location ? ` · ${r.location}` : ''}
               </p>
             </div>
             <span class="text-xs px-2 py-1 rounded-full whitespace-nowrap ${badge}">${s.text}</span>
           </header>
-          <ul class="divide-y divide-slate-100">${dishes}</ul>
+          <div class="p-3 space-y-3">${meals}</div>
         </section>`;
     }
 
@@ -112,7 +136,7 @@
         if (!r.ok) throw new Error('HTTP ' + r.status);
         const data = await r.json();
         const html = (data.restaurants||[]).map(renderRestaurant).join('') + `
-          <p class="text-center text-xs text-slate-400 pt-2">数据：lounaat.info · 翻译：Claude</p>
+          <p class="text-center text-xs text-slate-400 pt-2">数据：Juvenes / Jamix · 翻译：Gemini · 图：Pexels</p>
           <p class="text-center text-xs text-slate-400">更新于 ${data.updated_at ? new Date(data.updated_at).toLocaleString('zh-CN') : '—'}</p>`;
         main.innerHTML = html || '<div class="text-center text-slate-400 py-16">尚无数据，等 GitHub Action 跑一次</div>';
       } catch (e) {
