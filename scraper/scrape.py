@@ -183,91 +183,99 @@ VALID_ROLES = {"main", "staple", "sauce", "salad", "dessert", "side"}
 
 BATCH_SIZE = 25
 
+try:
+    from pydantic import BaseModel as _BaseModel
 
-def _translate_one_batch(client, types, BaseModel, fi_names: list[str], model: str) -> list[dict]:
-    class Translation(BaseModel):
+    class _Translation(_BaseModel):
         zh: str
         en_search: str
         role: str
 
-    numbered = "\n".join(f"{i+1}. {n}" for i, n in enumerate(fi_names))
-    prompt = (
-        "下面是带编号的芬兰餐厅菜名。芬兰学生餐的点法：选一道主菜（main）"
-        "+ 配的主食（staple）+ 自助沙拉吧 + 面包 + 一杯餐饮。"
-        "对每一条输出对象：\n"
-        '  zh = 简短自然的中文菜名（不带编号/原文/解释/标点）\n'
-        '  en_search = 2-3 个英文 Pexels 检索关键词，描述菜式外观，不音译\n'
-        '  role 必为以下之一：\n'
-        '    "main"    = 主菜（蛋白质/主角：鸡/鱼/肉丸/炖菜/falafel/扁豆饼/披萨/汤/烩菜）\n'
-        '    "staple"  = 主食（米饭/土豆/面条/薯泥）\n'
-        '    "sauce"   = 浇汁/酱（kastike/kastiketta）\n'
-        '    "salad"   = 沙拉\n'
-        '    "dessert" = 甜点/糕点/果酱/打发奶油\n'
-        '    "side"    = 配蔬菜（烤蔬菜/煮蔬菜）\n'
-        '汤（keitto）算 main。蛋白+酱（如 Kalkkuna-kasviskastike 火鸡蔬菜酱）算 main，不是 sauce。\n'
-        "返回 JSON 数组，长度与编号一致。\n\n"
-        f"{numbered}"
-    )
-    config = types.GenerateContentConfig(
-        response_mime_type="application/json",
-        response_schema=list[Translation],
-        temperature=0.2,
-        max_output_tokens=8192,
-    )
-    resp = client.models.generate_content(model=model, contents=prompt, config=config)
-    text = (resp.text or "").strip()
-    if not text:
-        return []
-    try:
-        return json.loads(text)
-    except json.JSONDecodeError as e:
-        print(f"  ⚠ JSON parse 失败 ({e!r}), 尾 200 字: {text[-200:]!r}", file=sys.stderr)
-        return []
+    _PYDANTIC_OK = True
+except Exception:
+    _PYDANTIC_OK = False
+    _Translation = None
 
 
 def translate_batch(fi_names: list[str]) -> dict[str, dict[str, str]]:
-    """对每个菜名返回 {'zh': 中文, 'en_search': 英文图片关键词, 'role': main/staple/sauce/salad/dessert/side}。
-    大批量分成 BATCH_SIZE 块跑，避开 Gemini 输出 token 上限。"""
+    """大批量分成 BATCH_SIZE 块跑，避开 Gemini 输出 token 上限。"""
     if not fi_names:
         return {}
     api_key = os.environ.get("GEMINI_API_KEY") or os.environ.get("GOOGLE_API_KEY")
     if not api_key:
         print("warn: GEMINI_API_KEY 未设置，跳过翻译", file=sys.stderr)
         return {}
+    if not _PYDANTIC_OK:
+        print("warn: pydantic 未导入，跳过翻译", file=sys.stderr)
+        return {}
 
     try:
         from google import genai
         from google.genai import types
-        from pydantic import BaseModel
     except Exception as e:
         print(f"warn: google-genai import 失败: {e!r}", file=sys.stderr)
         return {}
 
     client = genai.Client(api_key=api_key)
+    config = types.GenerateContentConfig(
+        response_mime_type="application/json",
+        response_schema=list[_Translation],
+        temperature=0.2,
+        max_output_tokens=8192,
+    )
 
-    # 分块
+    def call_one(batch: list[str], model: str) -> list:
+        numbered = "\n".join(f"{i+1}. {n}" for i, n in enumerate(batch))
+        prompt = (
+            "下面是带编号的芬兰餐厅菜名。芬兰学生餐含 主菜 + 主食 + 自助沙拉吧 + 面包 + 饮料。"
+            "对每一条输出对象：\n"
+            '  zh = 简短自然的中文菜名（不带编号/原文/解释/标点）\n'
+            '  en_search = 2-3 个英文 Pexels 检索关键词，描述菜式外观，不音译\n'
+            '  role ∈ {"main","staple","sauce","salad","dessert","side"}\n'
+            '    main: 蛋白质主角（鸡/鱼/肉丸/炖菜/falafel/扁豆饼/披萨/汤/烩菜）；'
+            '"X-kasvis-kastike"(肉/禽+蔬菜+酱) 算 main\n'
+            '    staple: 米饭/土豆/面条/薯泥\n'
+            '    sauce: 单独的浇汁/酱（番茄酱/胡椒奶油酱/罗勒酱）\n'
+            '    dessert: 甜点/果酱/打发奶油/煎饼\n'
+            '    side: 烤蔬菜/煮蔬菜等非碳水非主菜配菜\n'
+            "返回 JSON 数组，长度与编号一致。\n\n"
+            f"{numbered}"
+        )
+        resp = client.models.generate_content(
+            model=model, contents=prompt, config=config,
+        )
+        text = (resp.text or "").strip()
+        if not text:
+            print(f"    [{model}] empty response", file=sys.stderr)
+            return []
+        print(f"    [{model}] {len(text)} 字符返回", file=sys.stderr)
+        try:
+            return json.loads(text)
+        except json.JSONDecodeError as e:
+            print(f"    JSON parse 失败 {e!r}; 尾 150: {text[-150:]!r}", file=sys.stderr)
+            return []
+
     batches = [fi_names[i:i + BATCH_SIZE] for i in range(0, len(fi_names), BATCH_SIZE)]
-    print(f"  分 {len(batches)} 批 × {BATCH_SIZE}", file=sys.stderr)
+    print(f"  分 {len(batches)} 批 × ≤{BATCH_SIZE}", file=sys.stderr)
 
-    all_arr: list[dict | None] = []
-    chosen_model = None
+    all_arr: list = []
+    chosen_model: str | None = None
     for bi, batch in enumerate(batches):
-        arr: list[dict] = []
-        last_err: Exception | None = None
-        for model in (GEMINI_MODELS if chosen_model is None else [chosen_model] + [m for m in GEMINI_MODELS if m != chosen_model]):
+        arr: list = []
+        models_to_try = GEMINI_MODELS if chosen_model is None else [chosen_model] + [m for m in GEMINI_MODELS if m != chosen_model]
+        for model in models_to_try:
             try:
-                arr = _translate_one_batch(client, types, BaseModel, batch, model)
+                arr = call_one(batch, model)
                 if arr:
                     chosen_model = model
                     break
             except Exception as e:
-                last_err = e
-                print(f"  批 {bi+1}/{len(batches)} 模型 {model} 失败: {e!r}", file=sys.stderr)
+                print(f"  批 {bi+1}/{len(batches)} 模型 {model} 异常: {e!r}", file=sys.stderr)
         if not arr:
             print(f"  ⚠ 批 {bi+1} 完全没结果", file=sys.stderr)
             arr = [{} for _ in batch]
         if len(arr) < len(batch):
-            print(f"  ⚠ 批 {bi+1} 返回 {len(arr)}/{len(batch)}, 后续按位置对齐", file=sys.stderr)
+            print(f"  ⚠ 批 {bi+1} 返回 {len(arr)}/{len(batch)}, 末尾补空", file=sys.stderr)
             arr = list(arr) + [{}] * (len(batch) - len(arr))
         all_arr.extend(arr)
 
