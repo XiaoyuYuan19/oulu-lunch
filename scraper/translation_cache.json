@@ -49,6 +49,11 @@
     "role": "main",
     "zh": "咖喱菠萝酱鸡肉丸"
   },
+  "Capuccinomoussea": {
+    "en_search": "cappuccino mousse, coffee dessert, creamy dessert",
+    "role": "dessert",
+    "zh": "卡布奇诺慕斯"
+  },
   "Chili-kebabpaistosta": {
     "en_search": "chili kebab bake, baked dish, meat casserole",
     "role": "main",
@@ -119,6 +124,11 @@
     "role": "main",
     "zh": "肉末通心粉盒"
   },
+  "Jauhelihalasagnettea ja uunikasviksia": {
+    "en_search": "meat lasagna, baked vegetables, pasta bake",
+    "role": "main",
+    "zh": "肉酱千层面和烤蔬菜"
+  },
   "Jauhelihamureketta": {
     "en_search": "meatloaf, baked meat, sliced meat",
     "role": "main",
@@ -159,10 +169,25 @@
     "role": "main",
     "zh": "蔬菜千层面"
   },
+  "Kasvislasagnettea ja uunikasviksia": {
+    "en_search": "vegetable lasagna, baked vegetables, pasta bake",
+    "role": "main",
+    "zh": "蔬菜千层面和烤蔬菜"
+  },
   "Keitettyjä perunoita": {
     "en_search": "boiled potatoes, whole potatoes",
     "role": "staple",
     "zh": "煮土豆"
+  },
+  "Kermaista kanakeittoa": {
+    "en_search": "creamy chicken soup, chicken stew",
+    "role": "main",
+    "zh": "奶油鸡肉汤"
+  },
+  "Kermaista kinkkukiusausta ja uunikasviksia": {
+    "en_search": "ham casserole, creamy gratin, baked vegetables",
+    "role": "main",
+    "zh": "奶油火腿砂锅和烤蔬菜"
   },
   "Kermaista lohi-seikeittoa": {
     "en_search": "creamy salmon soup, fish soup, white soup",
@@ -183,6 +208,11 @@
     "en_search": "rainbow trout casserole, fish bake",
     "role": "main",
     "zh": "虹鳟鱼砂锅"
+  },
+  "Kookos-broilerkeittoa": {
+    "en_search": "coconut chicken soup, creamy chicken soup",
+    "role": "main",
+    "zh": "椰香鸡肉汤"
   },
   "Kukkakaali-aurajuustokeittoa": {
     "en_search": "cauliflower blue cheese soup, creamy soup, white soup",
@@ -208,6 +238,11 @@
     "en_search": "lentil sweet potato mash, orange puree, creamy mash",
     "role": "main",
     "zh": "扁豆红薯泥"
+  },
+  "Linssi-kasviskiusausta ja uunikasviksia": {
+    "en_search": "lentil casserole, baked vegetables, vegetarian gratin",
+    "role": "main",
+    "zh": "扁豆蔬菜砂锅和烤蔬菜"
   },
   "Linssi-kasvispaistikkaat": {
     "en_search": "lentil vegetable patties, vegetarian fritters, fried patties",
@@ -318,6 +353,11 @@
     "en_search": "whole grain rice, brown rice",
     "role": "staple",
     "zh": "全麦米饭"
+  },
+  "Vadelma-salmiakkimoussea": {
+    "en_search": "raspberry mousse, dessert mousse, sweet dessert",
+    "role": "dessert",
+    "zh": "覆盆子甘草慕斯"
   },
   "Vadelmarahkaa": {
     "en_search": "raspberry quark, fruit dessert, creamy",
