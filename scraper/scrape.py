@@ -111,13 +111,13 @@ def fetch_menu(url: str) -> list[tuple[str, list[str]]]:
 def translate_batch(fi_names: list[str]) -> dict[str, str]:
     if not fi_names:
         return {}
-    api_key = os.environ.get("ANTHROPIC_API_KEY")
+    api_key = os.environ.get("GEMINI_API_KEY") or os.environ.get("GOOGLE_API_KEY")
     if not api_key:
-        print("warn: ANTHROPIC_API_KEY 未设置，跳过翻译", file=sys.stderr)
+        print("warn: GEMINI_API_KEY 未设置，跳过翻译", file=sys.stderr)
         return {}
 
-    import anthropic
-    client = anthropic.Anthropic(api_key=api_key)
+    from google import genai
+    client = genai.Client(api_key=api_key)
 
     numbered = "\n".join(f"{i+1}. {n}" for i, n in enumerate(fi_names))
     prompt = (
@@ -127,12 +127,11 @@ def translate_batch(fi_names: list[str]) -> dict[str, str]:
         "- 看不懂的词直接音译或描述\n\n"
         f"{numbered}"
     )
-    resp = client.messages.create(
-        model="claude-haiku-4-5-20251001",
-        max_tokens=2000,
-        messages=[{"role": "user", "content": prompt}],
+    resp = client.models.generate_content(
+        model="gemini-2.5-flash",
+        contents=prompt,
     )
-    text = resp.content[0].text.strip()
+    text = (resp.text or "").strip()
     zh_lines = [l.strip() for l in text.splitlines() if l.strip()]
     # 容错：行数对不上时尽量按位置对齐
     return {fi: zh_lines[i] if i < len(zh_lines) else fi for i, fi in enumerate(fi_names)}
