@@ -205,8 +205,11 @@
 
       const closedHint = r.closed
         ? `<p class="text-[11px] text-rose-600 mt-1">夏休：${r.closed}</p>` : '';
+      const isSodexo = r.provider === 'sodexo_hilla';
       const emptyMsg = empty
-        ? (r.closed ? `闭店中（${r.closed}）` : '这天没抓到菜单')
+        ? (r.closed ? `闭店中（${r.closed}）`
+           : isSodexo ? 'Sodexo 还没排（通常每周日/周一更新下周菜单）'
+           : '这天没抓到菜单')
         : '';
 
       return `

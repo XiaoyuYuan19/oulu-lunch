@@ -570,7 +570,7 @@ def main() -> int:
             "prices": r.get("prices") or {},
             "closed": r.get("closed"),
             "provider": r.get("provider", "jamix"),
-            "external_url": r.get("sodexo_url"),
+            "external_url": r.get("external_url") or r.get("sodexo_url"),
             "by_date": days_out,
         })
 

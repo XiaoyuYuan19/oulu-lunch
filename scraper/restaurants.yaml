@@ -15,6 +15,7 @@ restaurants:
       basic:  [1.24, 4.78, 10.90]
       fusion: null
     closed: null
+    external_url: "https://juvenes.fi/kerttu/"
 
   - name: Hilla
     provider: sodexo_hilla
@@ -26,6 +27,7 @@ restaurants:
       basic:  [0.84, 3.92, 8.80]
       fusion: null
     closed: null
+    external_url: "https://www.sodexo.fi/ravintolat/ravintolat-hilla-ja-mustikka"
 
   - name: Mara
     provider: jamix
@@ -36,6 +38,7 @@ restaurants:
       basic:  [1.24, 4.78, 10.90]
       fusion: [5.90, 10.90, 12.35]
     closed: "29.5-9.8.2026"
+    external_url: "https://juvenes.fi/mara/"
 
   - name: Foobar
     provider: jamix
@@ -46,6 +49,7 @@ restaurants:
       basic:  [1.24, 4.78, 10.90]
       fusion: [5.90, 10.90, 12.35]
     closed: "29.6-9.8.2026"
+    external_url: "https://juvenes.fi/foobar/"
 
   # —— Kontinkangas（医学院）——
   - name: Medisiina
@@ -57,3 +61,4 @@ restaurants:
       basic:  [1.24, 4.78, 10.90]
       fusion: [5.90, 10.90, 12.35]
     closed: "29.6-2.8.2026"
+    external_url: "https://juvenes.fi/medisiina/"
