@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-29T13:01:48+00:00",
+  "updated_at": "2026-05-29T13:04:11+00:00",
   "dates": [
     20260529,
     20260601,
@@ -11,10 +11,11 @@
   "restaurants": [
     {
       "name": "Foobar",
-      "hours": "10:30-14:30",
+      "hours": "10:00-14:30",
       "location": "Linnanmaa",
       "price_basic": "1,24",
       "price_fusion": "5,90",
+      "closed": "29.6-9.8.2026",
       "kitchen_id": 69,
       "by_date": {
         "20260529": {
@@ -681,10 +682,11 @@
     },
     {
       "name": "Kerttu",
-      "hours": "10:30-14:30",
+      "hours": "10:30-14:00",
       "location": "Linnanmaa",
       "price_basic": "1,24",
       "price_fusion": null,
+      "closed": null,
       "kitchen_id": 70,
       "by_date": {
         "20260529": {
@@ -1226,10 +1228,11 @@
     },
     {
       "name": "Mara",
-      "hours": "10:30-14:30",
+      "hours": "10:00-13:30",
       "location": "Linnanmaa",
       "price_basic": "1,24",
       "price_fusion": "5,90",
+      "closed": "29.5-9.8.2026",
       "kitchen_id": 49,
       "by_date": {
         "20260529": {
@@ -1276,10 +1279,11 @@
     },
     {
       "name": "Medisiina",
-      "hours": "10:30-14:30",
+      "hours": "10:30-13:30",
       "location": "Kontinkangas (医学院)",
       "price_basic": "1,24",
       "price_fusion": "5,90",
+      "closed": "29.6-2.8.2026",
       "kitchen_id": 75,
       "by_date": {
         "20260529": {
