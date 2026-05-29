@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-29T10:57:27+00:00",
+  "updated_at": "2026-05-29T10:59:07+00:00",
   "date": 20260529,
   "restaurants": [
     {
@@ -11,14 +11,14 @@
       "dishes": [
         {
           "fi": "Harissa falavelpyörykät",
-          "zh": "哈里萨炸素丸子",
+          "zh": "哈里萨法拉费丸子",
           "emoji": "🍽️",
           "category": "素菜",
           "tags": []
         },
         {
           "fi": "Chilimausteista tomaattikastiketta",
-          "zh": "辣味番茄酱",
+          "zh": "香辣番茄酱",
           "emoji": "🍽️",
           "category": "素菜",
           "tags": [
@@ -58,7 +58,7 @@
         },
         {
           "fi": "Kananpoikaa kermaisessa pippurikasviskastikkeessa",
-          "zh": "奶油胡椒蔬菜酱鸡肉",
+          "zh": "奶油胡椒蔬菜烩鸡",
           "emoji": "🍗",
           "category": "午餐",
           "tags": [
@@ -71,7 +71,7 @@
         },
         {
           "fi": "Lempeän mausteista kalapataa",
-          "zh": "微辣炖鱼",
+          "zh": "温和香料鱼煲",
           "emoji": "🐟",
           "category": "午餐",
           "tags": [
@@ -82,7 +82,7 @@
         },
         {
           "fi": "Keitettyjä perunoita",
-          "zh": "煮土豆",
+          "zh": "水煮土豆",
           "emoji": "🥔",
           "category": "午餐",
           "tags": [
@@ -104,14 +104,14 @@
       "dishes": [
         {
           "fi": "Harissa falavelpyörykät",
-          "zh": "哈里萨炸素丸子",
+          "zh": "哈里萨法拉费丸子",
           "emoji": "🍽️",
           "category": "素菜",
           "tags": []
         },
         {
           "fi": "Chilimausteista tomaattikastiketta",
-          "zh": "辣味番茄酱",
+          "zh": "香辣番茄酱",
           "emoji": "🍽️",
           "category": "素菜",
           "tags": [
@@ -151,7 +151,7 @@
         },
         {
           "fi": "Kananpoikaa kermaisessa pippurikasviskastikkeessa",
-          "zh": "奶油胡椒蔬菜酱鸡肉",
+          "zh": "奶油胡椒蔬菜烩鸡",
           "emoji": "🍗",
           "category": "午餐",
           "tags": [
@@ -164,7 +164,7 @@
         },
         {
           "fi": "Lempeän mausteista kalapataa",
-          "zh": "微辣炖鱼",
+          "zh": "温和香料鱼煲",
           "emoji": "🐟",
           "category": "午餐",
           "tags": [
@@ -175,7 +175,7 @@
         },
         {
           "fi": "Keitettyjä perunoita",
-          "zh": "煮土豆",
+          "zh": "水煮土豆",
           "emoji": "🥔",
           "category": "午餐",
           "tags": [
@@ -188,7 +188,7 @@
         },
         {
           "fi": "Hernesosekeittoa",
-          "zh": "豌豆泥汤",
+          "zh": "豌豆浓汤",
           "emoji": "🍽️",
           "category": "汤/沙拉",
           "tags": [
@@ -236,7 +236,7 @@
         },
         {
           "fi": "Basilika-kermaviilipiimäkastiketta",
-          "zh": "罗勒酸奶油酱",
+          "zh": "罗勒酸奶酪酱",
           "emoji": "🍽️",
           "category": "素菜",
           "tags": [
@@ -248,7 +248,7 @@
         },
         {
           "fi": "Keitettyjä perunoita",
-          "zh": "煮土豆",
+          "zh": "水煮土豆",
           "emoji": "🥔",
           "category": "素菜",
           "tags": [
@@ -261,7 +261,7 @@
         },
         {
           "fi": "Lihapyöryköitä",
-          "zh": "肉丸",
+          "zh": "肉丸子",
           "emoji": "🍽️",
           "category": "午餐",
           "tags": [
@@ -310,7 +310,7 @@
         },
         {
           "fi": "Täysjyväriisiä",
-          "zh": "全谷物米饭",
+          "zh": "全麦米饭",
           "emoji": "🍽️",
           "category": "午餐",
           "tags": [
