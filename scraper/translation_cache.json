@@ -4,20 +4,50 @@
     "role": "main",
     "zh": "亚洲风味炖猪肉"
   },
+  "Basilika-kermaviilipiimäkastiketta": {
+    "en_search": "basil sour cream sauce, white sauce, creamy dressing",
+    "role": "sauce",
+    "zh": "罗勒酸奶油酪乳酱"
+  },
+  "Bataattisosekeittoa": {
+    "en_search": "sweet potato soup, orange soup, creamy soup",
+    "role": "main",
+    "zh": "红薯泥汤"
+  },
   "Broilerilasagnettea kasviksilla": {
     "en_search": "chicken lasagna, vegetable lasagna, baked pasta",
     "role": "main",
     "zh": "蔬菜鸡肉千层面"
+  },
+  "Broilerlasagnettea": {
+    "en_search": "chicken lasagna, baked pasta, layered pasta",
+    "role": "main",
+    "zh": "鸡肉千层面"
   },
   "Broilerpyöryköitä": {
     "en_search": "chicken meatballs, poultry balls",
     "role": "main",
     "zh": "鸡肉丸子"
   },
+  "Broilerpyöryköitä curry-ananaskastikkeessa": {
+    "en_search": "chicken meatballs, curry sauce, pineapple sauce",
+    "role": "main",
+    "zh": "咖喱菠萝酱鸡肉丸"
+  },
+  "Chili-kebabpaistosta": {
+    "en_search": "chili kebab bake, baked dish, meat casserole",
+    "role": "main",
+    "zh": "辣椒烤肉砂锅"
+  },
   "Chilimausteista tomaattikastiketta": {
     "en_search": "chili tomato sauce, red sauce",
     "role": "sauce",
     "zh": "辣味番茄酱"
+  },
+  "Chilistä kylmäsavulohipataa": {
+    "en_search": "chili smoked salmon stew, fish stew, creamy stew",
+    "role": "main",
+    "zh": "辣椒冷熏三文鱼炖菜"
   },
   "Curry-ananaskastiketta": {
     "en_search": "curry pineapple sauce, yellow sauce",
@@ -34,15 +64,45 @@
     "role": "main",
     "zh": "哈里萨沙拉三明治丸子"
   },
+  "Hernesosekeittoa": {
+    "en_search": "pea soup, green soup, creamy soup",
+    "role": "main",
+    "zh": "豌豆泥汤"
+  },
   "Härkäpapu-Mac&cheese": {
     "en_search": "mac and cheese, broad beans, pasta",
     "role": "main",
     "zh": "蚕豆通心粉奶酪"
   },
+  "Härkäpapu-kasvispataa": {
+    "en_search": "fava bean stew, vegetable stew, hearty stew",
+    "role": "main",
+    "zh": "蚕豆蔬菜炖菜"
+  },
+  "Härkäpapu-pastapaistosta": {
+    "en_search": "fava bean pasta bake, baked pasta, casserole",
+    "role": "main",
+    "zh": "蚕豆意面焗烤"
+  },
+  "Jauheliha-kaalilaatikkoa": {
+    "en_search": "minced meat cabbage casserole, baked dish, hearty casserole",
+    "role": "main",
+    "zh": "肉末卷心菜砂锅"
+  },
   "Jauheliha-kasvisbolognesea": {
     "en_search": "minced meat bolognese, vegetable sauce",
     "role": "main",
     "zh": "肉末蔬菜肉酱"
+  },
+  "Jauhelihamureketta": {
+    "en_search": "meatloaf, baked meat, sliced meat",
+    "role": "main",
+    "zh": "肉末卷"
+  },
+  "Juustoista vihanneskeittoa": {
+    "en_search": "cheese vegetable soup, creamy soup, hearty soup",
+    "role": "main",
+    "zh": "奶酪蔬菜汤"
   },
   "Jättipapu-juurescurrya": {
     "en_search": "giant bean curry, root vegetables, vegetarian curry",
@@ -54,20 +114,60 @@
     "role": "main",
     "zh": "奶油胡椒蔬菜鸡肉"
   },
+  "Kasvisborssikeittoa": {
+    "en_search": "vegetable borscht, red soup, beet soup",
+    "role": "main",
+    "zh": "蔬菜罗宋汤"
+  },
   "Keitettyjä perunoita": {
     "en_search": "boiled potatoes, whole potatoes",
     "role": "staple",
     "zh": "煮土豆"
+  },
+  "Kermaista lohi-seikeittoa": {
+    "en_search": "creamy salmon soup, fish soup, white soup",
+    "role": "main",
+    "zh": "奶油三文鱼鳕鱼汤"
+  },
+  "Kermavaahtoa": {
+    "en_search": "whipped cream, white cream, dessert topping",
+    "role": "dessert",
+    "zh": "打发奶油"
+  },
+  "Kikherne-kasvistaginea": {
+    "en_search": "chickpea vegetable tagine, Moroccan stew, hearty stew",
+    "role": "main",
+    "zh": "鹰嘴豆蔬菜塔吉锅"
   },
   "Kirjolohikiusausta": {
     "en_search": "rainbow trout casserole, fish bake",
     "role": "main",
     "zh": "虹鳟鱼砂锅"
   },
+  "Kukkakaali-aurajuustokeittoa": {
+    "en_search": "cauliflower blue cheese soup, creamy soup, white soup",
+    "role": "main",
+    "zh": "花椰菜蓝纹奶酪汤"
+  },
   "Lempeän mausteista kalapataa": {
     "en_search": "fish stew, mild spice, seafood",
     "role": "main",
     "zh": "温和香料炖鱼"
+  },
+  "Lihapyöryköitä": {
+    "en_search": "meatballs, brown meatballs, round meat",
+    "role": "main",
+    "zh": "肉丸"
+  },
+  "Linssi-bataattimuhennosta": {
+    "en_search": "lentil sweet potato mash, orange puree, creamy mash",
+    "role": "main",
+    "zh": "扁豆红薯泥"
+  },
+  "Linssi-kasvispaistikkaat": {
+    "en_search": "lentil vegetable patties, vegetarian fritters, fried patties",
+    "role": "main",
+    "zh": "扁豆蔬菜饼"
   },
   "Nakki-pekonistroganoffia": {
     "en_search": "sausage stroganoff, bacon, creamy stew",
@@ -84,15 +184,40 @@
     "role": "side",
     "zh": "烤蔬菜"
   },
+  "Pippuri-kermakastiketta": {
+    "en_search": "pepper cream sauce, white sauce, creamy sauce",
+    "role": "sauce",
+    "zh": "胡椒奶油酱"
+  },
   "Porkkana-hernekastiketta": {
     "en_search": "carrot pea sauce, vegetable sauce",
     "role": "sauce",
     "zh": "胡萝卜豌豆酱"
   },
+  "Puolukkasurvosta": {
+    "en_search": "lingonberry jam, red berry sauce, fruit preserve",
+    "role": "dessert",
+    "zh": "越橘酱"
+  },
   "Ranskalaisia perunoita": {
     "en_search": "french fries, fried potatoes",
     "role": "staple",
     "zh": "炸薯条"
+  },
+  "Ruskeaa kastiketta": {
+    "en_search": "brown gravy, meat sauce, savory sauce",
+    "role": "sauce",
+    "zh": "棕色肉汁"
+  },
+  "Soija-kasviskiusausta": {
+    "en_search": "soy vegetable bake, casserole, baked dish",
+    "role": "main",
+    "zh": "豆制品蔬菜焗烤"
+  },
+  "Tomaattista kermakastiketta": {
+    "en_search": "tomato cream sauce, red sauce, creamy sauce",
+    "role": "sauce",
+    "zh": "番茄奶油酱"
   },
   "Tuplajuustoburger": {
     "en_search": "double cheese burger, beef patty",
