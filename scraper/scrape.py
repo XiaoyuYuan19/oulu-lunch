@@ -146,6 +146,9 @@ def fetch_dishes(customer_id: int, kitchen_id: int, today: int) -> list[dict]:
     return items
 
 
+GEMINI_MODELS = ["gemini-2.5-flash", "gemini-2.0-flash", "gemini-1.5-flash"]
+
+
 def translate_batch(fi_names: list[str]) -> dict[str, str]:
     if not fi_names:
         return {}
@@ -154,9 +157,13 @@ def translate_batch(fi_names: list[str]) -> dict[str, str]:
         print("warn: GEMINI_API_KEY 未设置，跳过翻译", file=sys.stderr)
         return {}
 
-    from google import genai
-    client = genai.Client(api_key=api_key)
+    try:
+        from google import genai
+    except Exception as e:
+        print(f"warn: google-genai import 失败: {e!r}", file=sys.stderr)
+        return {}
 
+    client = genai.Client(api_key=api_key)
     numbered = "\n".join(f"{i+1}. {n}" for i, n in enumerate(fi_names))
     prompt = (
         "把下列芬兰菜名翻译成简短自然的中文。要求：\n"
@@ -165,11 +172,24 @@ def translate_batch(fi_names: list[str]) -> dict[str, str]:
         "- 看不懂的词直接音译或描述\n\n"
         f"{numbered}"
     )
-    resp = client.models.generate_content(
-        model="gemini-2.5-flash",
-        contents=prompt,
-    )
-    text = (resp.text or "").strip()
+
+    text = ""
+    last_err: Exception | None = None
+    for model in GEMINI_MODELS:
+        try:
+            resp = client.models.generate_content(model=model, contents=prompt)
+            text = (resp.text or "").strip()
+            if text:
+                print(f"  翻译用模型: {model}", file=sys.stderr)
+                break
+        except Exception as e:
+            last_err = e
+            print(f"  模型 {model} 失败: {e!r}", file=sys.stderr)
+
+    if not text:
+        print(f"warn: 所有 Gemini 模型失败，跳过翻译。最后错误: {last_err!r}", file=sys.stderr)
+        return {}
+
     zh_lines = [l.strip() for l in text.splitlines() if l.strip()]
     return {fi: (zh_lines[i] if i < len(zh_lines) else fi) for i, fi in enumerate(fi_names)}
 
