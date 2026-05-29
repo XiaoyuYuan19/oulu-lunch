@@ -408,6 +408,7 @@ def main() -> int:
             "location": r.get("location", ""),
             "price_basic": r.get("price_basic"),
             "price_fusion": r.get("price_fusion"),
+            "closed": r.get("closed"),
             "kitchen_id": r["kitchen_id"],
             "by_date": days_out,
         })
