@@ -139,7 +139,13 @@ SIDE_RE = re.compile(
 )
 
 
-PREMIUM_RE = re.compile(r"\b(fusion|erikois|special|à la carte)\b", re.IGNORECASE)
+# Jamix mealoption 名字 → 是不是非 Kela 补贴的高价线
+# Foobar 把 Fusion 拆成 PIZZA / MY POPUP GRILL 等独立 mealoption，所以也得列。
+PREMIUM_RE = re.compile(
+    r"\b(fusion|erikois|special|à la carte|"
+    r"pizza|burger|grill|popup|wok|noodle|streetfood|street\s*food)\b",
+    re.IGNORECASE,
+)
 
 
 def fetch_items_by_date(customer_id: int, kitchen_id: int, dates: set[int]) -> dict[int, list[dict]]:
