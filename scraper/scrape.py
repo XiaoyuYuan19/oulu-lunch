@@ -261,8 +261,8 @@ def translate_batch(fi_names: list[str]) -> dict[str, dict[str, str]]:
 
 # --- 图片：Pexels ----------------------------------------------------------
 
-def fetch_images(en_queries: list[str]) -> dict[str, str]:
-    """对每个英文查询返回一张 Pexels 图片 URL。缺 key 或失败返回空映射。"""
+def fetch_images(en_queries: list[str], per_query: int = 5) -> dict[str, list[str]]:
+    """每个英文查询拉 Pexels 前 N 张候选 URL。缺 key 或失败返回空映射。"""
     api_key = os.environ.get("PEXELS_API_KEY")
     if not api_key:
         print("warn: PEXELS_API_KEY 未设置，跳过图片抓取", file=sys.stderr)
@@ -272,23 +272,26 @@ def fetch_images(en_queries: list[str]) -> dict[str, str]:
     sess.headers["Authorization"] = api_key
     sess.headers["User-Agent"] = HEADERS["User-Agent"]
 
-    out: dict[str, str] = {}
+    out: dict[str, list[str]] = {}
     for q in en_queries:
         if not q or q in out:
             continue
         try:
             r = sess.get(
                 "https://api.pexels.com/v1/search",
-                params={"query": q, "per_page": 1, "orientation": "square"},
+                params={"query": q, "per_page": per_query, "orientation": "square"},
                 timeout=15,
             )
             if r.status_code != 200:
                 print(f"  pexels {q!r} -> {r.status_code}", file=sys.stderr)
                 continue
-            photos = r.json().get("photos", [])
-            if photos:
-                src = photos[0].get("src", {})
-                out[q] = src.get("medium") or src.get("small") or src.get("original", "")
+            urls: list[str] = []
+            for p in r.json().get("photos", []):
+                src = p.get("src", {})
+                u = src.get("medium") or src.get("small") or src.get("original", "")
+                if u:
+                    urls.append(u)
+            out[q] = urls
         except Exception as e:
             print(f"  pexels {q!r} 失败: {e!r}", file=sys.stderr)
     return out
@@ -323,17 +326,34 @@ def main() -> int:
     print(f"翻译+分类 {len(all_names)} 个菜品…", file=sys.stderr)
     tr_map = translate_batch(all_names)
 
-    # 只为主菜抓图
+    # 只为主菜抓图，每个查询拉多张候选
+    main_fi_order: list[str] = []
     main_queries: list[str] = []
+    seen_fi: set[str] = set()
     for _, items in per_restaurant:
         for it in items:
-            if tr_map.get(it["fi"], {}).get("role") == "main":
-                en = tr_map[it["fi"]].get("en_search", "")
-                if en and en not in main_queries:
-                    main_queries.append(en)
+            if tr_map.get(it["fi"], {}).get("role") != "main":
+                continue
+            if it["fi"] not in seen_fi:
+                seen_fi.add(it["fi"])
+                main_fi_order.append(it["fi"])
+            en = tr_map[it["fi"]].get("en_search", "")
+            if en and en not in main_queries:
+                main_queries.append(en)
 
-    print(f"抓图 {len(main_queries)} 个主菜…", file=sys.stderr)
-    img_map = fetch_images(main_queries)
+    print(f"抓图 {len(main_queries)} 个查询…", file=sys.stderr)
+    candidates = fetch_images(main_queries)
+
+    # 同一道菜（fi 相同）→ 同一张图；不同菜之间避让候选
+    used_urls: set[str] = set()
+    fi_to_image: dict[str, str] = {}
+    for fi in main_fi_order:
+        en = tr_map.get(fi, {}).get("en_search", "")
+        cands = candidates.get(en, [])
+        pick = next((u for u in cands if u not in used_urls), cands[0] if cands else "")
+        if pick:
+            used_urls.add(pick)
+        fi_to_image[fi] = pick
 
     output = {
         "updated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
@@ -355,7 +375,7 @@ def main() -> int:
                 "source": it["source_meal"],
             }
             if role == "main":
-                entry["image_url"] = img_map.get(tr.get("en_search", ""), "")
+                entry["image_url"] = fi_to_image.get(it["fi"], "")
             buckets.setdefault(role, []).append(entry)
 
         output["restaurants"].append({
