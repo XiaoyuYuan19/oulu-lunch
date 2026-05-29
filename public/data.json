@@ -1,36 +1,377 @@
 {
-  "updated_at": "2026-05-29T10:38:09+00:00",
+  "updated_at": "2026-05-29T10:49:24+00:00",
+  "date": 20260529,
   "restaurants": [
     {
       "name": "Foobar",
       "hours": "10:30-14:30",
       "price": "2.95",
       "location": "Linnanmaa",
-      "url": "https://www.lounaat.info/lounas/foobar/oulu",
-      "dishes": []
+      "kitchen_id": 69,
+      "dishes": [
+        {
+          "fi": "Harissa falavelpyörykät",
+          "zh": "1. 哈里萨法拉费丸子",
+          "emoji": "🍽️",
+          "category": "素菜",
+          "tags": []
+        },
+        {
+          "fi": "Chilimausteista tomaattikastiketta",
+          "zh": "2. 辣味番茄酱",
+          "emoji": "🍽️",
+          "category": "素菜",
+          "tags": [
+            "无麸质",
+            "无奶",
+            "无蛋",
+            "素",
+            "心脏",
+            "含有机"
+          ]
+        },
+        {
+          "fi": "Yrttiriisiä",
+          "zh": "3. 香草米饭",
+          "emoji": "🍽️",
+          "category": "素菜",
+          "tags": [
+            "无麸质",
+            "无奶",
+            "无蛋",
+            "素",
+            "心脏"
+          ]
+        },
+        {
+          "fi": "Paahdettuja kasviksia",
+          "zh": "4. 烤蔬菜",
+          "emoji": "🌱",
+          "category": "素菜",
+          "tags": [
+            "无麸质",
+            "无奶",
+            "无蛋",
+            "素",
+            "心脏"
+          ]
+        },
+        {
+          "fi": "Kananpoikaa kermaisessa pippurikasviskastikkeessa",
+          "zh": "5. 奶油胡椒蔬菜烩鸡",
+          "emoji": "🍗",
+          "category": "午餐",
+          "tags": [
+            "无麸质",
+            "无乳糖",
+            "无蛋",
+            "心脏",
+            "含有机"
+          ]
+        },
+        {
+          "fi": "Lempeän mausteista kalapataa",
+          "zh": "6. 微辣炖鱼",
+          "emoji": "🐟",
+          "category": "午餐",
+          "tags": [
+            "无麸质",
+            "无乳糖",
+            "无蛋"
+          ]
+        },
+        {
+          "fi": "Keitettyjä perunoita",
+          "zh": "7. 煮土豆",
+          "emoji": "🥔",
+          "category": "午餐",
+          "tags": [
+            "无麸质",
+            "无奶",
+            "无蛋",
+            "素",
+            "心脏"
+          ]
+        }
+      ]
     },
     {
-      "name": "Voltti",
+      "name": "Kerttu",
       "hours": "10:30-14:30",
       "price": "2.95",
       "location": "Linnanmaa",
-      "url": "https://www.lounaat.info/lounas/voltti/oulu",
-      "dishes": []
+      "kitchen_id": 70,
+      "dishes": [
+        {
+          "fi": "Harissa falavelpyörykät",
+          "zh": "1. 哈里萨法拉费丸子",
+          "emoji": "🍽️",
+          "category": "素菜",
+          "tags": []
+        },
+        {
+          "fi": "Chilimausteista tomaattikastiketta",
+          "zh": "2. 辣味番茄酱",
+          "emoji": "🍽️",
+          "category": "素菜",
+          "tags": [
+            "无麸质",
+            "无奶",
+            "无蛋",
+            "素",
+            "心脏",
+            "含有机"
+          ]
+        },
+        {
+          "fi": "Yrttiriisiä",
+          "zh": "3. 香草米饭",
+          "emoji": "🍽️",
+          "category": "素菜",
+          "tags": [
+            "无麸质",
+            "无奶",
+            "无蛋",
+            "素",
+            "心脏"
+          ]
+        },
+        {
+          "fi": "Paahdettuja kasviksia",
+          "zh": "4. 烤蔬菜",
+          "emoji": "🌱",
+          "category": "素菜",
+          "tags": [
+            "无麸质",
+            "无奶",
+            "无蛋",
+            "素",
+            "心脏"
+          ]
+        },
+        {
+          "fi": "Kananpoikaa kermaisessa pippurikasviskastikkeessa",
+          "zh": "5. 奶油胡椒蔬菜烩鸡",
+          "emoji": "🍗",
+          "category": "午餐",
+          "tags": [
+            "无麸质",
+            "无乳糖",
+            "无蛋",
+            "心脏",
+            "含有机"
+          ]
+        },
+        {
+          "fi": "Lempeän mausteista kalapataa",
+          "zh": "6. 微辣炖鱼",
+          "emoji": "🐟",
+          "category": "午餐",
+          "tags": [
+            "无麸质",
+            "无乳糖",
+            "无蛋"
+          ]
+        },
+        {
+          "fi": "Keitettyjä perunoita",
+          "zh": "7. 煮土豆",
+          "emoji": "🥔",
+          "category": "午餐",
+          "tags": [
+            "无麸质",
+            "无奶",
+            "无蛋",
+            "素",
+            "心脏"
+          ]
+        },
+        {
+          "fi": "Hernesosekeittoa",
+          "zh": "8. 豌豆浓汤",
+          "emoji": "🍽️",
+          "category": "汤/沙拉",
+          "tags": [
+            "无麸质",
+            "无奶",
+            "无蛋",
+            "素",
+            "心脏",
+            "含有机"
+          ]
+        },
+        {
+          "fi": "Kermavaahtoa",
+          "zh": "9. 掼奶油",
+          "emoji": "🍽️",
+          "category": "甜点",
+          "tags": [
+            "无麸质",
+            "无乳糖",
+            "无蛋"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Medisiina",
+      "hours": "10:30-14:30",
+      "price": "2.95",
+      "location": "Kontinkangas (医学院)",
+      "kitchen_id": 75,
+      "dishes": [
+        {
+          "fi": "Linssi-kasvispaistikkaat",
+          "zh": "10. 扁豆蔬菜饼",
+          "emoji": "🌱",
+          "category": "素菜",
+          "tags": [
+            "无麸质",
+            "无奶",
+            "无蛋",
+            "素",
+            "心脏",
+            "含有机"
+          ]
+        },
+        {
+          "fi": "Basilika-kermaviilipiimäkastiketta",
+          "zh": "11. 罗勒酸乳酱",
+          "emoji": "🍽️",
+          "category": "素菜",
+          "tags": [
+            "无麸质",
+            "无乳糖",
+            "无蛋",
+            "心脏"
+          ]
+        },
+        {
+          "fi": "Keitettyjä perunoita",
+          "zh": "7. 煮土豆",
+          "emoji": "🥔",
+          "category": "素菜",
+          "tags": [
+            "无麸质",
+            "无奶",
+            "无蛋",
+            "素",
+            "心脏"
+          ]
+        },
+        {
+          "fi": "Lihapyöryköitä",
+          "zh": "12. 肉丸子",
+          "emoji": "🍽️",
+          "category": "午餐",
+          "tags": [
+            "无奶",
+            "无蛋",
+            "心脏"
+          ]
+        },
+        {
+          "fi": "Pippuri-kermakastiketta",
+          "zh": "13. 奶油胡椒酱",
+          "emoji": "🍽️",
+          "category": "午餐",
+          "tags": [
+            "无麸质",
+            "无乳糖",
+            "无蛋",
+            "心脏"
+          ]
+        },
+        {
+          "fi": "Paahdettuja kasviksia",
+          "zh": "4. 烤蔬菜",
+          "emoji": "🌱",
+          "category": "午餐",
+          "tags": [
+            "无麸质",
+            "无奶",
+            "无蛋",
+            "素",
+            "心脏"
+          ]
+        },
+        {
+          "fi": "Kalkkuna-kasviskastiketta",
+          "zh": "14. 火鸡蔬菜酱",
+          "emoji": "🍗",
+          "category": "午餐",
+          "tags": [
+            "无麸质",
+            "无奶",
+            "无蛋",
+            "心脏",
+            "含有机"
+          ]
+        },
+        {
+          "fi": "Täysjyväriisiä",
+          "zh": "15. 全谷米饭",
+          "emoji": "🍽️",
+          "category": "午餐",
+          "tags": [
+            "无麸质",
+            "无奶",
+            "无蛋",
+            "素",
+            "心脏"
+          ]
+        },
+        {
+          "fi": "BBQ-broilerpizzaa",
+          "zh": "16. 烧烤鸡肉披萨",
+          "emoji": "🍽️",
+          "category": "融合料理",
+          "tags": [
+            "无乳糖",
+            "无蛋"
+          ]
+        },
+        {
+          "fi": "Pannukakkua",
+          "zh": "17. 煎饼",
+          "emoji": "🥞",
+          "category": "甜点",
+          "tags": [
+            "无乳糖"
+          ]
+        },
+        {
+          "fi": "Mansikkahilloa",
+          "zh": "18. 草莓酱",
+          "emoji": "🍽️",
+          "category": "甜点",
+          "tags": [
+            "无麸质",
+            "无奶",
+            "无蛋",
+            "素"
+          ]
+        },
+        {
+          "fi": "Parsakeittoa",
+          "zh": "19. 芦笋汤",
+          "emoji": "🍽️",
+          "category": "汤/沙拉",
+          "tags": [
+            "无麸质",
+            "无乳糖",
+            "无蛋",
+            "含有机"
+          ]
+        }
+      ]
     },
     {
       "name": "Mara",
       "hours": "10:30-14:30",
       "price": "2.95",
       "location": "Linnanmaa",
-      "url": "https://www.lounaat.info/lounas/mara/oulu",
-      "dishes": []
-    },
-    {
-      "name": "Konehuone",
-      "hours": "10:30-14:00",
-      "price": "2.95",
-      "location": "Linnanmaa",
-      "url": "https://www.lounaat.info/lounas/konehuone/oulu",
+      "kitchen_id": 49,
       "dishes": []
     }
   ]
