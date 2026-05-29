@@ -58,53 +58,47 @@
       return { open: true, text: '营业中' };
     }
 
-    function tagsHtml(tags) {
+    function tagsHtml(tags, cls = 'bg-slate-100 text-slate-600') {
       return (tags || []).map(t =>
-        `<span class="text-[10px] px-1.5 py-0.5 bg-slate-100 text-slate-600 rounded">${t}</span>`
+        `<span class="text-[10px] px-1.5 py-0.5 ${cls} rounded-full">${t}</span>`
       ).join('');
     }
 
     function renderMain(d) {
       const media = d.image_url
-        ? `<img src="${d.image_url}" alt="" loading="lazy" class="w-full aspect-square object-cover bg-slate-100">`
-        : `<div class="w-full aspect-square bg-slate-50 flex items-center justify-center text-5xl">${d.emoji || '🍽️'}</div>`;
+        ? `<img src="${d.image_url}" alt="" loading="lazy" class="w-28 h-28 sm:w-32 sm:h-32 object-cover bg-slate-100 flex-shrink-0">`
+        : `<div class="w-28 h-28 sm:w-32 sm:h-32 bg-slate-50 flex items-center justify-center text-5xl flex-shrink-0">${d.emoji || '🍽️'}</div>`;
       const premium = d.is_premium
-        ? `<span class="absolute top-1.5 left-1.5 text-[10px] px-1.5 py-0.5 bg-purple-600 text-white rounded font-medium">特殊餐</span>` : '';
+        ? `<span class="text-[10px] px-1.5 py-0.5 bg-purple-600 text-white rounded font-medium">特殊餐 +€</span>` : '';
       return `
-        <article class="rounded-xl overflow-hidden border border-slate-200 bg-white">
-          <div class="relative">${media}${premium}</div>
-          <div class="px-2.5 py-2">
-            <div class="text-sm font-semibold text-slate-900 leading-tight">${d.zh || d.fi}</div>
-            <div class="text-[10px] text-slate-400 mt-0.5 leading-tight break-words">${d.fi}</div>
-            ${(d.tags && d.tags.length) ? `<div class="mt-1 flex gap-1 flex-wrap">${tagsHtml(d.tags)}</div>` : ''}
+        <article class="flex items-stretch border-b border-slate-100 last:border-b-0">
+          ${media}
+          <div class="flex-1 min-w-0 px-3 py-2.5 flex flex-col justify-center">
+            <div class="text-base font-semibold text-slate-900 leading-snug">${d.zh || d.fi}</div>
+            <div class="text-[11px] text-slate-400 mt-0.5 break-words">${d.fi}</div>
+            <div class="mt-1.5 flex gap-1 flex-wrap">${premium}${tagsHtml(d.tags)}</div>
           </div>
         </article>`;
     }
 
-    function renderSmallItem(d, opts = {}) {
-      const pillCls = opts.warn ? 'bg-pink-50 text-pink-700' : 'bg-slate-50 text-slate-700';
-      return `
-        <span class="inline-flex items-center gap-1 px-2 py-1 rounded-full text-xs ${pillCls}">
-          <span>${d.emoji || '·'}</span>
-          <span>${d.zh || d.fi}</span>
-          <span class="text-[10px] text-slate-400">${d.fi}</span>
-          ${d.is_premium ? '<span class="text-[10px] text-purple-700">+€</span>' : ''}
-        </span>`;
-    }
-
-    function section(title, items, opts = {}) {
+    function compactLine(label, items, opts = {}) {
       if (!items || !items.length) return '';
+      const sep = '<span class="text-slate-300 mx-1">·</span>';
+      const text = items.map(d => {
+        const prem = d.is_premium ? ' <span class="text-purple-600">+€</span>' : '';
+        return `<span class="whitespace-nowrap">${d.emoji || ''} ${d.zh || d.fi}${prem}</span>`;
+      }).join(sep);
+      const labelCls = opts.warn ? 'text-pink-700' : 'text-slate-500';
       return `
-        <section class="mt-3 first:mt-2">
-          <h3 class="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-1.5">${title}</h3>
-          <div class="flex flex-wrap gap-1.5">${items.map(d => renderSmallItem(d, opts)).join('')}</div>
-        </section>`;
+        <div class="px-4 py-2 text-[13px] text-slate-600 border-t border-slate-100 leading-relaxed">
+          <span class="${labelCls} font-medium mr-1.5">${label}</span>${text}
+        </div>`;
     }
 
     function priceLine(r) {
       const parts = [];
-      if (r.price_basic)  parts.push(`基础餐 <b class="text-slate-700">${r.price_basic} €</b>`);
-      if (r.price_fusion) parts.push(`特殊餐 <b class="text-slate-700">${r.price_fusion} €</b>`);
+      if (r.price_basic)  parts.push(`基础餐 <b class="text-slate-800">${r.price_basic} €</b>`);
+      if (r.price_fusion) parts.push(`特殊餐 <b class="text-slate-800">${r.price_fusion} €</b>`);
       if (!parts.length)  parts.push('学生价见柜台');
       return parts.join(' · ');
     }
@@ -114,34 +108,32 @@
       const badge = s.open ? 'bg-green-100 text-green-700' : 'bg-slate-100 text-slate-500';
       const empty = !(r.mains?.length || r.staples?.length || r.sauces?.length ||
                        r.salads?.length || r.desserts?.length || r.sides?.length);
+      const carbsAndSides = [...(r.staples || []), ...(r.sides || [])];
       const mainsHtml = (r.mains && r.mains.length)
-        ? `<section>
-             <h3 class="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-2">今日主菜（任选一）</h3>
-             <div class="grid grid-cols-2 gap-2.5">${r.mains.map(renderMain).join('')}</div>
-           </section>`
+        ? `<div class="px-4 pt-3 pb-1 text-[11px] font-semibold text-slate-500 uppercase tracking-wide">
+             今日主菜 · 任选一 · 共 ${r.mains.length} 道
+           </div>
+           <div>${r.mains.map(renderMain).join('')}</div>`
         : '';
       return `
         <section class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
-          <header class="px-4 py-3 border-b border-slate-100">
+          <header class="px-4 py-3">
             <div class="flex items-start justify-between gap-3">
               <div class="min-w-0">
-                <h2 class="font-semibold">${r.name}</h2>
+                <h2 class="text-lg font-bold">${r.name}</h2>
                 <p class="text-xs text-slate-500 mt-0.5">${r.hours || '—'}${r.location ? ` · ${r.location}` : ''}</p>
               </div>
-              <span class="text-xs px-2 py-1 rounded-full whitespace-nowrap ${badge}">${s.text}</span>
+              <span class="text-[11px] px-2 py-0.5 rounded-full whitespace-nowrap ${badge}">${s.text}</span>
             </div>
-            <p class="text-[11px] text-slate-500 mt-1.5">${priceLine(r)}</p>
-            <p class="text-[11px] text-slate-400 mt-0.5">学生餐含：自助沙拉吧 · 面包+黄油 · 1 杯水 · 1 杯餐饮</p>
+            <p class="text-xs text-slate-600 mt-1.5">${priceLine(r)}</p>
+            <p class="text-[11px] text-slate-400 mt-0.5">含 自助沙拉吧 · 面包+黄油 · 1 杯水 · 1 杯餐饮</p>
           </header>
-          <div class="p-3">
-            ${empty ? '<div class="py-6 text-sm text-slate-400 text-center">今天没抓到菜单</div>' : ''}
-            ${mainsHtml}
-            ${section('主食', r.staples)}
-            ${section('配菜', r.sides)}
-            ${section('配酱', r.sauces)}
-            ${section('沙拉', r.salads)}
-            ${section('甜点 / 可能另付', r.desserts, {warn: true})}
-          </div>
+          ${empty ? '<div class="py-6 text-sm text-slate-400 text-center border-t border-slate-100">今天没抓到菜单</div>' : ''}
+          ${mainsHtml}
+          ${compactLine('配 ', carbsAndSides)}
+          ${compactLine('酱 ', r.sauces)}
+          ${compactLine('沙拉 ', r.salads)}
+          ${compactLine('甜点 ', r.desserts, {warn: true})}
         </section>`;
     }
 
