@@ -33,6 +33,32 @@
     <div class="text-center text-slate-400 py-16">加载中…</div>
   </main>
 
+  <section id="installHint" class="mx-4 mb-8 rounded-xl bg-white border border-slate-200 overflow-hidden">
+    <details>
+      <summary class="px-4 py-3 cursor-pointer font-medium text-slate-900 flex items-center gap-2">
+        <span>📲</span><span>装到手机（无浏览器框）</span>
+      </summary>
+      <div class="px-4 pb-4 text-sm text-slate-600 space-y-2.5 leading-relaxed">
+        <p><b class="text-slate-800">Android</b>（推荐，原生 APP 体验）：
+          <a href="https://github.com/XiaoyuYuan19/oulu-lunch/releases/latest" target="_blank" rel="noopener"
+             class="text-sky-700 underline">从 GitHub Releases 下载 APK ↗</a>
+          → 手机点开 → 允许"未知来源" → 装。
+        </p>
+        <p><b class="text-slate-800">iOS</b>：Safari 打开此页 → 底部分享 ⬆️ → "添加到主屏幕"。</p>
+        <p class="text-[12px] text-slate-400">已经装过？关掉浏览器，从主屏图标开。</p>
+      </div>
+    </details>
+  </section>
+
+  <script>
+    // 如果已经从主屏 PWA 模式打开，隐藏安装提示
+    if (window.matchMedia('(display-mode: standalone)').matches ||
+        window.navigator.standalone === true) {
+      const h = document.getElementById('installHint');
+      if (h) h.style.display = 'none';
+    }
+  </script>
+
   <script>
     const WEEKDAYS = ['周日','周一','周二','周三','周四','周五','周六'];
 
