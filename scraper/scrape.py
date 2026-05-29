@@ -182,6 +182,84 @@ def fetch_items_by_date(customer_id: int, kitchen_id: int, dates: set[int]) -> d
     return by_date
 
 
+# --- Sodexo Hilla 抓取 ----------------------------------------------------
+
+def fetch_items_by_date_sodexo(url: str, restaurant_part: str, dates: set[int]) -> dict[int, list[dict]]:
+    """从 Sodexo 'Hilla ja Mustikka' 页面解析 restaurant_part 餐厅每日菜单。
+    页面是 Drupal 渲染的 14 天 tab；用 'Tänään' 标签锚定今天，其他 tab 按下标偏移得到日期。"""
+    from bs4 import BeautifulSoup as BS
+    r = requests.get(url, headers=HEADERS, timeout=20)
+    r.raise_for_status()
+    soup = BS(r.text, "html.parser")
+
+    nav = soup.select('.meal-date-tabs li a[href^="#tabs-"]')
+    today_idx = None
+    for a in nav:
+        if a.get_text(strip=True) == "Tänään":
+            m = re.match(r"#tabs-(\d+)", a.get("href", ""))
+            if m:
+                today_idx = int(m.group(1))
+                break
+    if today_idx is None:
+        print(f"  warn: Sodexo 页面没有 'Tänään' 标签，跳过", file=sys.stderr)
+        return {d: [] for d in dates}
+
+    today_date = datetime.now(TZ_HELSINKI).date()
+    tab_to_ymd: dict[int, int] = {}
+    for a in nav:
+        m = re.match(r"#tabs-(\d+)", a.get("href", ""))
+        if not m:
+            continue
+        idx = int(m.group(1))
+        d = today_date + timedelta(days=idx - today_idx)
+        tab_to_ymd[idx] = d.year * 10000 + d.month * 100 + d.day
+
+    rest_lower = restaurant_part.lower()
+    by_date: dict[int, list[dict]] = {d: [] for d in dates}
+    for idx, ymd in tab_to_ymd.items():
+        if ymd not in dates:
+            continue
+        tab_div = soup.select_one(f"#tabs-{idx}")
+        if not tab_div:
+            continue
+        seen: set[str] = set()
+        for row in tab_div.select(".mealrow"):
+            mt = row.select_one(".meal-type")
+            if not mt:
+                continue
+            mt_text = mt.get_text(strip=True)
+            if not mt_text.lower().startswith(rest_lower):
+                continue
+            nm = row.select_one(".meal-name")
+            if not nm:
+                continue
+            name = clean_name(nm.get_text(strip=True))
+            if not name or name in seen:
+                continue
+            seen.add(name)
+            # 主 diet codes
+            codes = [el.get_text(strip=True) for el in row.select(".mealdietcodes span")]
+            tags: list[str] = []
+            for raw in codes:
+                for c in re.split(r"[,/]", raw):
+                    c = c.strip()
+                    if c in DIET_TAGS and DIET_TAGS[c] not in tags:
+                        tags.append(DIET_TAGS[c])
+            # 附加标签（vegan / better-choice / climate）— 只取 vegan
+            for extra in row.select(".mealdietcodesadditional span"):
+                cls = " ".join(extra.get("class", []))
+                if "vegan" in cls and "全素" not in tags:
+                    tags.append("全素")
+            # source_meal 用 meal-type 全文，便于 jälkiruoka 后缀走 dessert
+            by_date[ymd].append({
+                "fi": name,
+                "tags": tags,
+                "source_meal": mt_text,
+                "is_premium": False,  # Hilla 没有 Fusion 线
+            })
+    return by_date
+
+
 GEMINI_MODELS = ["gemini-2.5-flash", "gemini-2.0-flash", "gemini-1.5-flash"]
 
 
@@ -415,15 +493,19 @@ def main() -> int:
         provider = r.get("provider", "jamix")
         print(f"→ {r['name']} ({provider})", file=sys.stderr)
         by_date: dict[int, list[dict]] = {d: [] for d in dates}
-        if provider == "jamix":
-            try:
+        try:
+            if provider == "jamix":
                 by_date = fetch_items_by_date(customer_id, r["kitchen_id"], date_set)
-                total = sum(len(v) for v in by_date.values())
-                print(f"   {total} 个菜品 / {sum(1 for v in by_date.values() if v)} 天有菜", file=sys.stderr)
-            except Exception as e:
-                print(f"   fetch failed: {e}", file=sys.stderr)
-        else:
-            print(f"   provider={provider} 暂未实现抓取，仅显示价目/营业信息", file=sys.stderr)
+            elif provider == "sodexo_hilla":
+                by_date = fetch_items_by_date_sodexo(
+                    r["sodexo_url"], r["sodexo_part"], date_set,
+                )
+            else:
+                print(f"   未知 provider={provider}", file=sys.stderr)
+        except Exception as e:
+            print(f"   fetch failed: {e}", file=sys.stderr)
+        total = sum(len(v) for v in by_date.values())
+        print(f"   {total} 个菜品 / {sum(1 for v in by_date.values() if v)} 天有菜", file=sys.stderr)
         per_r.append((r, by_date))
 
     # 收集所有日所有餐厅的菜名（去重）

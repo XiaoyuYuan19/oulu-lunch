@@ -192,12 +192,11 @@
            </div>`
         : '';
       const externalNote = r.external_url
-        ? `<div class="px-4 py-3 border-t border-slate-100 text-center">
+        ? `<div class="px-4 py-2 border-t border-slate-100 text-center">
              <a href="${r.external_url}" target="_blank" rel="noopener"
-                class="inline-flex items-center gap-1.5 text-sm font-medium text-sky-700 underline">
-               看官网完整菜单 ↗
+                class="text-[11px] text-slate-500 hover:text-sky-700">
+               官网完整菜单（含过敏原） ↗
              </a>
-             <div class="text-[10px] text-slate-400 mt-1">自动菜单抓取暂未支持，先去 Sodexo 官网</div>
            </div>`
         : '';
       const statusHtml = s.text
