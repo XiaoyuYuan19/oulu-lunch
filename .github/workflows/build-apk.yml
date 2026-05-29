@@ -37,13 +37,17 @@ jobs:
         with:
           node-version: '20'
 
+      - uses: android-actions/setup-android@v3
+        with:
+          packages: "platform-tools build-tools;33.0.2 platforms;android-33"
+
       - name: Install Bubblewrap CLI
         run: npm install -g @bubblewrap/cli@1.23.0
 
-      - name: Pre-configure Bubblewrap (skip JDK/SDK install prompts)
+      - name: Pre-configure Bubblewrap (skip install prompts)
         run: |
           mkdir -p ~/.bubblewrap
-          SDK="${ANDROID_SDK_ROOT:-${ANDROID_HOME:-/usr/local/lib/android/sdk}}"
+          SDK="${ANDROID_HOME:-$ANDROID_SDK_ROOT}"
           cat > ~/.bubblewrap/config.json <<EOF
           {
             "jdkPath": "${JAVA_HOME}",
@@ -52,9 +56,14 @@ jobs:
           EOF
           echo "JAVA_HOME=$JAVA_HOME"
           echo "ANDROID_SDK=$SDK"
+          echo "--- SDK 目录结构 ---"
+          ls "$SDK"
+          ls "$SDK/cmdline-tools" 2>/dev/null || true
+          ls "$SDK/build-tools" 2>/dev/null || true
+          ls "$SDK/platforms" 2>/dev/null || true
+          cat ~/.bubblewrap/config.json
           test -x "$JAVA_HOME/bin/java" || (echo "no java"; exit 1)
           test -d "$SDK" || (echo "no android sdk at $SDK"; exit 1)
-          cat ~/.bubblewrap/config.json
 
       - name: Restore keystore
         env:
