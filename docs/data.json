@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-29T11:52:14+00:00",
+  "updated_at": "2026-05-29T11:59:43+00:00",
   "date": 20260529,
   "restaurants": [
     {
@@ -11,15 +11,15 @@
       "dishes": [
         {
           "fi": "Harissa falavelpyörykät",
-          "zh": "Harissa falavelpyörykät",
+          "zh": "哈里萨沙拉三明治丸子",
           "emoji": "🍽️",
           "category": "素菜",
           "tags": [],
-          "image_url": ""
+          "image_url": "https://images.pexels.com/photos/11842176/pexels-photo-11842176.jpeg?auto=compress&cs=tinysrgb&h=350"
         },
         {
           "fi": "Chilimausteista tomaattikastiketta",
-          "zh": "Chilimausteista tomaattikastiketta",
+          "zh": "辣味番茄酱",
           "emoji": "🍽️",
           "category": "素菜",
           "tags": [
@@ -30,11 +30,11 @@
             "心脏",
             "含有机"
           ],
-          "image_url": ""
+          "image_url": "https://images.pexels.com/photos/8743924/pexels-photo-8743924.jpeg?auto=compress&cs=tinysrgb&h=350"
         },
         {
           "fi": "Yrttiriisiä",
-          "zh": "Yrttiriisiä",
+          "zh": "香草米饭",
           "emoji": "🍽️",
           "category": "素菜",
           "tags": [
@@ -44,11 +44,11 @@
             "素",
             "心脏"
           ],
-          "image_url": ""
+          "image_url": "https://images.pexels.com/photos/23106717/pexels-photo-23106717.jpeg?auto=compress&cs=tinysrgb&h=350"
         },
         {
           "fi": "Paahdettuja kasviksia",
-          "zh": "Paahdettuja kasviksia",
+          "zh": "烤蔬菜",
           "emoji": "🌱",
           "category": "素菜",
           "tags": [
@@ -58,11 +58,11 @@
             "素",
             "心脏"
           ],
-          "image_url": ""
+          "image_url": "https://images.pexels.com/photos/8996223/pexels-photo-8996223.jpeg?auto=compress&cs=tinysrgb&h=350"
         },
         {
           "fi": "Kananpoikaa kermaisessa pippurikasviskastikkeessa",
-          "zh": "Kananpoikaa kermaisessa pippurikasviskastikkeessa",
+          "zh": "奶油胡椒蔬菜鸡肉",
           "emoji": "🍗",
           "category": "午餐",
           "tags": [
@@ -72,11 +72,11 @@
             "心脏",
             "含有机"
           ],
-          "image_url": ""
+          "image_url": "https://images.pexels.com/photos/15597768/pexels-photo-15597768.jpeg?auto=compress&cs=tinysrgb&h=350"
         },
         {
           "fi": "Lempeän mausteista kalapataa",
-          "zh": "Lempeän mausteista kalapataa",
+          "zh": "温和香料鱼炖菜",
           "emoji": "🐟",
           "category": "午餐",
           "tags": [
@@ -84,11 +84,11 @@
             "无乳糖",
             "无蛋"
           ],
-          "image_url": ""
+          "image_url": "https://images.pexels.com/photos/32986465/pexels-photo-32986465.jpeg?auto=compress&cs=tinysrgb&h=350"
         },
         {
           "fi": "Keitettyjä perunoita",
-          "zh": "Keitettyjä perunoita",
+          "zh": "煮土豆",
           "emoji": "🥔",
           "category": "午餐",
           "tags": [
@@ -98,7 +98,7 @@
             "素",
             "心脏"
           ],
-          "image_url": ""
+          "image_url": "https://images.pexels.com/photos/5249331/pexels-photo-5249331.jpeg?auto=compress&cs=tinysrgb&h=350"
         }
       ]
     },
@@ -111,15 +111,15 @@
       "dishes": [
         {
           "fi": "Harissa falavelpyörykät",
-          "zh": "Harissa falavelpyörykät",
+          "zh": "哈里萨沙拉三明治丸子",
           "emoji": "🍽️",
           "category": "素菜",
           "tags": [],
-          "image_url": ""
+          "image_url": "https://images.pexels.com/photos/11842176/pexels-photo-11842176.jpeg?auto=compress&cs=tinysrgb&h=350"
         },
         {
           "fi": "Chilimausteista tomaattikastiketta",
-          "zh": "Chilimausteista tomaattikastiketta",
+          "zh": "辣味番茄酱",
           "emoji": "🍽️",
           "category": "素菜",
           "tags": [
@@ -130,11 +130,11 @@
             "心脏",
             "含有机"
           ],
-          "image_url": ""
+          "image_url": "https://images.pexels.com/photos/8743924/pexels-photo-8743924.jpeg?auto=compress&cs=tinysrgb&h=350"
         },
         {
           "fi": "Yrttiriisiä",
-          "zh": "Yrttiriisiä",
+          "zh": "香草米饭",
           "emoji": "🍽️",
           "category": "素菜",
           "tags": [
@@ -144,11 +144,11 @@
             "素",
             "心脏"
           ],
-          "image_url": ""
+          "image_url": "https://images.pexels.com/photos/23106717/pexels-photo-23106717.jpeg?auto=compress&cs=tinysrgb&h=350"
         },
         {
           "fi": "Paahdettuja kasviksia",
-          "zh": "Paahdettuja kasviksia",
+          "zh": "烤蔬菜",
           "emoji": "🌱",
           "category": "素菜",
           "tags": [
@@ -158,11 +158,11 @@
             "素",
             "心脏"
           ],
-          "image_url": ""
+          "image_url": "https://images.pexels.com/photos/8996223/pexels-photo-8996223.jpeg?auto=compress&cs=tinysrgb&h=350"
         },
         {
           "fi": "Kananpoikaa kermaisessa pippurikasviskastikkeessa",
-          "zh": "Kananpoikaa kermaisessa pippurikasviskastikkeessa",
+          "zh": "奶油胡椒蔬菜鸡肉",
           "emoji": "🍗",
           "category": "午餐",
           "tags": [
@@ -172,11 +172,11 @@
             "心脏",
             "含有机"
           ],
-          "image_url": ""
+          "image_url": "https://images.pexels.com/photos/15597768/pexels-photo-15597768.jpeg?auto=compress&cs=tinysrgb&h=350"
         },
         {
           "fi": "Lempeän mausteista kalapataa",
-          "zh": "Lempeän mausteista kalapataa",
+          "zh": "温和香料鱼炖菜",
           "emoji": "🐟",
           "category": "午餐",
           "tags": [
@@ -184,11 +184,11 @@
             "无乳糖",
             "无蛋"
           ],
-          "image_url": ""
+          "image_url": "https://images.pexels.com/photos/32986465/pexels-photo-32986465.jpeg?auto=compress&cs=tinysrgb&h=350"
         },
         {
           "fi": "Keitettyjä perunoita",
-          "zh": "Keitettyjä perunoita",
+          "zh": "煮土豆",
           "emoji": "🥔",
           "category": "午餐",
           "tags": [
@@ -198,11 +198,11 @@
             "素",
             "心脏"
           ],
-          "image_url": ""
+          "image_url": "https://images.pexels.com/photos/5249331/pexels-photo-5249331.jpeg?auto=compress&cs=tinysrgb&h=350"
         },
         {
           "fi": "Hernesosekeittoa",
-          "zh": "Hernesosekeittoa",
+          "zh": "豌豆泥汤",
           "emoji": "🍽️",
           "category": "汤/沙拉",
           "tags": [
@@ -213,11 +213,11 @@
             "心脏",
             "含有机"
           ],
-          "image_url": ""
+          "image_url": "https://images.pexels.com/photos/6955149/pexels-photo-6955149.jpeg?auto=compress&cs=tinysrgb&h=350"
         },
         {
           "fi": "Kermavaahtoa",
-          "zh": "Kermavaahtoa",
+          "zh": "鲜奶油",
           "emoji": "🍽️",
           "category": "甜点",
           "tags": [
@@ -225,7 +225,7 @@
             "无乳糖",
             "无蛋"
           ],
-          "image_url": ""
+          "image_url": "https://images.pexels.com/photos/8250849/pexels-photo-8250849.jpeg?auto=compress&cs=tinysrgb&h=350"
         }
       ]
     },
@@ -238,7 +238,7 @@
       "dishes": [
         {
           "fi": "Linssi-kasvispaistikkaat",
-          "zh": "Linssi-kasvispaistikkaat",
+          "zh": "扁豆蔬菜饼",
           "emoji": "🌱",
           "category": "素菜",
           "tags": [
@@ -249,11 +249,11 @@
             "心脏",
             "含有机"
           ],
-          "image_url": ""
+          "image_url": "https://images.pexels.com/photos/17486827/pexels-photo-17486827.jpeg?auto=compress&cs=tinysrgb&h=350"
         },
         {
           "fi": "Basilika-kermaviilipiimäkastiketta",
-          "zh": "Basilika-kermaviilipiimäkastiketta",
+          "zh": "罗勒酸奶酱",
           "emoji": "🍽️",
           "category": "素菜",
           "tags": [
@@ -262,11 +262,11 @@
             "无蛋",
             "心脏"
           ],
-          "image_url": ""
+          "image_url": "https://images.pexels.com/photos/16767580/pexels-photo-16767580.jpeg?auto=compress&cs=tinysrgb&h=350"
         },
         {
           "fi": "Keitettyjä perunoita",
-          "zh": "Keitettyjä perunoita",
+          "zh": "煮土豆",
           "emoji": "🥔",
           "category": "素菜",
           "tags": [
@@ -276,11 +276,11 @@
             "素",
             "心脏"
           ],
-          "image_url": ""
+          "image_url": "https://images.pexels.com/photos/5249331/pexels-photo-5249331.jpeg?auto=compress&cs=tinysrgb&h=350"
         },
         {
           "fi": "Lihapyöryköitä",
-          "zh": "Lihapyöryköitä",
+          "zh": "肉丸",
           "emoji": "🍽️",
           "category": "午餐",
           "tags": [
@@ -288,11 +288,11 @@
             "无蛋",
             "心脏"
           ],
-          "image_url": ""
+          "image_url": "https://images.pexels.com/photos/15735751/pexels-photo-15735751.jpeg?auto=compress&cs=tinysrgb&h=350"
         },
         {
           "fi": "Pippuri-kermakastiketta",
-          "zh": "Pippuri-kermakastiketta",
+          "zh": "胡椒奶油酱",
           "emoji": "🍽️",
           "category": "午餐",
           "tags": [
@@ -301,11 +301,11 @@
             "无蛋",
             "心脏"
           ],
-          "image_url": ""
+          "image_url": "https://images.pexels.com/photos/15820588/pexels-photo-15820588.jpeg?auto=compress&cs=tinysrgb&h=350"
         },
         {
           "fi": "Paahdettuja kasviksia",
-          "zh": "Paahdettuja kasviksia",
+          "zh": "烤蔬菜",
           "emoji": "🌱",
           "category": "午餐",
           "tags": [
@@ -315,11 +315,11 @@
             "素",
             "心脏"
           ],
-          "image_url": ""
+          "image_url": "https://images.pexels.com/photos/8996223/pexels-photo-8996223.jpeg?auto=compress&cs=tinysrgb&h=350"
         },
         {
           "fi": "Kalkkuna-kasviskastiketta",
-          "zh": "Kalkkuna-kasviskastiketta",
+          "zh": "火鸡蔬菜酱",
           "emoji": "🍗",
           "category": "午餐",
           "tags": [
@@ -329,11 +329,11 @@
             "心脏",
             "含有机"
           ],
-          "image_url": ""
+          "image_url": "https://images.pexels.com/photos/15597769/pexels-photo-15597769.jpeg?auto=compress&cs=tinysrgb&h=350"
         },
         {
           "fi": "Täysjyväriisiä",
-          "zh": "Täysjyväriisiä",
+          "zh": "全麦米饭",
           "emoji": "🍽️",
           "category": "午餐",
           "tags": [
@@ -343,32 +343,32 @@
             "素",
             "心脏"
           ],
-          "image_url": ""
+          "image_url": "https://images.pexels.com/photos/586615/pexels-photo-586615.jpeg?auto=compress&cs=tinysrgb&h=350"
         },
         {
           "fi": "BBQ-broilerpizzaa",
-          "zh": "BBQ-broilerpizzaa",
+          "zh": "烧烤鸡肉披萨",
           "emoji": "🍽️",
           "category": "融合料理",
           "tags": [
             "无乳糖",
             "无蛋"
           ],
-          "image_url": ""
+          "image_url": "https://images.pexels.com/photos/9792460/pexels-photo-9792460.jpeg?auto=compress&cs=tinysrgb&h=350"
         },
         {
           "fi": "Pannukakkua",
-          "zh": "Pannukakkua",
+          "zh": "煎饼",
           "emoji": "🥞",
           "category": "甜点",
           "tags": [
             "无乳糖"
           ],
-          "image_url": ""
+          "image_url": "https://images.pexels.com/photos/10593645/pexels-photo-10593645.jpeg?auto=compress&cs=tinysrgb&h=350"
         },
         {
           "fi": "Mansikkahilloa",
-          "zh": "Mansikkahilloa",
+          "zh": "草莓酱",
           "emoji": "🍽️",
           "category": "甜点",
           "tags": [
@@ -377,11 +377,11 @@
             "无蛋",
             "素"
           ],
-          "image_url": ""
+          "image_url": "https://images.pexels.com/photos/26341194/pexels-photo-26341194.jpeg?auto=compress&cs=tinysrgb&h=350"
         },
         {
           "fi": "Parsakeittoa",
-          "zh": "Parsakeittoa",
+          "zh": "芦笋汤",
           "emoji": "🍽️",
           "category": "汤/沙拉",
           "tags": [
@@ -390,7 +390,7 @@
             "无蛋",
             "含有机"
           ],
-          "image_url": ""
+          "image_url": "https://images.pexels.com/photos/8743923/pexels-photo-8743923.jpeg?auto=compress&cs=tinysrgb&h=350"
         }
       ]
     },
