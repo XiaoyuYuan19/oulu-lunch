@@ -14,7 +14,7 @@ import yaml
 
 ROOT = Path(__file__).resolve().parent.parent
 CONFIG = ROOT / "scraper" / "restaurants.yaml"
-OUTPUT = ROOT / "public" / "data.json"
+OUTPUT = ROOT / "docs" / "data.json"
 
 JAMIX_API = "https://fi.jamix.cloud/apps/menuservice/rest/haku/menu/{cust}/{kitchen}?lang=fi"
 HEADERS = {"User-Agent": "oulu-lunch-pwa/1.0 python-requests"}

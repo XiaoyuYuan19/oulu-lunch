@@ -9,7 +9,7 @@
 1. 创建一个 GitHub repo（空的就行）
 2. 把这个目录推上去
 3. GitHub repo 配三件事：
-   - Pages：从 `main` 分支的 `/public` 目录发布
+   - Pages：从 `main` 分支的 `/docs` 目录发布
    - Secret：`ANTHROPIC_API_KEY`
    - Actions workflow permissions：Read and write
 4. Actions → "Update menus" → Run workflow
