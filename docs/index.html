@@ -60,8 +60,8 @@
 
     function renderDish(d) {
       const media = d.image_url
-        ? `<img src="${d.image_url}" alt="" class="w-12 h-12 rounded-lg object-cover flex-shrink-0">`
-        : `<span class="text-3xl leading-none flex-shrink-0 w-12 text-center">${d.emoji || '🍽️'}</span>`;
+        ? `<img src="${d.image_url}" alt="" loading="lazy" class="w-20 h-20 rounded-xl object-cover flex-shrink-0 bg-slate-100">`
+        : `<span class="text-4xl leading-none flex-shrink-0 w-20 h-20 flex items-center justify-center bg-slate-50 rounded-xl">${d.emoji || '🍽️'}</span>`;
       const cat = d.category
         ? `<span class="text-[10px] px-1.5 py-0.5 bg-amber-50 text-amber-700 rounded">${d.category}</span>`
         : '';

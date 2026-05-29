@@ -149,7 +149,8 @@ def fetch_dishes(customer_id: int, kitchen_id: int, today: int) -> list[dict]:
 GEMINI_MODELS = ["gemini-2.5-flash", "gemini-2.0-flash", "gemini-1.5-flash"]
 
 
-def translate_batch(fi_names: list[str]) -> dict[str, str]:
+def translate_batch(fi_names: list[str]) -> dict[str, dict[str, str]]:
+    """对每个菜名返回 {'zh': 中文, 'en_search': 英文图片关键词}"""
     if not fi_names:
         return {}
     api_key = os.environ.get("GEMINI_API_KEY") or os.environ.get("GOOGLE_API_KEY")
@@ -159,6 +160,7 @@ def translate_batch(fi_names: list[str]) -> dict[str, str]:
 
     try:
         from google import genai
+        from google.genai import types
     except Exception as e:
         print(f"warn: google-genai import 失败: {e!r}", file=sys.stderr)
         return {}
@@ -166,18 +168,23 @@ def translate_batch(fi_names: list[str]) -> dict[str, str]:
     client = genai.Client(api_key=api_key)
     numbered = "\n".join(f"{i+1}. {n}" for i, n in enumerate(fi_names))
     prompt = (
-        "把下列芬兰菜名翻译成简短自然的中文。要求：\n"
-        "- 每行一个，顺序与编号一致\n"
-        "- 只输出中文，不要编号、不要解释、不要原文\n"
-        "- 看不懂的词直接音译或描述\n\n"
+        "下面是芬兰菜名。对每个输出 JSON 数组项，包含两个字段：\n"
+        '  "zh": 简短自然的中文菜名（不要编号/原文/解释）\n'
+        '  "en_search": 2-3 个英文检索关键词，用于在 Pexels 图库搜到代表性食物图，'
+        "倾向用通用菜式描述（如 \"pea soup\"、\"meatballs in cream sauce\"），"
+        "而不是音译。\n"
+        "顺序必须与编号一致。只输出 JSON 数组。\n\n"
         f"{numbered}"
     )
 
     text = ""
     last_err: Exception | None = None
+    config = types.GenerateContentConfig(response_mime_type="application/json")
     for model in GEMINI_MODELS:
         try:
-            resp = client.models.generate_content(model=model, contents=prompt)
+            resp = client.models.generate_content(
+                model=model, contents=prompt, config=config,
+            )
             text = (resp.text or "").strip()
             if text:
                 print(f"  翻译用模型: {model}", file=sys.stderr)
@@ -190,9 +197,56 @@ def translate_batch(fi_names: list[str]) -> dict[str, str]:
         print(f"warn: 所有 Gemini 模型失败，跳过翻译。最后错误: {last_err!r}", file=sys.stderr)
         return {}
 
-    raw_lines = [l.strip() for l in text.splitlines() if l.strip()]
-    zh_lines = [re.sub(r"^\s*\d+[.．、)、:：]+\s*", "", l).strip() for l in raw_lines]
-    return {fi: (zh_lines[i] if i < len(zh_lines) else fi) for i, fi in enumerate(fi_names)}
+    try:
+        arr = json.loads(text)
+    except json.JSONDecodeError as e:
+        print(f"warn: JSON parse 失败 ({e!r}), 第一段: {text[:200]!r}", file=sys.stderr)
+        return {}
+
+    out: dict[str, dict[str, str]] = {}
+    for i, fi in enumerate(fi_names):
+        if i < len(arr) and isinstance(arr[i], dict):
+            zh = (arr[i].get("zh") or fi).strip()
+            en = (arr[i].get("en_search") or "").strip()
+            out[fi] = {"zh": zh, "en_search": en}
+        else:
+            out[fi] = {"zh": fi, "en_search": ""}
+    return out
+
+
+# --- 图片：Pexels ----------------------------------------------------------
+
+def fetch_images(en_queries: list[str]) -> dict[str, str]:
+    """对每个英文查询返回一张 Pexels 图片 URL。缺 key 或失败返回空映射。"""
+    api_key = os.environ.get("PEXELS_API_KEY")
+    if not api_key:
+        print("warn: PEXELS_API_KEY 未设置，跳过图片抓取", file=sys.stderr)
+        return {}
+
+    sess = requests.Session()
+    sess.headers["Authorization"] = api_key
+    sess.headers["User-Agent"] = HEADERS["User-Agent"]
+
+    out: dict[str, str] = {}
+    for q in en_queries:
+        if not q or q in out:
+            continue
+        try:
+            r = sess.get(
+                "https://api.pexels.com/v1/search",
+                params={"query": q, "per_page": 1, "orientation": "square"},
+                timeout=15,
+            )
+            if r.status_code != 200:
+                print(f"  pexels {q!r} -> {r.status_code}", file=sys.stderr)
+                continue
+            photos = r.json().get("photos", [])
+            if photos:
+                src = photos[0].get("src", {})
+                out[q] = src.get("medium") or src.get("small") or src.get("original", "")
+        except Exception as e:
+            print(f"  pexels {q!r} 失败: {e!r}", file=sys.stderr)
+    return out
 
 
 def main() -> int:
@@ -222,7 +276,11 @@ def main() -> int:
                 all_names.append(d["fi"])
 
     print(f"翻译 {len(all_names)} 道菜…", file=sys.stderr)
-    zh_map = translate_batch(all_names)
+    tr_map = translate_batch(all_names)
+
+    en_queries = [tr_map.get(n, {}).get("en_search", "") for n in all_names]
+    print(f"抓图 {sum(1 for q in en_queries if q)} 个查询…", file=sys.stderr)
+    img_map = fetch_images(en_queries)
 
     output = {
         "updated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
@@ -230,16 +288,19 @@ def main() -> int:
         "restaurants": [],
     }
     for r, dishes in per_restaurant:
-        items = [
-            {
+        items = []
+        for d in dishes:
+            tr = tr_map.get(d["fi"], {})
+            zh = tr.get("zh") or d["fi"]
+            en_q = tr.get("en_search") or ""
+            items.append({
                 "fi": d["fi"],
-                "zh": zh_map.get(d["fi"], d["fi"]),
+                "zh": zh,
                 "emoji": emoji_for(d["fi"]),
                 "category": d["category"],
                 "tags": d["tags"],
-            }
-            for d in dishes
-        ]
+                "image_url": img_map.get(en_q, ""),
+            })
         output["restaurants"].append({
             "name": r["name"],
             "hours": r.get("hours", ""),
