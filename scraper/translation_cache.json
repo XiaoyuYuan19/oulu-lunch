@@ -1,0 +1,127 @@
+{
+  "Aasialaista possupataa": {
+    "en_search": "asian pork stew, braised pork",
+    "role": "main",
+    "zh": "亚洲风味炖猪肉"
+  },
+  "Broilerilasagnettea kasviksilla": {
+    "en_search": "chicken lasagna, vegetable lasagna, baked pasta",
+    "role": "main",
+    "zh": "蔬菜鸡肉千层面"
+  },
+  "Broilerpyöryköitä": {
+    "en_search": "chicken meatballs, poultry balls",
+    "role": "main",
+    "zh": "鸡肉丸子"
+  },
+  "Chilimausteista tomaattikastiketta": {
+    "en_search": "chili tomato sauce, red sauce",
+    "role": "sauce",
+    "zh": "辣味番茄酱"
+  },
+  "Curry-ananaskastiketta": {
+    "en_search": "curry pineapple sauce, yellow sauce",
+    "role": "sauce",
+    "zh": "咖喱菠萝酱"
+  },
+  "Halloumiburger": {
+    "en_search": "halloumi burger, cheese patty",
+    "role": "main",
+    "zh": "烤哈罗米芝士汉堡"
+  },
+  "Harissa falavelpyörykät": {
+    "en_search": "falafel balls, harissa, fried",
+    "role": "main",
+    "zh": "哈里萨沙拉三明治丸子"
+  },
+  "Härkäpapu-Mac&cheese": {
+    "en_search": "mac and cheese, broad beans, pasta",
+    "role": "main",
+    "zh": "蚕豆通心粉奶酪"
+  },
+  "Jauheliha-kasvisbolognesea": {
+    "en_search": "minced meat bolognese, vegetable sauce",
+    "role": "main",
+    "zh": "肉末蔬菜肉酱"
+  },
+  "Jättipapu-juurescurrya": {
+    "en_search": "giant bean curry, root vegetables, vegetarian curry",
+    "role": "main",
+    "zh": "大豆根菜咖喱"
+  },
+  "Kananpoikaa kermaisessa pippurikasviskastikkeessa": {
+    "en_search": "creamy chicken, pepper sauce, vegetables",
+    "role": "main",
+    "zh": "奶油胡椒蔬菜鸡肉"
+  },
+  "Keitettyjä perunoita": {
+    "en_search": "boiled potatoes, whole potatoes",
+    "role": "staple",
+    "zh": "煮土豆"
+  },
+  "Kirjolohikiusausta": {
+    "en_search": "rainbow trout casserole, fish bake",
+    "role": "main",
+    "zh": "虹鳟鱼砂锅"
+  },
+  "Lempeän mausteista kalapataa": {
+    "en_search": "fish stew, mild spice, seafood",
+    "role": "main",
+    "zh": "温和香料炖鱼"
+  },
+  "Nakki-pekonistroganoffia": {
+    "en_search": "sausage stroganoff, bacon, creamy stew",
+    "role": "main",
+    "zh": "香肠培根俄式烩牛肉"
+  },
+  "PIZZA": {
+    "en_search": "pizza slice, cheese pizza",
+    "role": "main",
+    "zh": "披萨"
+  },
+  "Paahdettuja kasviksia": {
+    "en_search": "roasted vegetables, mixed vegetables",
+    "role": "side",
+    "zh": "烤蔬菜"
+  },
+  "Porkkana-hernekastiketta": {
+    "en_search": "carrot pea sauce, vegetable sauce",
+    "role": "sauce",
+    "zh": "胡萝卜豌豆酱"
+  },
+  "Ranskalaisia perunoita": {
+    "en_search": "french fries, fried potatoes",
+    "role": "staple",
+    "zh": "炸薯条"
+  },
+  "Tuplajuustoburger": {
+    "en_search": "double cheese burger, beef patty",
+    "role": "main",
+    "zh": "双层芝士汉堡"
+  },
+  "Täysjyväpastaa": {
+    "en_search": "whole grain pasta, brown pasta",
+    "role": "staple",
+    "zh": "全麦意面"
+  },
+  "Täysjyväriisiä": {
+    "en_search": "whole grain rice, brown rice",
+    "role": "staple",
+    "zh": "全麦米饭"
+  },
+  "Vadelmarahkaa": {
+    "en_search": "raspberry quark, fruit dessert, creamy",
+    "role": "dessert",
+    "zh": "覆盆子夸克甜点"
+  },
+  "Valkosuklaavanukasta": {
+    "en_search": "white chocolate pudding, creamy dessert",
+    "role": "dessert",
+    "zh": "白巧克力布丁"
+  },
+  "Yrttiriisiä": {
+    "en_search": "herb rice, white rice",
+    "role": "staple",
+    "zh": "香草米饭"
+  }
+}

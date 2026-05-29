@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-29T13:14:29+00:00",
+  "updated_at": "2026-05-29T15:26:29+00:00",
   "dates": [
     20260529,
     20260601,
@@ -42,11 +42,11 @@
               ],
               "is_premium": false,
               "source": "LOUNAS",
-              "image_url": "https://images.pexels.com/photos/15597768/pexels-photo-15597768.jpeg?auto=compress&cs=tinysrgb&h=350"
+              "image_url": "https://images.pexels.com/photos/12737659/pexels-photo-12737659.jpeg?auto=compress&cs=tinysrgb&h=350"
             },
             {
               "fi": "Lempeän mausteista kalapataa",
-              "zh": "温和香料鱼炖菜",
+              "zh": "温和香料炖鱼",
               "emoji": "🐟",
               "tags": [
                 "无麸质",
@@ -55,7 +55,7 @@
               ],
               "is_premium": false,
               "source": "LOUNAS",
-              "image_url": "https://images.pexels.com/photos/32986465/pexels-photo-32986465.jpeg?auto=compress&cs=tinysrgb&h=350"
+              "image_url": "https://images.pexels.com/photos/17649370/pexels-photo-17649370.jpeg?auto=compress&cs=tinysrgb&h=350"
             }
           ],
           "staple": [
@@ -142,7 +142,7 @@
             },
             {
               "fi": "Broilerpyöryköitä",
-              "zh": "鸡肉丸",
+              "zh": "鸡肉丸子",
               "emoji": "🍽️",
               "tags": [
                 "无奶",
@@ -293,7 +293,7 @@
             },
             {
               "fi": "Jauheliha-kasvisbolognesea",
-              "zh": "肉末蔬菜博洛尼亚酱",
+              "zh": "肉末蔬菜肉酱",
               "emoji": "🥩",
               "tags": [
                 "无麸质",
@@ -446,7 +446,7 @@
             },
             {
               "fi": "Aasialaista possupataa",
-              "zh": "亚洲风味猪肉炖菜",
+              "zh": "亚洲风味炖猪肉",
               "emoji": "🥓",
               "tags": [
                 "无麸质",
@@ -471,7 +471,7 @@
               ],
               "is_premium": false,
               "source": "LOUNAS",
-              "image_url": "https://images.pexels.com/photos/26341207/pexels-photo-26341207.jpeg?auto=compress&cs=tinysrgb&h=350"
+              "image_url": "https://images.pexels.com/photos/10966592/pexels-photo-10966592.jpeg?auto=compress&cs=tinysrgb&h=350"
             },
             {
               "fi": "Tuplajuustoburger",
@@ -752,11 +752,11 @@
               ],
               "is_premium": false,
               "source": "LOUNAS",
-              "image_url": "https://images.pexels.com/photos/15597768/pexels-photo-15597768.jpeg?auto=compress&cs=tinysrgb&h=350"
+              "image_url": "https://images.pexels.com/photos/12737659/pexels-photo-12737659.jpeg?auto=compress&cs=tinysrgb&h=350"
             },
             {
               "fi": "Lempeän mausteista kalapataa",
-              "zh": "温和香料鱼炖菜",
+              "zh": "温和香料炖鱼",
               "emoji": "🐟",
               "tags": [
                 "无麸质",
@@ -765,7 +765,7 @@
               ],
               "is_premium": false,
               "source": "LOUNAS",
-              "image_url": "https://images.pexels.com/photos/32986465/pexels-photo-32986465.jpeg?auto=compress&cs=tinysrgb&h=350"
+              "image_url": "https://images.pexels.com/photos/17649370/pexels-photo-17649370.jpeg?auto=compress&cs=tinysrgb&h=350"
             }
           ],
           "staple": [
@@ -1170,7 +1170,7 @@
           "main": [
             {
               "fi": "Aasialaista possupataa",
-              "zh": "亚洲风味猪肉炖菜",
+              "zh": "亚洲风味炖猪肉",
               "emoji": "🥓",
               "tags": [
                 "无麸质",
@@ -1683,7 +1683,7 @@
           "main": [
             {
               "fi": "Broilerpyöryköitä",
-              "zh": "鸡肉丸",
+              "zh": "鸡肉丸子",
               "emoji": "🍽️",
               "tags": [
                 "无奶",
@@ -1696,7 +1696,7 @@
             },
             {
               "fi": "Jauheliha-kasvisbolognesea",
-              "zh": "肉末蔬菜博洛尼亚酱",
+              "zh": "肉末蔬菜肉酱",
               "emoji": "🥩",
               "tags": [
                 "无麸质",
