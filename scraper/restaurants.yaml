@@ -16,23 +16,23 @@ restaurants:
     kitchen_id: 69
     hours: "10:30-14:30"
     location: Linnanmaa
-    price_basic: null      # Foobar 没有 Peruslounas 这条线
-    price_fusion: "5,90"
+    price_basic: "1,24"       # Peruslounas
+    price_fusion: "5,90"      # Fusion-ateria
   - name: Kerttu
     kitchen_id: 70
     hours: "10:30-14:30"
     location: Linnanmaa
-    price_basic: "1,24"
-    price_fusion: null
+    price_basic: "1,24"       # Peruslounas + Keittoateria 都是 1,24
+    price_fusion: null        # Kerttu 没有 Fusion / Erikois 线
   - name: Mara
     kitchen_id: 49
     hours: "10:30-14:30"
     location: Linnanmaa
-    price_basic: "1,24"
-    price_fusion: "5,90"
+    price_basic: "1,24"       # Peruslounas + Salad/Soup
+    price_fusion: "5,90"      # Erikoislounas
   - name: Medisiina
     kitchen_id: 75
     hours: "10:30-14:30"
     location: Kontinkangas (医学院)
-    price_basic: "1,24"    # 待核实
-    price_fusion: "5,90"   # 待核实
+    price_basic: "1,24"       # Peruslounas
+    price_fusion: "5,90"      # 周五特殊餐（仅周五）

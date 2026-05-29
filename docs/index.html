@@ -68,15 +68,14 @@
       const media = d.image_url
         ? `<img src="${d.image_url}" alt="" loading="lazy" class="w-28 h-28 sm:w-32 sm:h-32 object-cover bg-slate-100 flex-shrink-0">`
         : `<div class="w-28 h-28 sm:w-32 sm:h-32 bg-slate-50 flex items-center justify-center text-5xl flex-shrink-0">${d.emoji || '🍽️'}</div>`;
-      const premium = d.is_premium
-        ? `<span class="text-[10px] px-1.5 py-0.5 bg-purple-600 text-white rounded font-medium">特殊餐 +€</span>` : '';
+      const tags = tagsHtml(d.tags);
       return `
         <article class="flex items-stretch border-b border-slate-100 last:border-b-0">
           ${media}
           <div class="flex-1 min-w-0 px-3 py-2.5 flex flex-col justify-center">
             <div class="text-base font-semibold text-slate-900 leading-snug">${d.zh || d.fi}</div>
             <div class="text-[11px] text-slate-400 mt-0.5 break-words">${d.fi}</div>
-            <div class="mt-1.5 flex gap-1 flex-wrap">${premium}${tagsHtml(d.tags)}</div>
+            ${tags ? `<div class="mt-1.5 flex gap-1 flex-wrap">${tags}</div>` : ''}
           </div>
         </article>`;
     }
@@ -95,26 +94,43 @@
         </div>`;
     }
 
-    function priceLine(r) {
-      const parts = [];
-      if (r.price_basic)  parts.push(`基础餐 <b class="text-slate-800">${r.price_basic} €</b>`);
-      if (r.price_fusion) parts.push(`特殊餐 <b class="text-slate-800">${r.price_fusion} €</b>`);
-      if (!parts.length)  parts.push('学生价见柜台');
-      return parts.join(' · ');
+    function mainsSection(label, price, kelaIncluded, items, accentCls) {
+      if (!items || !items.length) return '';
+      return `
+        <div class="border-t border-slate-100">
+          <div class="px-4 pt-3 pb-2 flex items-baseline gap-2 ${accentCls}">
+            <span class="text-[11px] font-bold uppercase tracking-wide">${label}</span>
+            <span class="text-base font-bold">${price} €</span>
+            <span class="text-[11px] text-slate-400 ml-auto">${kelaIncluded ? 'KELA 补贴 · 含沙拉/面包/餐饮' : '加价 · 不享 KELA'}</span>
+          </div>
+          <div>${items.map(renderMain).join('')}</div>
+        </div>`;
     }
 
     function renderRestaurant(r) {
       const s = statusOf(r.hours);
       const badge = s.open ? 'bg-green-100 text-green-700' : 'bg-slate-100 text-slate-500';
-      const empty = !(r.mains?.length || r.staples?.length || r.sauces?.length ||
+      const mains = r.mains || [];
+      const basicMains   = mains.filter(m => !m.is_premium);
+      const premiumMains = mains.filter(m =>  m.is_premium);
+      const empty = !(mains.length || r.staples?.length || r.sauces?.length ||
                        r.salads?.length || r.desserts?.length || r.sides?.length);
       const carbsAndSides = [...(r.staples || []), ...(r.sides || [])];
-      const mainsHtml = (r.mains && r.mains.length)
-        ? `<div class="px-4 pt-3 pb-1 text-[11px] font-semibold text-slate-500 uppercase tracking-wide">
-             今日主菜 · 任选一 · 共 ${r.mains.length} 道
-           </div>
-           <div>${r.mains.map(renderMain).join('')}</div>`
+
+      const basicBlock = (r.price_basic && (basicMains.length || !premiumMains.length))
+        ? mainsSection('基础餐', r.price_basic, true,
+            basicMains, 'text-emerald-700')
         : '';
+      const premiumBlock = (r.price_fusion && premiumMains.length)
+        ? mainsSection('特殊餐', r.price_fusion, false,
+            premiumMains, 'text-purple-700')
+        : '';
+      const noPremiumNote = (r.price_fusion && !premiumMains.length)
+        ? `<div class="px-4 py-2 text-[11px] text-slate-400 border-t border-slate-100">
+             特殊餐 ${r.price_fusion} € · 今天没有
+           </div>`
+        : '';
+
       return `
         <section class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
           <header class="px-4 py-3">
@@ -125,11 +141,11 @@
               </div>
               <span class="text-[11px] px-2 py-0.5 rounded-full whitespace-nowrap ${badge}">${s.text}</span>
             </div>
-            <p class="text-xs text-slate-600 mt-1.5">${priceLine(r)}</p>
-            <p class="text-[11px] text-slate-400 mt-0.5">含 自助沙拉吧 · 面包+黄油 · 1 杯水 · 1 杯餐饮</p>
           </header>
           ${empty ? '<div class="py-6 text-sm text-slate-400 text-center border-t border-slate-100">今天没抓到菜单</div>' : ''}
-          ${mainsHtml}
+          ${basicBlock}
+          ${premiumBlock}
+          ${noPremiumNote}
           ${compactLine('配 ', carbsAndSides)}
           ${compactLine('酱 ', r.sauces)}
           ${compactLine('沙拉 ', r.salads)}
