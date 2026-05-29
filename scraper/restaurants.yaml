@@ -1,41 +1,59 @@
-# Juvenes 在 Oulu 的学生餐厅。菜单数据来自 Jamix Cloud（juvenes.fi 后端）。
-# customer_id 是 Juvenes 公司 ID（不要改）；kitchen_id 通过查
-#   https://fi.jamix.cloud/apps/menuservice/rest/haku/menu/93077/<kitchen_id>?lang=fi
-# 的 kitchenName 字段确认。
-#
 # 改餐厅：注释掉/删掉不要的；新加的把 kitchen_id 填对就行。
-# price_basic = 学生价 Peruslounas（KELA 补贴线，含自助沙拉/面包/水/饮料）
-# price_fusion = 学生价 Fusion / Erikoislounas（特殊餐，通常不在 KELA 补贴里）
-# null 表示该餐厅不提供这条线。
+# prices.basic 和 prices.fusion = [学生, 教职工/PhD, 访客]，€；null 表示该餐厅不提供这条线。
+# provider: jamix (Juvenes) / sodexo_hilla / placeholder
 
-provider: jamix
-customer_id: 93077
+customer_id: 93077   # Juvenes 公司 ID
 
 restaurants:
-  - name: Foobar
-    kitchen_id: 69
-    hours: "10:00-14:30"          # Lounas: Ma-pe 10.00-14.30
-    location: Linnanmaa
-    price_basic: "1,24"
-    price_fusion: "5,90"
-    closed: "29.6-9.8.2026"       # 夏季休
+  # —— Linnanmaa 校园，按用户偏好排 ——
   - name: Kerttu
+    provider: jamix
     kitchen_id: 70
-    hours: "10:30-14:00"          # Lounas: Ma-Pe 10.30-14.00
+    hours: "10:30-14:00"
     location: Linnanmaa
-    price_basic: "1,24"
-    price_fusion: null
+    prices:
+      basic:  [1.24, 4.78, 10.90]
+      fusion: null
+    closed: null
+
+  - name: Hilla
+    provider: sodexo_hilla
+    sodexo_url: "https://www.sodexo.fi/ravintolat/ravintolat-hilla-ja-mustikka"
+    sodexo_part: "Ravintola Hilla"
+    hours: "10:30-14:00"
+    location: Linnanmaa (Sodexo)
+    prices:
+      basic:  [0.84, 3.92, 8.80]
+      fusion: null
+    closed: null
+
   - name: Mara
+    provider: jamix
     kitchen_id: 49
-    hours: "10:00-13:30"          # Lounas: Ma-Pe 10.00-13.30
+    hours: "10:00-13:30"
     location: Linnanmaa
-    price_basic: "1,24"
-    price_fusion: "5,90"
-    closed: "29.5-9.8.2026"       # 夏季休（即日起）
+    prices:
+      basic:  [1.24, 4.78, 10.90]
+      fusion: [5.90, 10.90, 12.35]
+    closed: "29.5-9.8.2026"
+
+  - name: Foobar
+    provider: jamix
+    kitchen_id: 69
+    hours: "10:00-14:30"
+    location: Linnanmaa
+    prices:
+      basic:  [1.24, 4.78, 10.90]
+      fusion: [5.90, 10.90, 12.35]
+    closed: "29.6-9.8.2026"
+
+  # —— Kontinkangas（医学院）——
   - name: Medisiina
+    provider: jamix
     kitchen_id: 75
-    hours: "10:30-13:30"          # Lounas: Ma-Pe 10.30-13.30
+    hours: "10:30-13:30"
     location: Kontinkangas (医学院)
-    price_basic: "1,24"
-    price_fusion: "5,90"
-    closed: "29.6-2.8.2026"       # 夏季休
+    prices:
+      basic:  [1.24, 4.78, 10.90]
+      fusion: [5.90, 10.90, 12.35]
+    closed: "29.6-2.8.2026"

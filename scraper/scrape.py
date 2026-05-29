@@ -412,14 +412,18 @@ def main() -> int:
     # {restaurant_idx: {date: [items]}}
     per_r: list[tuple[dict, dict[int, list[dict]]]] = []
     for r in cfg["restaurants"]:
-        print(f"→ {r['name']} (k={r['kitchen_id']})", file=sys.stderr)
-        try:
-            by_date = fetch_items_by_date(customer_id, r["kitchen_id"], date_set)
-            total = sum(len(v) for v in by_date.values())
-            print(f"   {total} 个菜品 / {sum(1 for v in by_date.values() if v)} 天有菜", file=sys.stderr)
-        except Exception as e:
-            print(f"   fetch failed: {e}", file=sys.stderr)
-            by_date = {d: [] for d in dates}
+        provider = r.get("provider", "jamix")
+        print(f"→ {r['name']} ({provider})", file=sys.stderr)
+        by_date: dict[int, list[dict]] = {d: [] for d in dates}
+        if provider == "jamix":
+            try:
+                by_date = fetch_items_by_date(customer_id, r["kitchen_id"], date_set)
+                total = sum(len(v) for v in by_date.values())
+                print(f"   {total} 个菜品 / {sum(1 for v in by_date.values() if v)} 天有菜", file=sys.stderr)
+            except Exception as e:
+                print(f"   fetch failed: {e}", file=sys.stderr)
+        else:
+            print(f"   provider={provider} 暂未实现抓取，仅显示价目/营业信息", file=sys.stderr)
         per_r.append((r, by_date))
 
     # 收集所有日所有餐厅的菜名（去重）
@@ -481,10 +485,10 @@ def main() -> int:
             "name": r["name"],
             "hours": r.get("hours", ""),
             "location": r.get("location", ""),
-            "price_basic": r.get("price_basic"),
-            "price_fusion": r.get("price_fusion"),
+            "prices": r.get("prices") or {},
             "closed": r.get("closed"),
-            "kitchen_id": r["kitchen_id"],
+            "provider": r.get("provider", "jamix"),
+            "external_url": r.get("sodexo_url"),
             "by_date": days_out,
         })
 
