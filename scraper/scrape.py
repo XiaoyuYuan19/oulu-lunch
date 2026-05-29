@@ -190,7 +190,8 @@ def translate_batch(fi_names: list[str]) -> dict[str, str]:
         print(f"warn: 所有 Gemini 模型失败，跳过翻译。最后错误: {last_err!r}", file=sys.stderr)
         return {}
 
-    zh_lines = [l.strip() for l in text.splitlines() if l.strip()]
+    raw_lines = [l.strip() for l in text.splitlines() if l.strip()]
+    zh_lines = [re.sub(r"^\s*\d+[.．、)、:：]+\s*", "", l).strip() for l in raw_lines]
     return {fi: (zh_lines[i] if i < len(zh_lines) else fi) for i, fi in enumerate(fi_names)}
 
 
