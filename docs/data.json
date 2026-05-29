@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-05-29T10:59:07+00:00",
+  "updated_at": "2026-05-29T11:45:18+00:00",
   "date": 20260529,
   "restaurants": [
     {
@@ -11,14 +11,15 @@
       "dishes": [
         {
           "fi": "Harissa falavelpyörykät",
-          "zh": "哈里萨法拉费丸子",
+          "zh": "Harissa falavelpyörykät",
           "emoji": "🍽️",
           "category": "素菜",
-          "tags": []
+          "tags": [],
+          "image_url": ""
         },
         {
           "fi": "Chilimausteista tomaattikastiketta",
-          "zh": "香辣番茄酱",
+          "zh": "Chilimausteista tomaattikastiketta",
           "emoji": "🍽️",
           "category": "素菜",
           "tags": [
@@ -28,11 +29,12 @@
             "素",
             "心脏",
             "含有机"
-          ]
+          ],
+          "image_url": ""
         },
         {
           "fi": "Yrttiriisiä",
-          "zh": "香草米饭",
+          "zh": "Yrttiriisiä",
           "emoji": "🍽️",
           "category": "素菜",
           "tags": [
@@ -41,11 +43,12 @@
             "无蛋",
             "素",
             "心脏"
-          ]
+          ],
+          "image_url": ""
         },
         {
           "fi": "Paahdettuja kasviksia",
-          "zh": "烤蔬菜",
+          "zh": "Paahdettuja kasviksia",
           "emoji": "🌱",
           "category": "素菜",
           "tags": [
@@ -54,11 +57,12 @@
             "无蛋",
             "素",
             "心脏"
-          ]
+          ],
+          "image_url": ""
         },
         {
           "fi": "Kananpoikaa kermaisessa pippurikasviskastikkeessa",
-          "zh": "奶油胡椒蔬菜烩鸡",
+          "zh": "Kananpoikaa kermaisessa pippurikasviskastikkeessa",
           "emoji": "🍗",
           "category": "午餐",
           "tags": [
@@ -67,22 +71,24 @@
             "无蛋",
             "心脏",
             "含有机"
-          ]
+          ],
+          "image_url": ""
         },
         {
           "fi": "Lempeän mausteista kalapataa",
-          "zh": "温和香料鱼煲",
+          "zh": "Lempeän mausteista kalapataa",
           "emoji": "🐟",
           "category": "午餐",
           "tags": [
             "无麸质",
             "无乳糖",
             "无蛋"
-          ]
+          ],
+          "image_url": ""
         },
         {
           "fi": "Keitettyjä perunoita",
-          "zh": "水煮土豆",
+          "zh": "Keitettyjä perunoita",
           "emoji": "🥔",
           "category": "午餐",
           "tags": [
@@ -91,7 +97,8 @@
             "无蛋",
             "素",
             "心脏"
-          ]
+          ],
+          "image_url": ""
         }
       ]
     },
@@ -104,14 +111,15 @@
       "dishes": [
         {
           "fi": "Harissa falavelpyörykät",
-          "zh": "哈里萨法拉费丸子",
+          "zh": "Harissa falavelpyörykät",
           "emoji": "🍽️",
           "category": "素菜",
-          "tags": []
+          "tags": [],
+          "image_url": ""
         },
         {
           "fi": "Chilimausteista tomaattikastiketta",
-          "zh": "香辣番茄酱",
+          "zh": "Chilimausteista tomaattikastiketta",
           "emoji": "🍽️",
           "category": "素菜",
           "tags": [
@@ -121,11 +129,12 @@
             "素",
             "心脏",
             "含有机"
-          ]
+          ],
+          "image_url": ""
         },
         {
           "fi": "Yrttiriisiä",
-          "zh": "香草米饭",
+          "zh": "Yrttiriisiä",
           "emoji": "🍽️",
           "category": "素菜",
           "tags": [
@@ -134,11 +143,12 @@
             "无蛋",
             "素",
             "心脏"
-          ]
+          ],
+          "image_url": ""
         },
         {
           "fi": "Paahdettuja kasviksia",
-          "zh": "烤蔬菜",
+          "zh": "Paahdettuja kasviksia",
           "emoji": "🌱",
           "category": "素菜",
           "tags": [
@@ -147,11 +157,12 @@
             "无蛋",
             "素",
             "心脏"
-          ]
+          ],
+          "image_url": ""
         },
         {
           "fi": "Kananpoikaa kermaisessa pippurikasviskastikkeessa",
-          "zh": "奶油胡椒蔬菜烩鸡",
+          "zh": "Kananpoikaa kermaisessa pippurikasviskastikkeessa",
           "emoji": "🍗",
           "category": "午餐",
           "tags": [
@@ -160,22 +171,24 @@
             "无蛋",
             "心脏",
             "含有机"
-          ]
+          ],
+          "image_url": ""
         },
         {
           "fi": "Lempeän mausteista kalapataa",
-          "zh": "温和香料鱼煲",
+          "zh": "Lempeän mausteista kalapataa",
           "emoji": "🐟",
           "category": "午餐",
           "tags": [
             "无麸质",
             "无乳糖",
             "无蛋"
-          ]
+          ],
+          "image_url": ""
         },
         {
           "fi": "Keitettyjä perunoita",
-          "zh": "水煮土豆",
+          "zh": "Keitettyjä perunoita",
           "emoji": "🥔",
           "category": "午餐",
           "tags": [
@@ -184,11 +197,12 @@
             "无蛋",
             "素",
             "心脏"
-          ]
+          ],
+          "image_url": ""
         },
         {
           "fi": "Hernesosekeittoa",
-          "zh": "豌豆浓汤",
+          "zh": "Hernesosekeittoa",
           "emoji": "🍽️",
           "category": "汤/沙拉",
           "tags": [
@@ -198,18 +212,20 @@
             "素",
             "心脏",
             "含有机"
-          ]
+          ],
+          "image_url": ""
         },
         {
           "fi": "Kermavaahtoa",
-          "zh": "鲜奶油",
+          "zh": "Kermavaahtoa",
           "emoji": "🍽️",
           "category": "甜点",
           "tags": [
             "无麸质",
             "无乳糖",
             "无蛋"
-          ]
+          ],
+          "image_url": ""
         }
       ]
     },
@@ -222,7 +238,7 @@
       "dishes": [
         {
           "fi": "Linssi-kasvispaistikkaat",
-          "zh": "扁豆蔬菜饼",
+          "zh": "Linssi-kasvispaistikkaat",
           "emoji": "🌱",
           "category": "素菜",
           "tags": [
@@ -232,11 +248,12 @@
             "素",
             "心脏",
             "含有机"
-          ]
+          ],
+          "image_url": ""
         },
         {
           "fi": "Basilika-kermaviilipiimäkastiketta",
-          "zh": "罗勒酸奶酪酱",
+          "zh": "Basilika-kermaviilipiimäkastiketta",
           "emoji": "🍽️",
           "category": "素菜",
           "tags": [
@@ -244,11 +261,12 @@
             "无乳糖",
             "无蛋",
             "心脏"
-          ]
+          ],
+          "image_url": ""
         },
         {
           "fi": "Keitettyjä perunoita",
-          "zh": "水煮土豆",
+          "zh": "Keitettyjä perunoita",
           "emoji": "🥔",
           "category": "素菜",
           "tags": [
@@ -257,22 +275,24 @@
             "无蛋",
             "素",
             "心脏"
-          ]
+          ],
+          "image_url": ""
         },
         {
           "fi": "Lihapyöryköitä",
-          "zh": "肉丸子",
+          "zh": "Lihapyöryköitä",
           "emoji": "🍽️",
           "category": "午餐",
           "tags": [
             "无奶",
             "无蛋",
             "心脏"
-          ]
+          ],
+          "image_url": ""
         },
         {
           "fi": "Pippuri-kermakastiketta",
-          "zh": "胡椒奶油酱",
+          "zh": "Pippuri-kermakastiketta",
           "emoji": "🍽️",
           "category": "午餐",
           "tags": [
@@ -280,11 +300,12 @@
             "无乳糖",
             "无蛋",
             "心脏"
-          ]
+          ],
+          "image_url": ""
         },
         {
           "fi": "Paahdettuja kasviksia",
-          "zh": "烤蔬菜",
+          "zh": "Paahdettuja kasviksia",
           "emoji": "🌱",
           "category": "午餐",
           "tags": [
@@ -293,11 +314,12 @@
             "无蛋",
             "素",
             "心脏"
-          ]
+          ],
+          "image_url": ""
         },
         {
           "fi": "Kalkkuna-kasviskastiketta",
-          "zh": "火鸡蔬菜酱",
+          "zh": "Kalkkuna-kasviskastiketta",
           "emoji": "🍗",
           "category": "午餐",
           "tags": [
@@ -306,11 +328,12 @@
             "无蛋",
             "心脏",
             "含有机"
-          ]
+          ],
+          "image_url": ""
         },
         {
           "fi": "Täysjyväriisiä",
-          "zh": "全麦米饭",
+          "zh": "Täysjyväriisiä",
           "emoji": "🍽️",
           "category": "午餐",
           "tags": [
@@ -319,30 +342,33 @@
             "无蛋",
             "素",
             "心脏"
-          ]
+          ],
+          "image_url": ""
         },
         {
           "fi": "BBQ-broilerpizzaa",
-          "zh": "烧烤鸡肉披萨",
+          "zh": "BBQ-broilerpizzaa",
           "emoji": "🍽️",
           "category": "融合料理",
           "tags": [
             "无乳糖",
             "无蛋"
-          ]
+          ],
+          "image_url": ""
         },
         {
           "fi": "Pannukakkua",
-          "zh": "煎饼",
+          "zh": "Pannukakkua",
           "emoji": "🥞",
           "category": "甜点",
           "tags": [
             "无乳糖"
-          ]
+          ],
+          "image_url": ""
         },
         {
           "fi": "Mansikkahilloa",
-          "zh": "草莓酱",
+          "zh": "Mansikkahilloa",
           "emoji": "🍽️",
           "category": "甜点",
           "tags": [
@@ -350,11 +376,12 @@
             "无奶",
             "无蛋",
             "素"
-          ]
+          ],
+          "image_url": ""
         },
         {
           "fi": "Parsakeittoa",
-          "zh": "芦笋汤",
+          "zh": "Parsakeittoa",
           "emoji": "🍽️",
           "category": "汤/沙拉",
           "tags": [
@@ -362,7 +389,8 @@
             "无乳糖",
             "无蛋",
             "含有机"
-          ]
+          ],
+          "image_url": ""
         }
       ]
     },
