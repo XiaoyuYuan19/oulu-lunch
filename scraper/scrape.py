@@ -127,14 +127,18 @@ SIDE_RE = re.compile(
 )
 
 
-def fetch_meals(customer_id: int, kitchen_id: int, today: int) -> list[dict]:
-    """返回 [{category_fi, category_zh, components: [{fi, tags}]}, ...]。"""
+PREMIUM_RE = re.compile(r"\b(fusion|erikois|special|à la carte)\b", re.IGNORECASE)
+
+
+def fetch_items(customer_id: int, kitchen_id: int, today: int) -> list[dict]:
+    """扁平返回今天的所有菜品：{fi, tags, source_meal, is_premium}。"""
     url = JAMIX_API.format(cust=customer_id, kitchen=kitchen_id)
     r = requests.get(url, headers=HEADERS, timeout=20)
     r.raise_for_status()
     data = r.json()
 
-    meals: list[dict] = []
+    items: list[dict] = []
+    seen: set[str] = set()
     for kitchen in data:
         for mt in kitchen.get("menuTypes", []):
             for menu in mt.get("menus", []):
@@ -142,40 +146,30 @@ def fetch_meals(customer_id: int, kitchen_id: int, today: int) -> list[dict]:
                     if day.get("date") != today:
                         continue
                     for opt in day.get("mealoptions", []):
-                        cat_fi = (opt.get("name") or "").strip()
-                        components: list[dict] = []
-                        seen: set[str] = set()
+                        source = (opt.get("name") or "").strip()
+                        premium = bool(PREMIUM_RE.search(source))
                         for mi in opt.get("menuItems", []):
                             name = clean_name((mi.get("name") or "").strip())
                             if not name or name in seen:
                                 continue
                             seen.add(name)
-                            components.append({
+                            items.append({
                                 "fi": name,
                                 "tags": parse_diets(mi.get("diets")),
+                                "source_meal": source,
+                                "is_premium": premium,
                             })
-                        if components:
-                            meals.append({
-                                "category_fi": cat_fi,
-                                "category_zh": map_category(cat_fi),
-                                "components": components,
-                            })
-    return meals
-
-
-def pick_main(components: list[dict]) -> dict | None:
-    """套餐里挑代表主菜（图片用它搜）。第一个不是配菜/酱的组件。"""
-    for c in components:
-        if not SIDE_RE.search(c["fi"]):
-            return c
-    return components[0] if components else None
+    return items
 
 
 GEMINI_MODELS = ["gemini-2.5-flash", "gemini-2.0-flash", "gemini-1.5-flash"]
 
 
+VALID_ROLES = {"main", "staple", "sauce", "salad", "dessert", "side"}
+
+
 def translate_batch(fi_names: list[str]) -> dict[str, dict[str, str]]:
-    """对每个菜名返回 {'zh': 中文, 'en_search': 英文图片关键词}"""
+    """对每个菜名返回 {'zh': 中文, 'en_search': 英文图片关键词, 'role': main/staple/sauce/salad/dessert/side}"""
     if not fi_names:
         return {}
     api_key = os.environ.get("GEMINI_API_KEY") or os.environ.get("GOOGLE_API_KEY")
@@ -194,16 +188,25 @@ def translate_batch(fi_names: list[str]) -> dict[str, dict[str, str]]:
     class Translation(BaseModel):
         zh: str
         en_search: str
+        role: str  # main/staple/sauce/salad/dessert/side
 
     client = genai.Client(api_key=api_key)
     numbered = "\n".join(f"{i+1}. {n}" for i, n in enumerate(fi_names))
     prompt = (
-        "下面是带编号的芬兰菜名。对每一条输出一个对象：\n"
-        '  zh = 简短自然的中文菜名（不带编号/原文/解释）\n'
-        '  en_search = 2-3 个英文检索关键词，能在 Pexels 图库搜到一张代表该菜的图，'
-        '用通用菜式描述（如 "pea soup", "meatballs in cream sauce", "pancake jam"），'
-        "不要音译。\n"
-        "返回 JSON 数组，长度与编号数完全一致，顺序对齐。\n\n"
+        "下面是带编号的芬兰餐厅菜名。芬兰学生餐的点法：选一道主菜（main）"
+        "+ 配的主食（staple，米饭/土豆/面食）+ 自助沙拉吧 + 面包 + 一杯餐饮。"
+        "对每一条输出对象：\n"
+        '  zh = 简短自然的中文菜名（不带编号/原文/解释/标点）\n'
+        '  en_search = 2-3 个英文 Pexels 检索关键词，描述菜式外观，不要音译\n'
+        '  role = 该菜在套餐里的角色，必为以下之一：\n'
+        '    "main"    = 主菜（蛋白质/主角，如鸡/鱼/肉丸/falafel/扁豆饼/披萨）\n'
+        '    "staple"  = 主食（米饭/土豆/面条/麦饭/薯泥/烤土豆等碳水底盘）\n'
+        '    "sauce"   = 浇汁/酱（pippurikastike, kermakastike, tomaattikastike 等）\n'
+        '    "salad"   = 沙拉/凉拌\n'
+        '    "dessert" = 甜点/糕点/果酱/打发奶油\n'
+        '    "side"    = 配蔬菜（烤蔬菜/煮蔬菜，非碳水非主菜）\n'
+        '汤类（keitto/keittoa）算 "main"。\n'
+        "返回 JSON 数组，长度与编号一致，顺序对齐。\n\n"
         f"{numbered}"
     )
 
@@ -247,9 +250,12 @@ def translate_batch(fi_names: list[str]) -> dict[str, dict[str, str]]:
         if i < len(arr) and isinstance(arr[i], dict):
             zh = (arr[i].get("zh") or fi).strip()
             en = (arr[i].get("en_search") or "").strip()
-            out[fi] = {"zh": zh, "en_search": en}
+            role = (arr[i].get("role") or "").strip().lower()
+            if role not in VALID_ROLES:
+                role = "side"
+            out[fi] = {"zh": zh, "en_search": en, "role": role}
         else:
-            out[fi] = {"zh": fi, "en_search": ""}
+            out[fi] = {"zh": fi, "en_search": "", "role": "side"}
     return out
 
 
@@ -299,36 +305,32 @@ def main() -> int:
     for r in cfg["restaurants"]:
         print(f"→ {r['name']} (k={r['kitchen_id']})", file=sys.stderr)
         try:
-            meals = fetch_meals(customer_id, r["kitchen_id"], today)
-            n_comp = sum(len(m["components"]) for m in meals)
-            print(f"   {len(meals)} 份套餐 / {n_comp} 个组件", file=sys.stderr)
+            items = fetch_items(customer_id, r["kitchen_id"], today)
+            print(f"   {len(items)} 个菜品", file=sys.stderr)
         except Exception as e:
             print(f"   fetch failed: {e}", file=sys.stderr)
-            meals = []
-        per_restaurant.append((r, meals))
+            items = []
+        per_restaurant.append((r, items))
 
     all_names: list[str] = []
     seen: set[str] = set()
-    for _, meals in per_restaurant:
-        for m in meals:
-            for c in m["components"]:
-                if c["fi"] not in seen:
-                    seen.add(c["fi"])
-                    all_names.append(c["fi"])
+    for _, items in per_restaurant:
+        for it in items:
+            if it["fi"] not in seen:
+                seen.add(it["fi"])
+                all_names.append(it["fi"])
 
-    print(f"翻译 {len(all_names)} 个组件…", file=sys.stderr)
+    print(f"翻译+分类 {len(all_names)} 个菜品…", file=sys.stderr)
     tr_map = translate_batch(all_names)
 
-    # 每份套餐选一个主菜出图
+    # 只为主菜抓图
     main_queries: list[str] = []
-    for _, meals in per_restaurant:
-        for m in meals:
-            main = pick_main(m["components"])
-            m["_main_fi"] = main["fi"] if main else None
-            en = tr_map.get(m["_main_fi"], {}).get("en_search", "") if main else ""
-            m["_main_en"] = en
-            if en and en not in main_queries:
-                main_queries.append(en)
+    for _, items in per_restaurant:
+        for it in items:
+            if tr_map.get(it["fi"], {}).get("role") == "main":
+                en = tr_map[it["fi"]].get("en_search", "")
+                if en and en not in main_queries:
+                    main_queries.append(en)
 
     print(f"抓图 {len(main_queries)} 个主菜…", file=sys.stderr)
     img_map = fetch_images(main_queries)
@@ -338,37 +340,37 @@ def main() -> int:
         "date": today,
         "restaurants": [],
     }
-    for r, meals in per_restaurant:
-        out_meals = []
-        for m in meals:
-            comps = []
-            for c in m["components"]:
-                tr = tr_map.get(c["fi"], {})
-                comps.append({
-                    "fi": c["fi"],
-                    "zh": tr.get("zh") or c["fi"],
-                    "emoji": emoji_for(c["fi"]),
-                    "tags": c["tags"],
-                    "is_main": c["fi"] == m["_main_fi"],
-                })
-            main_zh = ""
-            if m["_main_fi"]:
-                main_zh = tr_map.get(m["_main_fi"], {}).get("zh") or m["_main_fi"]
-            out_meals.append({
-                "category": m["category_zh"],
-                "category_fi": m["category_fi"],
-                "main_fi": m["_main_fi"],
-                "main_zh": main_zh,
-                "image_url": img_map.get(m["_main_en"], ""),
-                "components": comps,
-            })
+    for r, items in per_restaurant:
+        buckets: dict[str, list[dict]] = {k: [] for k in ("main", "staple", "sauce", "salad", "dessert", "side")}
+        for it in items:
+            tr = tr_map.get(it["fi"], {})
+            role = tr.get("role") or "side"
+            zh = tr.get("zh") or it["fi"]
+            entry = {
+                "fi": it["fi"],
+                "zh": zh,
+                "emoji": emoji_for(it["fi"]),
+                "tags": it["tags"],
+                "is_premium": it["is_premium"],
+                "source": it["source_meal"],
+            }
+            if role == "main":
+                entry["image_url"] = img_map.get(tr.get("en_search", ""), "")
+            buckets.setdefault(role, []).append(entry)
+
         output["restaurants"].append({
             "name": r["name"],
             "hours": r.get("hours", ""),
-            "price": r.get("price", ""),
             "location": r.get("location", ""),
+            "price_basic": r.get("price_basic"),
+            "price_fusion": r.get("price_fusion"),
             "kitchen_id": r["kitchen_id"],
-            "set_meals": out_meals,
+            "mains":    buckets["main"],
+            "staples":  buckets["staple"],
+            "sauces":   buckets["sauce"],
+            "salads":   buckets["salad"],
+            "desserts": buckets["dessert"],
+            "sides":    buckets["side"],
         })
 
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)

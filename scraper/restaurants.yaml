@@ -4,6 +4,9 @@
 # 的 kitchenName 字段确认。
 #
 # 改餐厅：注释掉/删掉不要的；新加的把 kitchen_id 填对就行。
+# price_basic = 学生价 Peruslounas（KELA 补贴线，含自助沙拉/面包/水/饮料）
+# price_fusion = 学生价 Fusion / Erikoislounas（特殊餐，通常不在 KELA 补贴里）
+# null 表示该餐厅不提供这条线。
 
 provider: jamix
 customer_id: 93077
@@ -12,20 +15,24 @@ restaurants:
   - name: Foobar
     kitchen_id: 69
     hours: "10:30-14:30"
-    price: "2.95"
     location: Linnanmaa
+    price_basic: null      # Foobar 没有 Peruslounas 这条线
+    price_fusion: "5,90"
   - name: Kerttu
     kitchen_id: 70
     hours: "10:30-14:30"
-    price: "2.95"
     location: Linnanmaa
-  - name: Medisiina
-    kitchen_id: 75
-    hours: "10:30-14:30"
-    price: "2.95"
-    location: Kontinkangas (医学院)
+    price_basic: "1,24"
+    price_fusion: null
   - name: Mara
     kitchen_id: 49
     hours: "10:30-14:30"
-    price: "2.95"
     location: Linnanmaa
+    price_basic: "1,24"
+    price_fusion: "5,90"
+  - name: Medisiina
+    kitchen_id: 75
+    hours: "10:30-14:30"
+    location: Kontinkangas (医学院)
+    price_basic: "1,24"    # 待核实
+    price_fusion: "5,90"   # 待核实
