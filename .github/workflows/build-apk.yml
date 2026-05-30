@@ -83,12 +83,42 @@ jobs:
           echo "VERSION=1.0.$N" >> "$GITHUB_ENV"
           jq '{packageId, appVersionName, appVersionCode, signingKey}' twa-manifest.json
 
+      - name: Probe Bubblewrap SDK detection
+        run: |
+          BWLIB=$(npm root -g)/@bubblewrap/cli/node_modules/@bubblewrap/core
+          test -d "$BWLIB" || BWLIB=$(npm root -g)/@bubblewrap/core
+          echo "core at: $BWLIB"
+          NODE_PATH="$(npm root -g)" node -e "
+          (async () => {
+            const { AndroidSdkTools, Config, JdkHelper } = require('@bubblewrap/core');
+            const cfg = new Config(process.env.JAVA_HOME, process.env.ANDROID_HOME);
+            console.log('JDK:', cfg.jdkPath);
+            console.log('SDK:', cfg.androidSdkPath);
+            try {
+              const jdk = new JdkHelper(process, cfg);
+              const log = { debug:console.log, info:console.log, warn:console.warn, error:console.error, newLog:()=>log };
+              const sdk = await AndroidSdkTools.create(process, cfg, jdk, log);
+              console.log('SDK Tools created OK');
+            } catch (e) {
+              console.error('FAIL:', e.message);
+              console.error(e.stack || '');
+              process.exit(2);
+            }
+          })();
+          " || (echo "--- Bubblewrap 拒绝 SDK，看路径详情 ---" && \
+                echo "ANDROID_HOME=$ANDROID_HOME" && \
+                ls -la "$ANDROID_HOME" && \
+                echo "--- cmdline-tools ---" && ls -la "$ANDROID_HOME/cmdline-tools" 2>/dev/null && \
+                ls -la "$ANDROID_HOME/cmdline-tools/latest/bin" 2>/dev/null && \
+                echo "--- build-tools ---" && ls -la "$ANDROID_HOME/build-tools" 2>/dev/null && \
+                echo "--- platforms ---" && ls -la "$ANDROID_HOME/platforms" 2>/dev/null && \
+                echo "--- platform-tools ---" && ls -la "$ANDROID_HOME/platform-tools" 2>/dev/null && \
+                exit 1)
+
       - name: Scaffold Android project from twa-manifest.json
         working-directory: android
         run: |
-          # update 是非交互的，从 twa-manifest.json 直接生成完整 Android 项目脚手架
           bubblewrap update --skipVersionUpgrade
-          ls -la
           test -f app/build.gradle && echo "scaffold ok" || (echo "no scaffold"; exit 1)
 
       - name: Build & sign APK
