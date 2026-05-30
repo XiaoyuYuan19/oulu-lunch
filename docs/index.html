@@ -29,11 +29,11 @@
     <nav id="dayTabs" class="flex overflow-x-auto gap-1 px-2 pb-2 -mx-px"></nav>
   </header>
 
-  <main id="restaurants" class="p-4 space-y-4 pb-12">
+  <main id="restaurants" class="p-4 space-y-4 pb-12 md:max-w-4xl md:mx-auto">
     <div class="text-center text-slate-400 py-16">加载中…</div>
   </main>
 
-  <section id="installHint" class="mx-4 mb-8 rounded-xl bg-white border border-slate-200 overflow-hidden">
+  <section id="installHint" class="mx-4 mb-8 rounded-xl bg-white border border-slate-200 overflow-hidden md:max-w-4xl md:mx-auto">
     <details>
       <summary class="px-4 py-3 cursor-pointer font-medium text-slate-900 flex items-center gap-2">
         <span>📲</span><span>装到手机</span>
@@ -61,6 +61,14 @@
     function parseYmd(n) {
       const s = String(n);
       return new Date(+s.slice(0,4), +s.slice(4,6)-1, +s.slice(6,8));
+    }
+    function localTodayYmd() {
+      const d = new Date();
+      return d.getFullYear()*10000 + (d.getMonth()+1)*100 + d.getDate();
+    }
+    function isWeekendYmd(ymd) {
+      const w = parseYmd(ymd).getDay();
+      return w === 0 || w === 6;
     }
     function tabLabel(ymd, todayYmd) {
       const d = parseYmd(ymd);
@@ -111,7 +119,7 @@
       localStorage.setItem(imgKey(restName, ymd, fi), String((cur + 1) % n));
     }
 
-    function renderMain(d, ctx) {
+    function renderMain(d, ctx, extraCls = '') {
       const urls = (d.image_urls && d.image_urls.length) ? d.image_urls
                   : (d.image_url ? [d.image_url] : []);
       const idx = currentImgIdx(ctx.restName, ctx.ymd, d.fi, urls.length);
@@ -132,7 +140,7 @@
         : `<div class="w-28 h-28 sm:w-32 sm:h-32 bg-slate-50 flex items-center justify-center text-5xl flex-shrink-0">${d.emoji || '🍽️'}</div>`;
       const tags = tagsHtml(d.tags);
       return `
-        <article class="flex items-stretch border-b border-slate-100 last:border-b-0">
+        <article class="flex items-stretch border-b border-slate-100 last:border-b-0 ${extraCls}">
           ${media}
           <div class="flex-1 min-w-0 px-3 py-2.5 flex flex-col justify-center">
             <div class="text-base font-semibold text-slate-900 leading-snug">${d.zh || d.fi}</div>
@@ -174,6 +182,13 @@
 
     function mainsSection(label, priceTriple_, kelaIncluded, items, accentCls, ctx) {
       if (!items || !items.length) return '';
+      // 多个主菜时桌面走 2 列网格；手机端始终纵向堆叠
+      const gridCls = items.length > 1
+        ? 'md:grid md:grid-cols-2 md:gap-3 md:p-3 md:pt-2'
+        : '';
+      const cardCls = items.length > 1
+        ? 'md:border-b-0 md:rounded-xl md:border md:border-slate-200 md:bg-slate-50/40 md:overflow-hidden'
+        : '';
       return `
         <div class="border-t border-slate-100">
           <div class="px-4 pt-3 pb-2 flex items-start justify-between gap-3 ${accentCls}">
@@ -183,7 +198,7 @@
             </div>
             <div class="text-right">${priceTriple_}</div>
           </div>
-          <div>${items.map(d => renderMain(d, ctx)).join('')}</div>
+          <div class="${gridCls}">${items.map(d => renderMain(d, ctx, cardCls)).join('')}</div>
         </div>`;
     }
 
@@ -228,8 +243,10 @@
       const closedHint = r.closed
         ? `<p class="text-[11px] text-rose-600 mt-1">夏休：${r.closed}</p>` : '';
       const isSodexo = r.provider === 'sodexo_hilla';
+      const weekend = isWeekendYmd(ymd);
       const emptyMsg = empty
         ? (r.closed ? `闭店中（${r.closed}）`
+           : weekend ? '周末关门 · 周一见'
            : isSodexo ? 'Sodexo 还没排（通常每周日/周一更新下周菜单）'
            : '这天没抓到菜单')
         : '';
@@ -266,7 +283,7 @@
 
     function renderTabs() {
       const tabs = document.getElementById('dayTabs');
-      const today = DATA.today;
+      const today = localTodayYmd();
       tabs.innerHTML = (DATA.dates || []).map(ymd => {
         const lab = tabLabel(ymd, today);
         const active = ymd === CURRENT_YMD;
@@ -292,11 +309,45 @@
     function renderBody() {
       const main = document.getElementById('restaurants');
       const html = (DATA.restaurants || [])
-        .map(r => renderRestaurant(r, CURRENT_YMD, DATA.today))
+        .map(r => renderRestaurant(r, CURRENT_YMD, localTodayYmd()))
         .join('') + `
         <p class="text-center text-xs text-slate-400 pt-2">数据：Juvenes / Jamix · 翻译：Gemini · 图：Pexels</p>`;
       main.innerHTML = html || '<div class="text-center text-slate-400 py-16">尚无数据，等 GitHub Action 跑一次</div>';
     }
+
+    // 触屏左右滑动切天（手机用；桌面无 touch 不触发）
+    (function setupSwipe() {
+      const area = document.getElementById('restaurants');
+      if (!area) return;
+      let sx = 0, sy = 0, active = false;
+      area.addEventListener('touchstart', (e) => {
+        if (e.touches.length !== 1) { active = false; return; }
+        // 主菜图片上的 ↻ 按钮等交互元素不参与滑动
+        if (e.target.closest('button, a, input')) { active = false; return; }
+        sx = e.touches[0].clientX;
+        sy = e.touches[0].clientY;
+        active = true;
+      }, { passive: true });
+      area.addEventListener('touchend', (e) => {
+        if (!active) return;
+        active = false;
+        const t = e.changedTouches[0];
+        const dx = t.clientX - sx;
+        const dy = t.clientY - sy;
+        if (Math.abs(dx) < 60 || Math.abs(dx) < Math.abs(dy) * 1.3) return;
+        const dates = (DATA && DATA.dates) || [];
+        const idx = dates.indexOf(CURRENT_YMD);
+        if (idx < 0) return;
+        const next = idx + (dx < 0 ? 1 : -1);
+        if (next < 0 || next >= dates.length) return;
+        CURRENT_YMD = dates[next];
+        renderTabs();
+        renderBody();
+        // 让选中 tab 滚进视野
+        const btn = document.querySelector(`#dayTabs button[data-ymd="${CURRENT_YMD}"]`);
+        if (btn) btn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+      }, { passive: true });
+    })();
 
     // 全局点击代理：处理"换图"按钮
     document.addEventListener('click', (e) => {
@@ -327,11 +378,9 @@
         const r = await fetch('data.json?t=' + Date.now(), { cache: 'no-store' });
         if (!r.ok) throw new Error('HTTP ' + r.status);
         DATA = await r.json();
-        CURRENT_YMD = DATA.today || (DATA.dates || [])[0];
-        // 如果今天不在 dates 列表里（周末），落到第一个
-        if (!DATA.dates || !DATA.dates.includes(CURRENT_YMD)) {
-          CURRENT_YMD = (DATA.dates || [])[0];
-        }
+        const today = localTodayYmd();
+        const dates = DATA.dates || [];
+        CURRENT_YMD = dates.includes(today) ? today : dates[0];
         document.getElementById('updated').textContent = DATA.updated_at
           ? '更新于 ' + new Date(DATA.updated_at).toLocaleString('zh-CN', {month:'numeric', day:'numeric', hour:'2-digit', minute:'2-digit'})
           : '';

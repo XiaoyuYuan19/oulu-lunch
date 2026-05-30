@@ -105,13 +105,12 @@ def today_yyyymmdd() -> int:
     return now.year * 10000 + now.month * 100 + now.day
 
 
-def upcoming_workdays(n: int = 5) -> list[int]:
-    """从今天起接下来 n 个工作日（YYYYMMDD int）。周末跳过。"""
+def upcoming_days(n: int = 7) -> list[int]:
+    """从今天起接下来 n 天（YYYYMMDD int），含周末。"""
     out: list[int] = []
     cur = datetime.now(TZ_HELSINKI).date()
-    while len(out) < n:
-        if cur.weekday() < 5:  # Mon=0 ... Fri=4
-            out.append(cur.year * 10000 + cur.month * 100 + cur.day)
+    for _ in range(n):
+        out.append(cur.year * 10000 + cur.month * 100 + cur.day)
         cur = cur + timedelta(days=1)
     return out
 
@@ -483,7 +482,7 @@ def main() -> int:
     with open(CONFIG, encoding="utf-8") as f:
         cfg = yaml.safe_load(f)
     customer_id = cfg["customer_id"]
-    dates = upcoming_workdays(5)
+    dates = upcoming_days(7)
     date_set = set(dates)
     print(f"dates={dates}", file=sys.stderr)
 
