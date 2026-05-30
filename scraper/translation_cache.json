@@ -34,6 +34,11 @@
     "role": "main",
     "zh": "蔬菜鸡肉千层面"
   },
+  "Broilerin paistia kasviskastikkeessa": {
+    "en_search": "roasted chicken, chicken stew",
+    "role": "main",
+    "zh": "蔬菜酱烤鸡"
+  },
   "Broilerlasagnettea": {
     "en_search": "chicken lasagna, baked pasta, layered pasta",
     "role": "main",
@@ -124,6 +129,11 @@
     "role": "main",
     "zh": "肉末通心粉盒"
   },
+  "Jauhelihalasagnettea": {
+    "en_search": "meat lasagna, pasta bake",
+    "role": "main",
+    "zh": "肉酱千层面"
+  },
   "Jauhelihalasagnettea ja uunikasviksia": {
     "en_search": "meat lasagna, baked vegetables, pasta bake",
     "role": "main",
@@ -149,6 +159,11 @@
     "role": "main",
     "zh": "大豆根菜咖喱"
   },
+  "Kalapuikkoja": {
+    "en_search": "fish sticks, fried fish",
+    "role": "main",
+    "zh": "炸鱼条"
+  },
   "Kalkkuna-kasviskastiketta": {
     "en_search": "Turkey vegetable stew",
     "role": "main",
@@ -158,6 +173,11 @@
     "en_search": "creamy chicken, pepper sauce, vegetables",
     "role": "main",
     "zh": "奶油胡椒蔬菜鸡肉"
+  },
+  "Kananpoikaa teriyakikastikkeessa": {
+    "en_search": "teriyaki chicken, chicken stir-fry",
+    "role": "main",
+    "zh": "照烧鸡肉"
   },
   "Kasvisborssikeittoa": {
     "en_search": "vegetable borscht, red soup, beet soup",
@@ -173,6 +193,11 @@
     "en_search": "vegetable lasagna, baked vegetables, pasta bake",
     "role": "main",
     "zh": "蔬菜千层面和烤蔬菜"
+  },
+  "Kasvisrisottoa": {
+    "en_search": "vegetable risotto, creamy rice",
+    "role": "main",
+    "zh": "蔬菜烩饭"
   },
   "Keitettyjä perunoita": {
     "en_search": "boiled potatoes, whole potatoes",
@@ -219,6 +244,11 @@
     "role": "main",
     "zh": "花椰菜蓝纹奶酪汤"
   },
+  "Kurpitsa-porkkanakeittoa": {
+    "en_search": "pumpkin carrot soup, creamy soup",
+    "role": "main",
+    "zh": "南瓜胡萝卜汤"
+  },
   "Kylmäsavulohi-cappellipastapaistosta": {
     "en_search": "Smoked salmon pasta bake",
     "role": "main",
@@ -263,6 +293,16 @@
     "en_search": "Strawberry quark dessert",
     "role": "dessert",
     "zh": "草莓夸克甜点"
+  },
+  "Meillä tehtyä perunamuusia": {
+    "en_search": "mashed potatoes, potato puree",
+    "role": "staple",
+    "zh": "自制土豆泥"
+  },
+  "Mustaherukkarahkaa": {
+    "en_search": "blackcurrant quark, berry dessert",
+    "role": "dessert",
+    "zh": "黑加仑夸克甜点"
   },
   "Nakki-pekonistroganoffia": {
     "en_search": "sausage stroganoff, bacon, creamy stew",
@@ -329,6 +369,21 @@
     "role": "main",
     "zh": "豆制品蔬菜焗烤"
   },
+  "Sweet & Sour Broilerikastiketta": {
+    "en_search": "sweet sour chicken, chicken sauce",
+    "role": "main",
+    "zh": "糖醋鸡肉酱"
+  },
+  "Tilli-kermakastiketta": {
+    "en_search": "dill cream sauce, white sauce",
+    "role": "sauce",
+    "zh": "莳萝奶油酱"
+  },
+  "Tofu-kikhernepihvejä": {
+    "en_search": "tofu patties, chickpea fritters",
+    "role": "main",
+    "zh": "豆腐鹰嘴豆饼"
+  },
   "Tomaatti-korianteri salsaa": {
     "en_search": "Tomato cilantro salsa",
     "role": "sauce",
@@ -354,6 +409,11 @@
     "role": "staple",
     "zh": "全麦米饭"
   },
+  "Uunimakkaraa": {
+    "en_search": "baked sausage, oven sausage",
+    "role": "main",
+    "zh": "烤香肠"
+  },
   "Vadelma-salmiakkimoussea": {
     "en_search": "raspberry mousse, dessert mousse, sweet dessert",
     "role": "dessert",
@@ -368,6 +428,11 @@
     "en_search": "white chocolate pudding, creamy dessert",
     "role": "dessert",
     "zh": "白巧克力布丁"
+  },
+  "Vegaanista jauhis-perunasosevuokaa": {
+    "en_search": "vegan casserole, potato bake",
+    "role": "main",
+    "zh": "素肉土豆泥砂锅"
   },
   "Viherpippurihärkää": {
     "en_search": "Green pepper beef",
