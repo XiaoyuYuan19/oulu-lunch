@@ -54,6 +54,11 @@
     "role": "main",
     "zh": "咖喱菠萝酱鸡肉丸"
   },
+  "Cappuccinomoussea": {
+    "en_search": "cappuccino mousse dessert",
+    "role": "dessert",
+    "zh": "卡布奇诺慕斯"
+  },
   "Capuccinomoussea": {
     "en_search": "cappuccino mousse, coffee dessert, creamy dessert",
     "role": "dessert",
@@ -204,6 +209,11 @@
     "role": "staple",
     "zh": "煮土豆"
   },
+  "Kermaista broilerkeittoa": {
+    "en_search": "creamy chicken soup",
+    "role": "main",
+    "zh": "奶油鸡肉汤"
+  },
   "Kermaista kanakeittoa": {
     "en_search": "creamy chicken soup, chicken stew",
     "role": "main",
@@ -344,6 +354,11 @@
     "role": "sauce",
     "zh": "胡萝卜豌豆酱"
   },
+  "Possu-kasvis-nuudeliwokkia ja uunikasviksia": {
+    "en_search": "pork noodle wok",
+    "role": "main",
+    "zh": "猪肉蔬菜炒面配烤蔬菜"
+  },
   "Puolukkasurvosta": {
     "en_search": "lingonberry jam, red berry sauce, fruit preserve",
     "role": "dessert",
@@ -363,6 +378,11 @@
     "en_search": "brown gravy, meat sauce, savory sauce",
     "role": "sauce",
     "zh": "棕色肉汁"
+  },
+  "Soija-kaalilaatikkoa, puolukkasurvosta ja uunikasviksia": {
+    "en_search": "cabbage casserole lingonberry",
+    "role": "main",
+    "zh": "豆制卷心菜砂锅配越橘酱和烤蔬菜"
   },
   "Soija-kasviskiusausta": {
     "en_search": "soy vegetable bake, casserole, baked dish",
