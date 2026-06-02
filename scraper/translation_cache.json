@@ -69,6 +69,11 @@
     "role": "main",
     "zh": "辣椒烤肉砂锅"
   },
+  "Chilillä maustettua kikhernepataa, höyrytettyä riisiä ja uunikasviksia": {
+    "en_search": "chickpea stew rice",
+    "role": "main",
+    "zh": "辣椒鹰嘴豆炖菜"
+  },
   "Chilimausteista tomaattikastiketta": {
     "en_search": "chili tomato sauce, red sauce",
     "role": "sauce",
@@ -164,10 +169,25 @@
     "role": "main",
     "zh": "大豆根菜咖喱"
   },
+  "Kala-pastapaistosta": {
+    "en_search": "fish pasta bake",
+    "role": "main",
+    "zh": "鱼肉意面焗饭"
+  },
+  "Kalakeittoa": {
+    "en_search": "fish soup bowl",
+    "role": "main",
+    "zh": "鱼汤"
+  },
   "Kalapuikkoja": {
     "en_search": "fish sticks, fried fish",
     "role": "main",
     "zh": "炸鱼条"
+  },
+  "Kalapuikkoja, talon perunamuusia, sitruuna-tillikastiketta ja uunikasviksia": {
+    "en_search": "fish sticks mashed potatoes",
+    "role": "main",
+    "zh": "炸鱼条配土豆泥"
   },
   "Kalkkuna-kasviskastiketta": {
     "en_search": "Turkey vegetable stew",
@@ -238,6 +258,11 @@
     "en_search": "chickpea vegetable tagine, Moroccan stew, hearty stew",
     "role": "main",
     "zh": "鹰嘴豆蔬菜塔吉锅"
+  },
+  "Kinkku-pastapaistosta": {
+    "en_search": "ham pasta bake",
+    "role": "main",
+    "zh": "火腿意面焗饭"
   },
   "Kirjolohikiusausta": {
     "en_search": "rainbow trout casserole, fish bake",
@@ -344,6 +369,11 @@
     "role": "main",
     "zh": "芦笋汤"
   },
+  "Persikkajogurttia": {
+    "en_search": "peach yogurt cup",
+    "role": "dessert",
+    "zh": "桃子酸奶"
+  },
   "Pippuri-kermakastiketta": {
     "en_search": "pepper cream sauce, white sauce, creamy sauce",
     "role": "sauce",
@@ -374,10 +404,20 @@
     "role": "staple",
     "zh": "炸薯条"
   },
+  "Rapeat kalapalat": {
+    "en_search": "crispy fish pieces",
+    "role": "main",
+    "zh": "脆皮鱼块"
+  },
   "Ruskeaa kastiketta": {
     "en_search": "brown gravy, meat sauce, savory sauce",
     "role": "sauce",
     "zh": "棕色肉汁"
+  },
+  "Sitruuna-tilli-kermakastiketta": {
+    "en_search": "lemon dill cream sauce",
+    "role": "sauce",
+    "zh": "柠檬莳萝奶油酱"
   },
   "Soija-kaalilaatikkoa, puolukkasurvosta ja uunikasviksia": {
     "en_search": "cabbage casserole lingonberry",
