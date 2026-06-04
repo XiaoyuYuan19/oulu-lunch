@@ -49,6 +49,16 @@
     "role": "main",
     "zh": "蔬菜酱烤鸡"
   },
+  "Broileripastapaistosta": {
+    "en_search": "chicken pasta bake casserole",
+    "role": "main",
+    "zh": "鸡肉意面焗饭"
+  },
+  "Broileririsottoa": {
+    "en_search": "chicken risotto creamy",
+    "role": "main",
+    "zh": "鸡肉烩饭"
+  },
   "Broilerlasagnettea": {
     "en_search": "chicken lasagna, baked pasta, layered pasta",
     "role": "main",
@@ -139,6 +149,11 @@
     "role": "main",
     "zh": "蚕豆意面焗烤"
   },
+  "Intialaista kasvis-linssihöystöä, höyrytettyä riisiä ja uunikasviksia": {
+    "en_search": "Indian vegetable lentil stew",
+    "role": "main",
+    "zh": "印度素食扁豆炖菜"
+  },
   "Intialaista kasvis-linssihöystöä, täysjyväkauraa ja uunikasviksia": {
     "en_search": "Lentil stew, whole grain, roasted vegetables",
     "role": "main",
@@ -183,6 +198,11 @@
     "en_search": "Cheesy rainbow trout soup",
     "role": "main",
     "zh": "芝士虹鳟鱼汤"
+  },
+  "Juustoista uunimakkaraa": {
+    "en_search": "cheesy baked sausage",
+    "role": "main",
+    "zh": "芝士烤香肠"
   },
   "Juustoista vihanneskeittoa": {
     "en_search": "cheese vegetable soup, creamy soup, hearty soup",
@@ -254,6 +274,11 @@
     "role": "main",
     "zh": "蔬菜烩饭"
   },
+  "Kebabkiusausta": {
+    "en_search": "kebab casserole baked",
+    "role": "main",
+    "zh": "烤肉串砂锅"
+  },
   "Keitettyjä perunoita": {
     "en_search": "boiled potatoes, whole potatoes",
     "role": "staple",
@@ -293,6 +318,11 @@
     "en_search": "chickpea vegetable tagine, Moroccan stew, hearty stew",
     "role": "main",
     "zh": "鹰嘴豆蔬菜塔吉锅"
+  },
+  "Kikherne-minestronekeittoa": {
+    "en_search": "chickpea minestrone soup",
+    "role": "main",
+    "zh": "鹰嘴豆意式蔬菜汤"
   },
   "Kinkku-pastapaistosta": {
     "en_search": "ham pasta bake",
@@ -339,6 +369,11 @@
     "role": "main",
     "zh": "扁豆红薯泥"
   },
+  "Linssi-kasviscurrya": {
+    "en_search": "lentil vegetable curry",
+    "role": "main",
+    "zh": "扁豆蔬菜咖喱"
+  },
   "Linssi-kasviskiusausta ja uunikasviksia": {
     "en_search": "lentil casserole, baked vegetables, vegetarian gratin",
     "role": "main",
@@ -349,10 +384,20 @@
     "role": "main",
     "zh": "扁豆蔬菜饼"
   },
+  "Linssicurrya": {
+    "en_search": "lentil curry bowl",
+    "role": "main",
+    "zh": "扁豆咖喱"
+  },
   "Mac&cheese Luomutofusta": {
     "en_search": "Tofu mac cheese",
     "role": "main",
     "zh": "有机豆腐通心粉奶酪"
+  },
+  "Makkarakastiketta": {
+    "en_search": "sausage gravy sauce",
+    "role": "main",
+    "zh": "香肠酱"
   },
   "Mansikkahilloa": {
     "en_search": "Strawberry jam spread",
@@ -363,6 +408,11 @@
     "en_search": "Strawberry quark dessert",
     "role": "dessert",
     "zh": "草莓夸克甜点"
+  },
+  "Marjamoussea": {
+    "en_search": "berry fruit mousse",
+    "role": "dessert",
+    "zh": "浆果慕斯"
   },
   "Marjaunelma": {
     "en_search": "Berry dessert, fruit compote, whipped cream",
@@ -378,6 +428,11 @@
     "en_search": "blackcurrant quark, berry dessert",
     "role": "dessert",
     "zh": "黑加仑夸克甜点"
+  },
+  "Mustajuurikeittoa": {
+    "en_search": "salsify cream soup",
+    "role": "main",
+    "zh": "婆罗门参汤"
   },
   "Nakki-pekonistroganoffia": {
     "en_search": "sausage stroganoff, bacon, creamy stew",
@@ -409,6 +464,11 @@
     "role": "dessert",
     "zh": "煎饼配果酱"
   },
+  "Parsakaali-kukkakaalikeittoa": {
+    "en_search": "broccoli cauliflower soup",
+    "role": "main",
+    "zh": "西兰花菜花汤"
+  },
   "Parsakeittoa": {
     "en_search": "Asparagus soup bowl",
     "role": "main",
@@ -418,6 +478,11 @@
     "en_search": "peach yogurt cup",
     "role": "dessert",
     "zh": "桃子酸奶"
+  },
+  "Persikkarahkaa": {
+    "en_search": "peach quark dessert",
+    "role": "dessert",
+    "zh": "桃子奶酪甜点"
   },
   "Pippuri-kermakastiketta": {
     "en_search": "pepper cream sauce, white sauce, creamy sauce",
@@ -470,6 +535,11 @@
     "zh": "棕色肉汁"
   },
   "Sitruuna-tilli-kermakastiketta": {
+    "en_search": "lemon dill cream sauce",
+    "role": "sauce",
+    "zh": "柠檬莳萝奶油酱"
+  },
+  "Sitruunaista tilli-kermakastiketta": {
     "en_search": "lemon dill cream sauce",
     "role": "sauce",
     "zh": "柠檬莳萝奶油酱"
