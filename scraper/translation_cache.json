@@ -89,6 +89,11 @@
     "role": "dessert",
     "zh": "卡布奇诺慕斯"
   },
+  "Chili sin carne": {
+    "en_search": "vegetarian chili, bean stew",
+    "role": "main",
+    "zh": "素辣椒"
+  },
   "Chili-kebabpaistosta": {
     "en_search": "chili kebab bake, baked dish, meat casserole",
     "role": "main",
@@ -158,6 +163,11 @@
     "en_search": "Lentil stew, whole grain, roasted vegetables",
     "role": "main",
     "zh": "印度素食扁豆炖菜配燕麦"
+  },
+  "Jauheliha-chili con carne": {
+    "en_search": "chili con carne, beef chili",
+    "role": "main",
+    "zh": "肉末辣椒"
   },
   "Jauheliha-kaalilaatikkoa": {
     "en_search": "minced meat cabbage casserole, baked dish, hearty casserole",
@@ -238,6 +248,11 @@
     "en_search": "Turkey vegetable stew",
     "role": "main",
     "zh": "火鸡蔬菜酱"
+  },
+  "Kananpoikaa currykastikkeessa": {
+    "en_search": "chicken curry, curry dish",
+    "role": "main",
+    "zh": "咖喱鸡"
   },
   "Kananpoikaa kermaisessa pippurikasviskastikkeessa": {
     "en_search": "creamy chicken, pepper sauce, vegetables",
@@ -554,6 +569,11 @@
     "role": "main",
     "zh": "豆制品蔬菜焗烤"
   },
+  "Suklaaherkku": {
+    "en_search": "chocolate dessert, sweet treat",
+    "role": "dessert",
+    "zh": "巧克力甜点"
+  },
   "Sweet & Sour Broilerikastiketta": {
     "en_search": "sweet sour chicken, chicken sauce",
     "role": "main",
@@ -623,6 +643,11 @@
     "en_search": "white chocolate pudding, creamy dessert",
     "role": "dessert",
     "zh": "白巧克力布丁"
+  },
+  "Vaniljakastiketta": {
+    "en_search": "vanilla sauce, dessert sauce",
+    "role": "sauce",
+    "zh": "香草酱"
   },
   "Vegaanista jauhis-perunasosevuokaa": {
     "en_search": "vegan casserole, potato bake",
