@@ -9,6 +9,11 @@
     "role": "main",
     "zh": "烧烤鸡肉披萨"
   },
+  "BBQ-kastiketta": {
+    "en_search": "BBQ sauce",
+    "role": "sauce",
+    "zh": "烧烤酱"
+  },
   "Banaani-marjasmoothie": {
     "en_search": "Banana smoothie, berry drink",
     "role": "dessert",
@@ -28,6 +33,11 @@
     "en_search": "sweet potato soup, orange soup, creamy soup",
     "role": "main",
     "zh": "红薯泥汤"
+  },
+  "Broiler-cheddarkastiketta": {
+    "en_search": "Chicken cheddar sauce",
+    "role": "main",
+    "zh": "鸡肉切达酱"
   },
   "Broiler-kasvistortillat": {
     "en_search": "Chicken vegetable tortillas",
@@ -189,6 +199,11 @@
     "role": "main",
     "zh": "肉末通心粉盒"
   },
+  "Jauheliha-perunasoselaatikkoa": {
+    "en_search": "Minced meat potato",
+    "role": "main",
+    "zh": "肉末土豆泥砂锅"
+  },
   "Jauhelihakeittoa": {
     "en_search": "Minced meat soup",
     "role": "main",
@@ -283,6 +298,11 @@
     "en_search": "teriyaki chicken, chicken stir-fry",
     "role": "main",
     "zh": "照烧鸡肉"
+  },
+  "Kasvisbolognesea, höyrytettyä ohraa ja uunikasviksia": {
+    "en_search": "Vegetable bolognese barley",
+    "role": "main",
+    "zh": "蔬菜肉酱配蒸大麦"
   },
   "Kasvisbolognesea, keitettyä pastaa ja uunikasviksia": {
     "en_search": "Vegetable bolognese, pasta",
@@ -379,6 +399,11 @@
     "role": "main",
     "zh": "火腿意面焗饭"
   },
+  "Kinkku-pekonipyttipannua ja lämpimiä kasviksia": {
+    "en_search": "Ham bacon hash",
+    "role": "main",
+    "zh": "火腿培根炒土豆"
+  },
   "Kinkku-pekonipyttipannua, lämmintä kasvislisäkettä": {
     "en_search": "Ham bacon hash, potato fry",
     "role": "main",
@@ -449,6 +474,11 @@
     "role": "main",
     "zh": "扁豆咖喱"
   },
+  "Lohi-nuudelivuokaa": {
+    "en_search": "Salmon noodle casserole",
+    "role": "main",
+    "zh": "烤三文鱼面条"
+  },
   "Mac&cheese Luomutofusta": {
     "en_search": "Tofu mac cheese",
     "role": "main",
@@ -498,6 +528,11 @@
     "en_search": "salsify cream soup",
     "role": "main",
     "zh": "婆罗门参汤"
+  },
+  "Mustikkarahkaa": {
+    "en_search": "Blueberry quark dessert",
+    "role": "dessert",
+    "zh": "蓝莓夸克甜点"
   },
   "Nakki-pekonistroganoffia": {
     "en_search": "sausage stroganoff, bacon, creamy stew",
@@ -584,6 +619,11 @@
     "role": "main",
     "zh": "瑞典肉丁土豆煎"
   },
+  "Quorn-linssi-kasviscurrya": {
+    "en_search": "Quorn lentil curry",
+    "role": "main",
+    "zh": "Quorn扁豆蔬菜咖喱"
+  },
   "Raejuusto-kermaviilikastiketta": {
     "en_search": "Cottage cheese sauce, sour cream dip",
     "role": "sauce",
@@ -643,6 +683,11 @@
     "en_search": "Soy vegetable stroganoff, stew",
     "role": "main",
     "zh": "豆制蔬菜俄式烩菜"
+  },
+  "Soijabolognesea": {
+    "en_search": "Soy bolognese sauce",
+    "role": "main",
+    "zh": "大豆肉酱"
   },
   "Suklaaherkku": {
     "en_search": "chocolate dessert, sweet treat",
