@@ -1,15 +1,15 @@
 {
-  "updated_at": "2026-06-09T10:46:58+00:00",
+  "updated_at": "2026-06-10T11:09:53+00:00",
   "dates": [
-    20260609,
     20260610,
     20260611,
     20260612,
     20260613,
     20260614,
-    20260615
+    20260615,
+    20260616
   ],
-  "today": 20260609,
+  "today": 20260610,
   "restaurants": [
     {
       "name": "Kerttu",
@@ -27,132 +27,31 @@
       "provider": "jamix",
       "external_url": "https://juvenes.fi/kerttu/",
       "by_date": {
-        "20260609": {
+        "20260610": {
           "main": [
             {
-              "fi": "Porkkanaohukaisia",
-              "zh": "胡萝卜薄饼",
+              "fi": "Jättipapu-juurescurrya",
+              "zh": "大豆根菜咖喱",
               "emoji": "🍽️",
               "tags": [
-                "无乳糖"
+                "无麸质",
+                "无奶",
+                "无蛋",
+                "素",
+                "心脏",
+                "含有机"
               ],
               "is_premium": false,
               "source": "KASVISLOUNAS",
               "image_urls": [
-                "https://images.pexels.com/photos/6947303/pexels-photo-6947303.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "https://images.pexels.com/photos/15735738/pexels-photo-15735738.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "https://images.pexels.com/photos/8992924/pexels-photo-8992924.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "https://images.pexels.com/photos/34293475/pexels-photo-34293475.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "https://images.pexels.com/photos/6671874/pexels-photo-6671874.png?auto=compress&cs=tinysrgb&h=350"
+                "https://images.pexels.com/photos/29684980/pexels-photo-29684980.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "https://images.pexels.com/photos/18698259/pexels-photo-18698259.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "https://images.pexels.com/photos/5894767/pexels-photo-5894767.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "https://images.pexels.com/photos/29684979/pexels-photo-29684979.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "https://images.pexels.com/photos/18405156/pexels-photo-18405156.jpeg?auto=compress&cs=tinysrgb&h=350"
               ],
-              "image_url": "https://images.pexels.com/photos/6947303/pexels-photo-6947303.jpeg?auto=compress&cs=tinysrgb&h=350"
+              "image_url": "https://images.pexels.com/photos/29684980/pexels-photo-29684980.jpeg?auto=compress&cs=tinysrgb&h=350"
             },
-            {
-              "fi": "Juustoista uunimakkaraa",
-              "zh": "芝士烤香肠",
-              "emoji": "🧀",
-              "tags": [
-                "无麸质",
-                "无乳糖",
-                "无蛋"
-              ],
-              "is_premium": false,
-              "source": "LOUNAS",
-              "image_urls": [
-                "https://images.pexels.com/photos/37271785/pexels-photo-37271785.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "https://images.pexels.com/photos/16716143/pexels-photo-16716143.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "https://images.pexels.com/photos/29699537/pexels-photo-29699537.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "https://images.pexels.com/photos/29039071/pexels-photo-29039071.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "https://images.pexels.com/photos/30343607/pexels-photo-30343607.jpeg?auto=compress&cs=tinysrgb&h=350"
-              ],
-              "image_url": "https://images.pexels.com/photos/37271785/pexels-photo-37271785.jpeg?auto=compress&cs=tinysrgb&h=350"
-            },
-            {
-              "fi": "Välimeren kalakeitto",
-              "zh": "地中海鱼汤",
-              "emoji": "🐟",
-              "tags": [
-                "无麸质",
-                "无奶",
-                "无蛋",
-                "心脏"
-              ],
-              "is_premium": false,
-              "source": "LOUNAS",
-              "image_urls": [
-                "https://images.pexels.com/photos/5966249/pexels-photo-5966249.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "https://images.pexels.com/photos/15735751/pexels-photo-15735751.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "https://images.pexels.com/photos/36769199/pexels-photo-36769199.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "https://images.pexels.com/photos/772518/pexels-photo-772518.png?auto=compress&cs=tinysrgb&h=350",
-                "https://images.pexels.com/photos/6046746/pexels-photo-6046746.jpeg?auto=compress&cs=tinysrgb&h=350"
-              ],
-              "image_url": "https://images.pexels.com/photos/5966249/pexels-photo-5966249.jpeg?auto=compress&cs=tinysrgb&h=350"
-            }
-          ],
-          "staple": [
-            {
-              "fi": "Täysjyväriisiä",
-              "zh": "全麦米饭",
-              "emoji": "🍽️",
-              "tags": [
-                "无麸质",
-                "无奶",
-                "无蛋",
-                "素",
-                "心脏"
-              ],
-              "is_premium": false,
-              "source": "KASVISLOUNAS"
-            },
-            {
-              "fi": "Meillä tehtyä perunamuusia",
-              "zh": "自制土豆泥",
-              "emoji": "🥔",
-              "tags": [
-                "无麸质",
-                "无乳糖",
-                "无蛋",
-                "心脏"
-              ],
-              "is_premium": false,
-              "source": "LOUNAS"
-            }
-          ],
-          "sauce": [
-            {
-              "fi": "Raejuusto-kermaviilikastiketta",
-              "zh": "茅屋芝士酸奶油酱",
-              "emoji": "🍽️",
-              "tags": [
-                "无麸质",
-                "无乳糖",
-                "无蛋"
-              ],
-              "is_premium": false,
-              "source": "KASVISLOUNAS"
-            }
-          ],
-          "salad": [],
-          "dessert": [],
-          "side": [
-            {
-              "fi": "Paahdettuja kasviksia",
-              "zh": "烤蔬菜",
-              "emoji": "🌱",
-              "tags": [
-                "无麸质",
-                "无奶",
-                "无蛋",
-                "素",
-                "心脏"
-              ],
-              "is_premium": false,
-              "source": "KASVISLOUNAS"
-            }
-          ]
-        },
-        "20260610": {
-          "main": [
             {
               "fi": "Broileririsottoa",
               "zh": "鸡肉烩饭",
@@ -195,6 +94,29 @@
                 "https://images.pexels.com/photos/14774999/pexels-photo-14774999.jpeg?auto=compress&cs=tinysrgb&h=350"
               ],
               "image_url": "https://images.pexels.com/photos/10839494/pexels-photo-10839494.jpeg?auto=compress&cs=tinysrgb&h=350"
+            },
+            {
+              "fi": "Mustajuurikeittoa",
+              "zh": "婆罗门参汤",
+              "emoji": "🍽️",
+              "tags": [
+                "无麸质",
+                "无奶",
+                "无蛋",
+                "素",
+                "心脏",
+                "含有机"
+              ],
+              "is_premium": false,
+              "source": "SALAD AND SOUP",
+              "image_urls": [
+                "https://images.pexels.com/photos/8580433/pexels-photo-8580433.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "https://images.pexels.com/photos/8743923/pexels-photo-8743923.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "https://images.pexels.com/photos/31236419/pexels-photo-31236419.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "https://images.pexels.com/photos/4871185/pexels-photo-4871185.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "https://images.pexels.com/photos/17696681/pexels-photo-17696681.jpeg?auto=compress&cs=tinysrgb&h=350"
+              ],
+              "image_url": "https://images.pexels.com/photos/8580433/pexels-photo-8580433.jpeg?auto=compress&cs=tinysrgb&h=350"
             }
           ],
           "staple": [
@@ -300,6 +222,28 @@
                 "https://images.pexels.com/photos/29684987/pexels-photo-29684987.jpeg?auto=compress&cs=tinysrgb&h=350"
               ],
               "image_url": "https://images.pexels.com/photos/29684985/pexels-photo-29684985.jpeg?auto=compress&cs=tinysrgb&h=350"
+            },
+            {
+              "fi": "Appelsiini-porkkanasosekeittoa",
+              "zh": "橙子胡萝卜浓汤",
+              "emoji": "🍽️",
+              "tags": [
+                "无麸质",
+                "无乳糖",
+                "无蛋",
+                "心脏",
+                "含有机"
+              ],
+              "is_premium": false,
+              "source": "SALAD AND SOUP",
+              "image_urls": [
+                "https://images.pexels.com/photos/6955149/pexels-photo-6955149.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "https://images.pexels.com/photos/34531190/pexels-photo-34531190.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "https://images.pexels.com/photos/8580433/pexels-photo-8580433.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "https://images.pexels.com/photos/4062272/pexels-photo-4062272.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "https://images.pexels.com/photos/772518/pexels-photo-772518.png?auto=compress&cs=tinysrgb&h=350"
+              ],
+              "image_url": "https://images.pexels.com/photos/6955149/pexels-photo-6955149.jpeg?auto=compress&cs=tinysrgb&h=350"
             }
           ],
           "staple": [
@@ -567,6 +511,27 @@
                 "https://images.pexels.com/photos/23948798/pexels-photo-23948798.jpeg?auto=compress&cs=tinysrgb&h=350"
               ],
               "image_url": "https://images.pexels.com/photos/26341210/pexels-photo-26341210.jpeg?auto=compress&cs=tinysrgb&h=350"
+            },
+            {
+              "fi": "Kermaista porkkana-basilikakeittoa",
+              "zh": "奶油胡萝卜罗勒汤",
+              "emoji": "🍽️",
+              "tags": [
+                "无麸质",
+                "无乳糖",
+                "无蛋",
+                "含有机"
+              ],
+              "is_premium": false,
+              "source": "SALAD AND SOUP",
+              "image_urls": [
+                "https://images.pexels.com/photos/34531190/pexels-photo-34531190.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "https://images.pexels.com/photos/8743923/pexels-photo-8743923.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "https://images.pexels.com/photos/8580433/pexels-photo-8580433.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "https://images.pexels.com/photos/6955149/pexels-photo-6955149.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "https://images.pexels.com/photos/33622710/pexels-photo-33622710.jpeg?auto=compress&cs=tinysrgb&h=350"
+              ],
+              "image_url": "https://images.pexels.com/photos/34531190/pexels-photo-34531190.jpeg?auto=compress&cs=tinysrgb&h=350"
             }
           ],
           "staple": [
@@ -632,6 +597,132 @@
               "source": "KASVISLOUNAS"
             }
           ]
+        },
+        "20260616": {
+          "main": [
+            {
+              "fi": "Mustapapu-makaronipaistosta",
+              "zh": "黑豆通心粉焗饭",
+              "emoji": "🍝",
+              "tags": [
+                "无奶",
+                "无蛋",
+                "素",
+                "心脏",
+                "含有机"
+              ],
+              "is_premium": false,
+              "source": "KASVISLOUNAS",
+              "image_urls": [
+                "https://images.pexels.com/photos/11101711/pexels-photo-11101711.png?auto=compress&cs=tinysrgb&h=350",
+                "https://images.pexels.com/photos/10839494/pexels-photo-10839494.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "https://images.pexels.com/photos/34363091/pexels-photo-34363091.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "https://images.pexels.com/photos/38028993/pexels-photo-38028993.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "https://images.pexels.com/photos/38028980/pexels-photo-38028980.jpeg?auto=compress&cs=tinysrgb&h=350"
+              ],
+              "image_url": "https://images.pexels.com/photos/11101711/pexels-photo-11101711.png?auto=compress&cs=tinysrgb&h=350"
+            },
+            {
+              "fi": "Kananpoikaa currykastikkeessa",
+              "zh": "咖喱鸡",
+              "emoji": "🍗",
+              "tags": [
+                "无麸质",
+                "无奶",
+                "无蛋",
+                "心脏",
+                "含有机"
+              ],
+              "is_premium": false,
+              "source": "LOUNAS",
+              "image_urls": [
+                "https://images.pexels.com/photos/29684985/pexels-photo-29684985.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "https://images.pexels.com/photos/32986463/pexels-photo-32986463.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "https://images.pexels.com/photos/29685076/pexels-photo-29685076.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "https://images.pexels.com/photos/29684990/pexels-photo-29684990.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "https://images.pexels.com/photos/29684987/pexels-photo-29684987.jpeg?auto=compress&cs=tinysrgb&h=350"
+              ],
+              "image_url": "https://images.pexels.com/photos/29684985/pexels-photo-29684985.jpeg?auto=compress&cs=tinysrgb&h=350"
+            },
+            {
+              "fi": "Kinkkukiusausta",
+              "zh": "火腿焗土豆",
+              "emoji": "🍽️",
+              "tags": [
+                "无麸质",
+                "无乳糖",
+                "无蛋",
+                "心脏"
+              ],
+              "is_premium": false,
+              "source": "LOUNAS",
+              "image_urls": [
+                "https://images.pexels.com/photos/31236419/pexels-photo-31236419.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "https://images.pexels.com/photos/9219092/pexels-photo-9219092.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "https://images.pexels.com/photos/10839494/pexels-photo-10839494.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "https://images.pexels.com/photos/5249331/pexels-photo-5249331.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "https://images.pexels.com/photos/8839625/pexels-photo-8839625.jpeg?auto=compress&cs=tinysrgb&h=350"
+              ],
+              "image_url": "https://images.pexels.com/photos/31236419/pexels-photo-31236419.jpeg?auto=compress&cs=tinysrgb&h=350"
+            },
+            {
+              "fi": "Punajuurisosekeittoa",
+              "zh": "甜菜根浓汤",
+              "emoji": "🍽️",
+              "tags": [
+                "无麸质",
+                "无乳糖",
+                "无蛋",
+                "心脏",
+                "含有机"
+              ],
+              "is_premium": false,
+              "source": "SALAD AND SOUP",
+              "image_urls": [
+                "https://images.pexels.com/photos/6468551/pexels-photo-6468551.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "https://images.pexels.com/photos/34531190/pexels-photo-34531190.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "https://images.pexels.com/photos/6895775/pexels-photo-6895775.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "https://images.pexels.com/photos/18229213/pexels-photo-18229213.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "https://images.pexels.com/photos/11663127/pexels-photo-11663127.jpeg?auto=compress&cs=tinysrgb&h=350"
+              ],
+              "image_url": "https://images.pexels.com/photos/6468551/pexels-photo-6468551.jpeg?auto=compress&cs=tinysrgb&h=350"
+            }
+          ],
+          "staple": [
+            {
+              "fi": "Täysjyväriisiä",
+              "zh": "全麦米饭",
+              "emoji": "🍽️",
+              "tags": [
+                "无麸质",
+                "无奶",
+                "无蛋",
+                "素",
+                "心脏"
+              ],
+              "is_premium": false,
+              "source": "LOUNAS"
+            }
+          ],
+          "sauce": [],
+          "salad": [],
+          "dessert": [],
+          "side": [
+            {
+              "fi": "Paahdettuja kasviksia",
+              "zh": "烤蔬菜",
+              "emoji": "🌱",
+              "tags": [
+                "无麸质",
+                "无奶",
+                "无蛋",
+                "素",
+                "心脏"
+              ],
+              "is_premium": false,
+              "source": "KASVISLOUNAS"
+            }
+          ]
         }
       }
     },
@@ -651,100 +742,25 @@
       "provider": "sodexo_hilla",
       "external_url": "https://www.sodexo.fi/ravintolat/ravintolat-hilla-ja-mustikka",
       "by_date": {
-        "20260609": {
+        "20260610": {
           "main": [
             {
-              "fi": "Kasvisbolognesea, höyrytettyä ohraa ja uunikasviksia",
-              "zh": "蔬菜肉酱配蒸大麦",
-              "emoji": "🌱",
+              "fi": "Linssi-kasviskormaa, höyrytettyä riisiä ja lämpimiä kasviksia",
+              "zh": "扁豆蔬菜咖喱",
+              "emoji": "🍚",
               "tags": [
+                "无麸质",
                 "无奶",
                 "全素"
               ],
               "is_premium": false,
               "source": "Ravintola Hilla",
               "image_urls": [
-                "https://images.pexels.com/photos/793765/pexels-photo-793765.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "https://images.pexels.com/photos/11101711/pexels-photo-11101711.png?auto=compress&cs=tinysrgb&h=350",
-                "https://images.pexels.com/photos/14164523/pexels-photo-14164523.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "https://images.pexels.com/photos/37540184/pexels-photo-37540184.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "https://images.pexels.com/photos/23106701/pexels-photo-23106701.jpeg?auto=compress&cs=tinysrgb&h=350"
-              ],
-              "image_url": "https://images.pexels.com/photos/793765/pexels-photo-793765.jpeg?auto=compress&cs=tinysrgb&h=350"
-            },
-            {
-              "fi": "Jauhelihakeittoa",
-              "zh": "肉末汤",
-              "emoji": "🥩",
-              "tags": [
-                "无麸质",
-                "无奶"
-              ],
-              "is_premium": false,
-              "source": "Ravintola Hilla",
-              "image_urls": [
-                "https://images.pexels.com/photos/772518/pexels-photo-772518.png?auto=compress&cs=tinysrgb&h=350",
-                "https://images.pexels.com/photos/8321980/pexels-photo-8321980.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "https://images.pexels.com/photos/15735751/pexels-photo-15735751.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "https://images.pexels.com/photos/18698265/pexels-photo-18698265.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "https://images.pexels.com/photos/31236419/pexels-photo-31236419.jpeg?auto=compress&cs=tinysrgb&h=350"
-              ],
-              "image_url": "https://images.pexels.com/photos/772518/pexels-photo-772518.png?auto=compress&cs=tinysrgb&h=350"
-            },
-            {
-              "fi": "Kinkku-pekonipyttipannua ja lämpimiä kasviksia",
-              "zh": "火腿培根炒土豆",
-              "emoji": "🥓",
-              "tags": [
-                "无麸质",
-                "无奶"
-              ],
-              "is_premium": false,
-              "source": "Ravintola Hilla",
-              "image_urls": [
-                "https://images.pexels.com/photos/23106716/pexels-photo-23106716.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "https://images.pexels.com/photos/23106715/pexels-photo-23106715.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "https://images.pexels.com/photos/9296995/pexels-photo-9296995.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "https://images.pexels.com/photos/5634637/pexels-photo-5634637.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "https://images.pexels.com/photos/3807027/pexels-photo-3807027.jpeg?auto=compress&cs=tinysrgb&h=350"
-              ],
-              "image_url": "https://images.pexels.com/photos/23106716/pexels-photo-23106716.jpeg?auto=compress&cs=tinysrgb&h=350"
-            }
-          ],
-          "staple": [],
-          "sauce": [],
-          "salad": [],
-          "dessert": [
-            {
-              "fi": "Cappuccinomoussea",
-              "zh": "卡布奇诺慕斯",
-              "emoji": "🍽️",
-              "tags": [
-                "无麸质"
-              ],
-              "is_premium": false,
-              "source": "Ravintola Hilla jälkiruoka"
-            }
-          ],
-          "side": []
-        },
-        "20260610": {
-          "main": [
-            {
-              "fi": "Linssi-munakoisokormaa, yrttikauraa ja lämmintä kasvislisäkettä",
-              "zh": "扁豆茄子咖喱",
-              "emoji": "🌱",
-              "tags": [
-                "无奶"
-              ],
-              "is_premium": false,
-              "source": "Ravintola Hilla",
-              "image_urls": [
                 "https://images.pexels.com/photos/17486827/pexels-photo-17486827.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "https://images.pexels.com/photos/30203314/pexels-photo-30203314.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "https://images.pexels.com/photos/772513/pexels-photo-772513.png?auto=compress&cs=tinysrgb&h=350",
-                "https://images.pexels.com/photos/25856539/pexels-photo-25856539.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "https://images.pexels.com/photos/24206916/pexels-photo-24206916.jpeg?auto=compress&cs=tinysrgb&h=350"
+                "https://images.pexels.com/photos/22391699/pexels-photo-22391699.png?auto=compress&cs=tinysrgb&h=350",
+                "https://images.pexels.com/photos/17486836/pexels-photo-17486836.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "https://images.pexels.com/photos/28241683/pexels-photo-28241683.jpeg?auto=compress&cs=tinysrgb&h=350"
               ],
               "image_url": "https://images.pexels.com/photos/17486827/pexels-photo-17486827.jpeg?auto=compress&cs=tinysrgb&h=350"
             },
@@ -753,23 +769,23 @@
               "zh": "香肠汤",
               "emoji": "🌭",
               "tags": [
-                "无奶",
-                "无麸质"
+                "无麸质",
+                "无奶"
               ],
               "is_premium": false,
               "source": "Ravintola Hilla",
               "image_urls": [
+                "https://images.pexels.com/photos/5041477/pexels-photo-5041477.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "https://images.pexels.com/photos/31236419/pexels-photo-31236419.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "https://images.pexels.com/photos/8321980/pexels-photo-8321980.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "https://images.pexels.com/photos/5041477/pexels-photo-5041477.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "https://images.pexels.com/photos/8992932/pexels-photo-8992932.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "https://images.pexels.com/photos/8696758/pexels-photo-8696758.jpeg?auto=compress&cs=tinysrgb&h=350"
+                "https://images.pexels.com/photos/8696758/pexels-photo-8696758.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "https://images.pexels.com/photos/8992932/pexels-photo-8992932.jpeg?auto=compress&cs=tinysrgb&h=350"
               ],
-              "image_url": "https://images.pexels.com/photos/31236419/pexels-photo-31236419.jpeg?auto=compress&cs=tinysrgb&h=350"
+              "image_url": "https://images.pexels.com/photos/5041477/pexels-photo-5041477.jpeg?auto=compress&cs=tinysrgb&h=350"
             },
             {
-              "fi": "Jauhelihapihvit, tummaa tinjamikastiketta, persiljaperunaa ja uunikasviksia",
-              "zh": "肉饼配百里香酱",
+              "fi": "Jauhelihapihvit, rosmariini-tomaattikastiketta, persiljaperunaa ja uunikasviksia",
+              "zh": "肉饼",
               "emoji": "🥩",
               "tags": [
                 "无奶"
@@ -777,13 +793,13 @@
               "is_premium": false,
               "source": "Ravintola Hilla",
               "image_urls": [
+                "https://images.pexels.com/photos/5041475/pexels-photo-5041475.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "https://images.pexels.com/photos/32807693/pexels-photo-32807693.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "https://images.pexels.com/photos/4669246/pexels-photo-4669246.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "https://images.pexels.com/photos/24206911/pexels-photo-24206911.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "https://images.pexels.com/photos/24206910/pexels-photo-24206910.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "https://images.pexels.com/photos/24206909/pexels-photo-24206909.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "https://images.pexels.com/photos/36829386/pexels-photo-36829386.jpeg?auto=compress&cs=tinysrgb&h=350"
+                "https://images.pexels.com/photos/23910856/pexels-photo-23910856.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "https://images.pexels.com/photos/20722046/pexels-photo-20722046.jpeg?auto=compress&cs=tinysrgb&h=350"
               ],
-              "image_url": "https://images.pexels.com/photos/4669246/pexels-photo-4669246.jpeg?auto=compress&cs=tinysrgb&h=350"
+              "image_url": "https://images.pexels.com/photos/5041475/pexels-photo-5041475.jpeg?auto=compress&cs=tinysrgb&h=350"
             }
           ],
           "staple": [],
@@ -791,11 +807,11 @@
           "salad": [],
           "dessert": [
             {
-              "fi": "Valkosuklaa-limepannacottaa tai omenapaistosta ja vaniljakastiketta",
-              "zh": "白巧克力青柠奶冻",
+              "fi": "Mariannemousse",
+              "zh": "玛丽安慕斯",
               "emoji": "🍽️",
               "tags": [
-                "极低乳糖"
+                "无麸质"
               ],
               "is_premium": false,
               "source": "Ravintola Hilla jälkiruoka"
@@ -804,11 +820,79 @@
           "side": []
         },
         "20260611": {
-          "main": [],
+          "main": [
+            {
+              "fi": "Kasvis-kvinoa arrabiattaa ( tomaattinen kastike ), pennepastaa, lämpimiä kasviksia",
+              "zh": "蔬菜藜麦辣番茄酱",
+              "emoji": "🌱",
+              "tags": [
+                "无奶",
+                "全素"
+              ],
+              "is_premium": false,
+              "source": "Ravintola Hilla",
+              "image_urls": [
+                "https://images.pexels.com/photos/32986455/pexels-photo-32986455.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "https://images.pexels.com/photos/9218739/pexels-photo-9218739.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "https://images.pexels.com/photos/5713746/pexels-photo-5713746.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "https://images.pexels.com/photos/14774990/pexels-photo-14774990.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "https://images.pexels.com/photos/15800993/pexels-photo-15800993.jpeg?auto=compress&cs=tinysrgb&h=350"
+              ],
+              "image_url": "https://images.pexels.com/photos/32986455/pexels-photo-32986455.jpeg?auto=compress&cs=tinysrgb&h=350"
+            },
+            {
+              "fi": "Hernekeittoa",
+              "zh": "豌豆汤",
+              "emoji": "🍽️",
+              "tags": [
+                "无麸质",
+                "无奶"
+              ],
+              "is_premium": false,
+              "source": "Ravintola Hilla",
+              "image_urls": [
+                "https://images.pexels.com/photos/8696758/pexels-photo-8696758.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "https://images.pexels.com/photos/8580433/pexels-photo-8580433.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "https://images.pexels.com/photos/8743923/pexels-photo-8743923.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "https://images.pexels.com/photos/8992932/pexels-photo-8992932.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "https://images.pexels.com/photos/6955149/pexels-photo-6955149.jpeg?auto=compress&cs=tinysrgb&h=350"
+              ],
+              "image_url": "https://images.pexels.com/photos/8696758/pexels-photo-8696758.jpeg?auto=compress&cs=tinysrgb&h=350"
+            },
+            {
+              "fi": "Tonnikalalasagnettea ja uunikasviksia",
+              "zh": "金枪鱼千层面",
+              "emoji": "🐟",
+              "tags": [
+                "无乳糖"
+              ],
+              "is_premium": false,
+              "source": "Ravintola Hilla",
+              "image_urls": [
+                "https://images.pexels.com/photos/9218739/pexels-photo-9218739.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "https://images.pexels.com/photos/5713732/pexels-photo-5713732.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "https://images.pexels.com/photos/36292347/pexels-photo-36292347.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "https://images.pexels.com/photos/10839494/pexels-photo-10839494.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "https://images.pexels.com/photos/12407828/pexels-photo-12407828.png?auto=compress&cs=tinysrgb&h=350"
+              ],
+              "image_url": "https://images.pexels.com/photos/9218739/pexels-photo-9218739.jpeg?auto=compress&cs=tinysrgb&h=350"
+            }
+          ],
           "staple": [],
           "sauce": [],
           "salad": [],
-          "dessert": [],
+          "dessert": [
+            {
+              "fi": "Pannukakkua ja hilloa",
+              "zh": "煎饼配果酱",
+              "emoji": "🥞",
+              "tags": [
+                "无乳糖"
+              ],
+              "is_premium": false,
+              "source": "Ravintola Hilla jälkiruoka"
+            }
+          ],
           "side": []
         },
         "20260612": {
@@ -818,7 +902,8 @@
               "zh": "烤肉土豆砂锅",
               "emoji": "🥔",
               "tags": [
-                "无奶"
+                "无奶",
+                "全素"
               ],
               "is_premium": false,
               "source": "Ravintola Hilla",
@@ -832,12 +917,31 @@
               "image_url": "https://images.pexels.com/photos/2739250/pexels-photo-2739250.jpeg?auto=compress&cs=tinysrgb&h=350"
             },
             {
+              "fi": "Makkarakeittoa",
+              "zh": "香肠汤",
+              "emoji": "🌭",
+              "tags": [
+                "无麸质",
+                "无奶"
+              ],
+              "is_premium": false,
+              "source": "Ravintola Hilla",
+              "image_urls": [
+                "https://images.pexels.com/photos/37264133/pexels-photo-37264133.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "https://images.pexels.com/photos/16716143/pexels-photo-16716143.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "https://images.pexels.com/photos/31236419/pexels-photo-31236419.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "https://images.pexels.com/photos/8696758/pexels-photo-8696758.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "https://images.pexels.com/photos/37264135/pexels-photo-37264135.jpeg?auto=compress&cs=tinysrgb&h=350"
+              ],
+              "image_url": "https://images.pexels.com/photos/37264133/pexels-photo-37264133.jpeg?auto=compress&cs=tinysrgb&h=350"
+            },
+            {
               "fi": "Hedelmäistä broilerkastiketta, höyrytettyä riisiä ja lämpimiä kasviksia",
               "zh": "水果鸡肉酱",
               "emoji": "🍚",
               "tags": [
-                "无乳糖",
-                "无麸质"
+                "无麸质",
+                "无乳糖"
               ],
               "is_premium": false,
               "source": "Ravintola Hilla",
@@ -892,6 +996,14 @@
           "salad": [],
           "dessert": [],
           "side": []
+        },
+        "20260616": {
+          "main": [],
+          "staple": [],
+          "sauce": [],
+          "salad": [],
+          "dessert": [],
+          "side": []
         }
       }
     },
@@ -915,14 +1027,6 @@
       "provider": "jamix",
       "external_url": "https://juvenes.fi/mara/",
       "by_date": {
-        "20260609": {
-          "main": [],
-          "staple": [],
-          "sauce": [],
-          "salad": [],
-          "dessert": [],
-          "side": []
-        },
         "20260610": {
           "main": [],
           "staple": [],
@@ -970,6 +1074,14 @@
           "salad": [],
           "dessert": [],
           "side": []
+        },
+        "20260616": {
+          "main": [],
+          "staple": [],
+          "sauce": [],
+          "salad": [],
+          "dessert": [],
+          "side": []
         }
       }
     },
@@ -993,130 +1105,6 @@
       "provider": "jamix",
       "external_url": "https://juvenes.fi/foobar/",
       "by_date": {
-        "20260609": {
-          "main": [
-            {
-              "fi": "Porkkanaohukaisia",
-              "zh": "胡萝卜薄饼",
-              "emoji": "🍽️",
-              "tags": [
-                "无乳糖"
-              ],
-              "is_premium": false,
-              "source": "KASVISLOUNAS",
-              "image_urls": [
-                "https://images.pexels.com/photos/6947303/pexels-photo-6947303.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "https://images.pexels.com/photos/15735738/pexels-photo-15735738.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "https://images.pexels.com/photos/8992924/pexels-photo-8992924.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "https://images.pexels.com/photos/34293475/pexels-photo-34293475.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "https://images.pexels.com/photos/6671874/pexels-photo-6671874.png?auto=compress&cs=tinysrgb&h=350"
-              ],
-              "image_url": "https://images.pexels.com/photos/6947303/pexels-photo-6947303.jpeg?auto=compress&cs=tinysrgb&h=350"
-            },
-            {
-              "fi": "Juustoista uunimakkaraa",
-              "zh": "芝士烤香肠",
-              "emoji": "🧀",
-              "tags": [
-                "无麸质",
-                "无乳糖",
-                "无蛋"
-              ],
-              "is_premium": false,
-              "source": "LOUNAS",
-              "image_urls": [
-                "https://images.pexels.com/photos/37271785/pexels-photo-37271785.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "https://images.pexels.com/photos/16716143/pexels-photo-16716143.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "https://images.pexels.com/photos/29699537/pexels-photo-29699537.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "https://images.pexels.com/photos/29039071/pexels-photo-29039071.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "https://images.pexels.com/photos/30343607/pexels-photo-30343607.jpeg?auto=compress&cs=tinysrgb&h=350"
-              ],
-              "image_url": "https://images.pexels.com/photos/37271785/pexels-photo-37271785.jpeg?auto=compress&cs=tinysrgb&h=350"
-            },
-            {
-              "fi": "Välimeren kalakeitto",
-              "zh": "地中海鱼汤",
-              "emoji": "🐟",
-              "tags": [
-                "无麸质",
-                "无奶",
-                "无蛋",
-                "心脏"
-              ],
-              "is_premium": false,
-              "source": "LOUNAS",
-              "image_urls": [
-                "https://images.pexels.com/photos/5966249/pexels-photo-5966249.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "https://images.pexels.com/photos/15735751/pexels-photo-15735751.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "https://images.pexels.com/photos/36769199/pexels-photo-36769199.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "https://images.pexels.com/photos/772518/pexels-photo-772518.png?auto=compress&cs=tinysrgb&h=350",
-                "https://images.pexels.com/photos/6046746/pexels-photo-6046746.jpeg?auto=compress&cs=tinysrgb&h=350"
-              ],
-              "image_url": "https://images.pexels.com/photos/5966249/pexels-photo-5966249.jpeg?auto=compress&cs=tinysrgb&h=350"
-            }
-          ],
-          "staple": [
-            {
-              "fi": "Täysjyväriisiä",
-              "zh": "全麦米饭",
-              "emoji": "🍽️",
-              "tags": [
-                "无麸质",
-                "无奶",
-                "无蛋",
-                "素",
-                "心脏"
-              ],
-              "is_premium": false,
-              "source": "KASVISLOUNAS"
-            },
-            {
-              "fi": "Meillä tehtyä perunamuusia",
-              "zh": "自制土豆泥",
-              "emoji": "🥔",
-              "tags": [
-                "无麸质",
-                "无乳糖",
-                "无蛋",
-                "心脏"
-              ],
-              "is_premium": false,
-              "source": "LOUNAS"
-            }
-          ],
-          "sauce": [
-            {
-              "fi": "Raejuusto-kermaviilikastiketta",
-              "zh": "茅屋芝士酸奶油酱",
-              "emoji": "🍽️",
-              "tags": [
-                "无麸质",
-                "无乳糖",
-                "无蛋"
-              ],
-              "is_premium": false,
-              "source": "KASVISLOUNAS"
-            }
-          ],
-          "salad": [],
-          "dessert": [],
-          "side": [
-            {
-              "fi": "Paahdettuja kasviksia",
-              "zh": "烤蔬菜",
-              "emoji": "🌱",
-              "tags": [
-                "无麸质",
-                "无奶",
-                "无蛋",
-                "素",
-                "心脏"
-              ],
-              "is_premium": false,
-              "source": "KASVISLOUNAS"
-            }
-          ]
-        },
         "20260610": {
           "main": [
             {
@@ -1621,6 +1609,110 @@
               "source": "KASVISLOUNAS"
             }
           ]
+        },
+        "20260616": {
+          "main": [
+            {
+              "fi": "Mustapapu-makaronipaistosta",
+              "zh": "黑豆通心粉焗饭",
+              "emoji": "🍝",
+              "tags": [
+                "无奶",
+                "无蛋",
+                "素",
+                "心脏",
+                "含有机"
+              ],
+              "is_premium": false,
+              "source": "KASVISLOUNAS",
+              "image_urls": [
+                "https://images.pexels.com/photos/11101711/pexels-photo-11101711.png?auto=compress&cs=tinysrgb&h=350",
+                "https://images.pexels.com/photos/10839494/pexels-photo-10839494.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "https://images.pexels.com/photos/34363091/pexels-photo-34363091.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "https://images.pexels.com/photos/38028993/pexels-photo-38028993.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "https://images.pexels.com/photos/38028980/pexels-photo-38028980.jpeg?auto=compress&cs=tinysrgb&h=350"
+              ],
+              "image_url": "https://images.pexels.com/photos/11101711/pexels-photo-11101711.png?auto=compress&cs=tinysrgb&h=350"
+            },
+            {
+              "fi": "Kananpoikaa currykastikkeessa",
+              "zh": "咖喱鸡",
+              "emoji": "🍗",
+              "tags": [
+                "无麸质",
+                "无奶",
+                "无蛋",
+                "心脏",
+                "含有机"
+              ],
+              "is_premium": false,
+              "source": "LOUNAS",
+              "image_urls": [
+                "https://images.pexels.com/photos/29684985/pexels-photo-29684985.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "https://images.pexels.com/photos/32986463/pexels-photo-32986463.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "https://images.pexels.com/photos/29685076/pexels-photo-29685076.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "https://images.pexels.com/photos/29684990/pexels-photo-29684990.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "https://images.pexels.com/photos/29684987/pexels-photo-29684987.jpeg?auto=compress&cs=tinysrgb&h=350"
+              ],
+              "image_url": "https://images.pexels.com/photos/29684985/pexels-photo-29684985.jpeg?auto=compress&cs=tinysrgb&h=350"
+            },
+            {
+              "fi": "Kinkkukiusausta",
+              "zh": "火腿焗土豆",
+              "emoji": "🍽️",
+              "tags": [
+                "无麸质",
+                "无乳糖",
+                "无蛋",
+                "心脏"
+              ],
+              "is_premium": false,
+              "source": "LOUNAS",
+              "image_urls": [
+                "https://images.pexels.com/photos/31236419/pexels-photo-31236419.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "https://images.pexels.com/photos/9219092/pexels-photo-9219092.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "https://images.pexels.com/photos/10839494/pexels-photo-10839494.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "https://images.pexels.com/photos/5249331/pexels-photo-5249331.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "https://images.pexels.com/photos/8839625/pexels-photo-8839625.jpeg?auto=compress&cs=tinysrgb&h=350"
+              ],
+              "image_url": "https://images.pexels.com/photos/31236419/pexels-photo-31236419.jpeg?auto=compress&cs=tinysrgb&h=350"
+            }
+          ],
+          "staple": [
+            {
+              "fi": "Täysjyväriisiä",
+              "zh": "全麦米饭",
+              "emoji": "🍽️",
+              "tags": [
+                "无麸质",
+                "无奶",
+                "无蛋",
+                "素",
+                "心脏"
+              ],
+              "is_premium": false,
+              "source": "LOUNAS"
+            }
+          ],
+          "sauce": [],
+          "salad": [],
+          "dessert": [],
+          "side": [
+            {
+              "fi": "Paahdettuja kasviksia",
+              "zh": "烤蔬菜",
+              "emoji": "🌱",
+              "tags": [
+                "无麸质",
+                "无奶",
+                "无蛋",
+                "素",
+                "心脏"
+              ],
+              "is_premium": false,
+              "source": "KASVISLOUNAS"
+            }
+          ]
         }
       }
     },
@@ -1644,143 +1736,6 @@
       "provider": "jamix",
       "external_url": "https://juvenes.fi/medisiina/",
       "by_date": {
-        "20260609": {
-          "main": [
-            {
-              "fi": "Täällä tehtyjä pinaattiohukaisia",
-              "zh": "菠菜薄饼",
-              "emoji": "🍽️",
-              "tags": [
-                "无乳糖",
-                "心脏"
-              ],
-              "is_premium": false,
-              "source": "KASVISLOUNAS",
-              "image_urls": [
-                "https://images.pexels.com/photos/2613471/pexels-photo-2613471.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "https://images.pexels.com/photos/6947303/pexels-photo-6947303.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "https://images.pexels.com/photos/6083893/pexels-photo-6083893.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "https://images.pexels.com/photos/15820610/pexels-photo-15820610.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "https://images.pexels.com/photos/15735738/pexels-photo-15735738.jpeg?auto=compress&cs=tinysrgb&h=350"
-              ],
-              "image_url": "https://images.pexels.com/photos/2613471/pexels-photo-2613471.jpeg?auto=compress&cs=tinysrgb&h=350"
-            },
-            {
-              "fi": "Rapeat kalapalat",
-              "zh": "脆皮鱼块",
-              "emoji": "🐟",
-              "tags": [
-                "无奶",
-                "无蛋",
-                "心脏"
-              ],
-              "is_premium": false,
-              "source": "LOUNAS",
-              "image_urls": [
-                "https://images.pexels.com/photos/6383082/pexels-photo-6383082.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "https://images.pexels.com/photos/19239119/pexels-photo-19239119.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "https://images.pexels.com/photos/19239122/pexels-photo-19239122.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "https://images.pexels.com/photos/36869513/pexels-photo-36869513.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "https://images.pexels.com/photos/8696468/pexels-photo-8696468.jpeg?auto=compress&cs=tinysrgb&h=350"
-              ],
-              "image_url": "https://images.pexels.com/photos/6383082/pexels-photo-6383082.jpeg?auto=compress&cs=tinysrgb&h=350"
-            },
-            {
-              "fi": "Kebabkiusausta",
-              "zh": "烤肉串砂锅",
-              "emoji": "🍽️",
-              "tags": [
-                "无麸质",
-                "无乳糖",
-                "无蛋",
-                "心脏"
-              ],
-              "is_premium": false,
-              "source": "LOUNAS",
-              "image_urls": [
-                "https://images.pexels.com/photos/10839494/pexels-photo-10839494.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "https://images.pexels.com/photos/9646858/pexels-photo-9646858.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "https://images.pexels.com/photos/32986491/pexels-photo-32986491.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "https://images.pexels.com/photos/29306495/pexels-photo-29306495.jpeg?auto=compress&cs=tinysrgb&h=350",
-                "https://images.pexels.com/photos/14774999/pexels-photo-14774999.jpeg?auto=compress&cs=tinysrgb&h=350"
-              ],
-              "image_url": "https://images.pexels.com/photos/10839494/pexels-photo-10839494.jpeg?auto=compress&cs=tinysrgb&h=350"
-            }
-          ],
-          "staple": [
-            {
-              "fi": "Keitettyjä perunoita",
-              "zh": "煮土豆",
-              "emoji": "🥔",
-              "tags": [
-                "无麸质",
-                "无奶",
-                "无蛋",
-                "素",
-                "心脏"
-              ],
-              "is_premium": false,
-              "source": "KASVISLOUNAS"
-            }
-          ],
-          "sauce": [
-            {
-              "fi": "Raejuusto-kermaviilikastiketta",
-              "zh": "茅屋芝士酸奶油酱",
-              "emoji": "🍽️",
-              "tags": [
-                "无麸质",
-                "无乳糖",
-                "无蛋"
-              ],
-              "is_premium": false,
-              "source": "KASVISLOUNAS"
-            },
-            {
-              "fi": "Sitruunaista tilli-kermakastiketta",
-              "zh": "柠檬莳萝奶油酱",
-              "emoji": "🍽️",
-              "tags": [
-                "无麸质",
-                "无乳糖",
-                "无蛋"
-              ],
-              "is_premium": false,
-              "source": "LOUNAS"
-            }
-          ],
-          "salad": [],
-          "dessert": [
-            {
-              "fi": "Vadelmarahkaa",
-              "zh": "覆盆子夸克甜点",
-              "emoji": "🍽️",
-              "tags": [
-                "无麸质",
-                "无乳糖",
-                "无蛋"
-              ],
-              "is_premium": false,
-              "source": "JÄLKIRUOKA"
-            }
-          ],
-          "side": [
-            {
-              "fi": "Paahdettuja kasviksia",
-              "zh": "烤蔬菜",
-              "emoji": "🌱",
-              "tags": [
-                "无麸质",
-                "无奶",
-                "无蛋",
-                "素",
-                "心脏"
-              ],
-              "is_premium": false,
-              "source": "KASVISLOUNAS"
-            }
-          ]
-        },
         "20260610": {
           "main": [
             {
@@ -2185,13 +2140,13 @@
               "is_premium": false,
               "source": "KASVISLOUNAS",
               "image_urls": [
-                "https://images.pexels.com/photos/11101711/pexels-photo-11101711.png?auto=compress&cs=tinysrgb&h=350",
                 "https://images.pexels.com/photos/793765/pexels-photo-793765.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "https://images.pexels.com/photos/11101711/pexels-photo-11101711.png?auto=compress&cs=tinysrgb&h=350",
                 "https://images.pexels.com/photos/12667658/pexels-photo-12667658.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "https://images.pexels.com/photos/23106701/pexels-photo-23106701.jpeg?auto=compress&cs=tinysrgb&h=350",
                 "https://images.pexels.com/photos/23106699/pexels-photo-23106699.jpeg?auto=compress&cs=tinysrgb&h=350"
               ],
-              "image_url": "https://images.pexels.com/photos/11101711/pexels-photo-11101711.png?auto=compress&cs=tinysrgb&h=350"
+              "image_url": "https://images.pexels.com/photos/793765/pexels-photo-793765.jpeg?auto=compress&cs=tinysrgb&h=350"
             },
             {
               "fi": "Broiler-cheddarkastiketta",
@@ -2254,6 +2209,117 @@
           "sauce": [],
           "salad": [],
           "dessert": [
+            {
+              "fi": "Mustikkarahkaa",
+              "zh": "蓝莓夸克甜点",
+              "emoji": "🍽️",
+              "tags": [
+                "无麸质",
+                "无乳糖",
+                "无蛋"
+              ],
+              "is_premium": false,
+              "source": "JÄLKIRUOKA"
+            }
+          ],
+          "side": [
+            {
+              "fi": "Paahdettuja kasviksia",
+              "zh": "烤蔬菜",
+              "emoji": "🌱",
+              "tags": [
+                "无麸质",
+                "无奶",
+                "无蛋",
+                "素",
+                "心脏"
+              ],
+              "is_premium": false,
+              "source": "KASVISLOUNAS"
+            }
+          ]
+        },
+        "20260616": {
+          "main": [
+            {
+              "fi": "Kasvis-kaalilaatikkoa",
+              "zh": "蔬菜卷心菜砂锅",
+              "emoji": "🌱",
+              "tags": [
+                "无麸质",
+                "无乳糖",
+                "无奶",
+                "无蛋",
+                "素",
+                "心脏",
+                "含有机"
+              ],
+              "is_premium": false,
+              "source": "KASVISLOUNAS",
+              "image_urls": [
+                "https://images.pexels.com/photos/33622710/pexels-photo-33622710.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "https://images.pexels.com/photos/10839494/pexels-photo-10839494.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "https://images.pexels.com/photos/23106702/pexels-photo-23106702.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "https://images.pexels.com/photos/26341204/pexels-photo-26341204.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "https://images.pexels.com/photos/9070122/pexels-photo-9070122.jpeg?auto=compress&cs=tinysrgb&h=350"
+              ],
+              "image_url": "https://images.pexels.com/photos/33622710/pexels-photo-33622710.jpeg?auto=compress&cs=tinysrgb&h=350"
+            },
+            {
+              "fi": "Vindaloo broilerpataa",
+              "zh": "咖喱鸡肉炖菜",
+              "emoji": "🍽️",
+              "tags": [
+                "无麸质",
+                "无奶",
+                "无蛋",
+                "心脏",
+                "含有机"
+              ],
+              "is_premium": false,
+              "source": "LOUNAS",
+              "image_urls": [
+                "https://images.pexels.com/photos/29685076/pexels-photo-29685076.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "https://images.pexels.com/photos/29684985/pexels-photo-29684985.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "https://images.pexels.com/photos/32986463/pexels-photo-32986463.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "https://images.pexels.com/photos/32986465/pexels-photo-32986465.jpeg?auto=compress&cs=tinysrgb&h=350",
+                "https://images.pexels.com/photos/29684988/pexels-photo-29684988.jpeg?auto=compress&cs=tinysrgb&h=350"
+              ],
+              "image_url": "https://images.pexels.com/photos/29685076/pexels-photo-29685076.jpeg?auto=compress&cs=tinysrgb&h=350"
+            }
+          ],
+          "staple": [
+            {
+              "fi": "Täysjyväriisiä",
+              "zh": "全麦米饭",
+              "emoji": "🍽️",
+              "tags": [
+                "无麸质",
+                "无奶",
+                "无蛋",
+                "素",
+                "心脏"
+              ],
+              "is_premium": false,
+              "source": "LOUNAS"
+            }
+          ],
+          "sauce": [],
+          "salad": [],
+          "dessert": [
+            {
+              "fi": "Puolukkahilloa",
+              "zh": "越橘果酱",
+              "emoji": "🍽️",
+              "tags": [
+                "无麸质",
+                "无奶",
+                "无蛋",
+                "素"
+              ],
+              "is_premium": false,
+              "source": "KASVISLOUNAS"
+            },
             {
               "fi": "Mustikkarahkaa",
               "zh": "蓝莓夸克甜点",

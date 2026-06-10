@@ -4,6 +4,11 @@
     "role": "main",
     "zh": "亚洲风味炖猪肉"
   },
+  "Appelsiini-porkkanasosekeittoa": {
+    "en_search": "orange carrot soup",
+    "role": "main",
+    "zh": "橙子胡萝卜浓汤"
+  },
   "BBQ-broilerpizzaa": {
     "en_search": "BBQ chicken pizza",
     "role": "main",
@@ -149,6 +154,11 @@
     "role": "main",
     "zh": "水果鸡肉酱"
   },
+  "Hernekeittoa": {
+    "en_search": "pea soup",
+    "role": "main",
+    "zh": "豌豆汤"
+  },
   "Hernesosekeittoa": {
     "en_search": "pea soup, green soup, creamy soup",
     "role": "main",
@@ -224,6 +234,11 @@
     "role": "main",
     "zh": "肉末卷"
   },
+  "Jauhelihapihvit, rosmariini-tomaattikastiketta, persiljaperunaa ja uunikasviksia": {
+    "en_search": "minced meat patty",
+    "role": "main",
+    "zh": "肉饼"
+  },
   "Jauhelihapihvit, talon perunamuusia, kastiketta ja uunikasviksia": {
     "en_search": "Meat patties, mashed potatoes, roasted vegetables",
     "role": "main",
@@ -298,6 +313,16 @@
     "en_search": "teriyaki chicken, chicken stir-fry",
     "role": "main",
     "zh": "照烧鸡肉"
+  },
+  "Kasvis-kaalilaatikkoa": {
+    "en_search": "vegetable cabbage casserole",
+    "role": "main",
+    "zh": "蔬菜卷心菜砂锅"
+  },
+  "Kasvis-kvinoa arrabiattaa ( tomaattinen kastike ), pennepastaa, lämpimiä kasviksia": {
+    "en_search": "vegetable quinoa arrabiata",
+    "role": "main",
+    "zh": "蔬菜藜麦辣番茄酱"
   },
   "Kasvisbolognesea, höyrytettyä ohraa ja uunikasviksia": {
     "en_search": "Vegetable bolognese barley",
@@ -379,6 +404,11 @@
     "role": "main",
     "zh": "奶油三文鱼砂锅配烤蔬菜"
   },
+  "Kermaista porkkana-basilikakeittoa": {
+    "en_search": "creamy carrot basil soup",
+    "role": "main",
+    "zh": "奶油胡萝卜罗勒汤"
+  },
   "Kermavaahtoa": {
     "en_search": "whipped cream, white cream, dessert topping",
     "role": "dessert",
@@ -408,6 +438,11 @@
     "en_search": "Ham bacon hash, potato fry",
     "role": "main",
     "zh": "火腿培根炒土豆"
+  },
+  "Kinkkukiusausta": {
+    "en_search": "ham potato casserole",
+    "role": "main",
+    "zh": "火腿焗土豆"
   },
   "Kirjolohikiusausta": {
     "en_search": "rainbow trout casserole, fish bake",
@@ -459,6 +494,11 @@
     "role": "main",
     "zh": "扁豆蔬菜砂锅和烤蔬菜"
   },
+  "Linssi-kasviskormaa, höyrytettyä riisiä ja lämpimiä kasviksia": {
+    "en_search": "lentil vegetable korma",
+    "role": "main",
+    "zh": "扁豆蔬菜咖喱"
+  },
   "Linssi-kasvispaistikkaat": {
     "en_search": "lentil vegetable patties, vegetarian fritters, fried patties",
     "role": "main",
@@ -489,6 +529,11 @@
     "role": "main",
     "zh": "香肠酱"
   },
+  "Makkarakeittoa": {
+    "en_search": "sausage soup",
+    "role": "main",
+    "zh": "香肠汤"
+  },
   "Mansikkahilloa": {
     "en_search": "Strawberry jam spread",
     "role": "dessert",
@@ -498,6 +543,11 @@
     "en_search": "Strawberry quark dessert",
     "role": "dessert",
     "zh": "草莓夸克甜点"
+  },
+  "Mariannemousse": {
+    "en_search": "Marianne chocolate mousse",
+    "role": "dessert",
+    "zh": "玛丽安慕斯"
   },
   "Mariannemoussea": {
     "en_search": "Chocolate mint mousse, dessert",
@@ -528,6 +578,11 @@
     "en_search": "salsify cream soup",
     "role": "main",
     "zh": "婆罗门参汤"
+  },
+  "Mustapapu-makaronipaistosta": {
+    "en_search": "black bean macaroni bake",
+    "role": "main",
+    "zh": "黑豆通心粉焗饭"
   },
   "Mustikkarahkaa": {
     "en_search": "Blueberry quark dessert",
@@ -608,6 +663,16 @@
     "en_search": "pork noodle wok",
     "role": "main",
     "zh": "猪肉蔬菜炒面配烤蔬菜"
+  },
+  "Punajuurisosekeittoa": {
+    "en_search": "beetroot puree soup",
+    "role": "main",
+    "zh": "甜菜根浓汤"
+  },
+  "Puolukkahilloa": {
+    "en_search": "lingonberry jam",
+    "role": "dessert",
+    "zh": "越橘果酱"
   },
   "Puolukkasurvosta": {
     "en_search": "lingonberry jam, red berry sauce, fruit preserve",
@@ -749,6 +814,11 @@
     "role": "main",
     "zh": "金枪鱼千层面"
   },
+  "Tonnikalalasagnettea ja uunikasviksia": {
+    "en_search": "tuna lasagna",
+    "role": "main",
+    "zh": "金枪鱼千层面"
+  },
   "Tuplajuustoburger": {
     "en_search": "double cheese burger, beef patty",
     "role": "main",
@@ -823,6 +893,11 @@
     "en_search": "Green pepper beef",
     "role": "main",
     "zh": "青胡椒牛肉"
+  },
+  "Vindaloo broilerpataa": {
+    "en_search": "vindaloo chicken stew",
+    "role": "main",
+    "zh": "咖喱鸡肉炖菜"
   },
   "Välimeren kalakeitto": {
     "en_search": "Mediterranean fish soup, seafood broth",
