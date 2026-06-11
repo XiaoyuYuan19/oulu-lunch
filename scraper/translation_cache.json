@@ -104,6 +104,11 @@
     "role": "dessert",
     "zh": "卡布奇诺慕斯"
   },
+  "Chili con carne": {
+    "en_search": "chili stew bowl",
+    "role": "main",
+    "zh": "墨西哥辣肉酱"
+  },
   "Chili sin carne": {
     "en_search": "vegetarian chili, bean stew",
     "role": "main",
@@ -134,10 +139,20 @@
     "role": "sauce",
     "zh": "咖喱菠萝酱"
   },
+  "Curry-kookoskastiketta": {
+    "en_search": "curry coconut sauce",
+    "role": "sauce",
+    "zh": "咖喱椰奶酱"
+  },
   "Currykastiketta": {
     "en_search": "Curry sauce bowl",
     "role": "sauce",
     "zh": "咖喱酱"
+  },
+  "Fajitaspataa naudanlihasta ja härkiksestä": {
+    "en_search": "fajita beef stew",
+    "role": "main",
+    "zh": "牛肉蚕豆法士达烩菜"
   },
   "Halloumiburger": {
     "en_search": "halloumi burger, cheese patty",
@@ -169,6 +184,11 @@
     "role": "main",
     "zh": "蚕豆通心粉奶酪"
   },
+  "Härkäpapu-kasviskeittoa": {
+    "en_search": "bean vegetable soup",
+    "role": "main",
+    "zh": "蚕豆蔬菜汤"
+  },
   "Härkäpapu-kasvispataa": {
     "en_search": "fava bean stew, vegetable stew, hearty stew",
     "role": "main",
@@ -188,6 +208,11 @@
     "en_search": "Lentil stew, whole grain, roasted vegetables",
     "role": "main",
     "zh": "印度素食扁豆炖菜配燕麦"
+  },
+  "Jauheliha chili con carne": {
+    "en_search": "minced meat chili",
+    "role": "main",
+    "zh": "碎肉墨西哥辣肉酱"
   },
   "Jauheliha-chili con carne": {
     "en_search": "chili con carne, beef chili",
@@ -248,6 +273,11 @@
     "en_search": "Meat patties, thyme sauce",
     "role": "main",
     "zh": "肉饼配百里香酱"
+  },
+  "Juures-inkiväärisosekeittoa": {
+    "en_search": "root vegetable soup",
+    "role": "main",
+    "zh": "根菜姜泥汤"
   },
   "Juustoista kirjolohikeittoa": {
     "en_search": "Cheesy rainbow trout soup",
@@ -314,10 +344,20 @@
     "role": "main",
     "zh": "照烧鸡肉"
   },
+  "Kanapuikko": {
+    "en_search": "chicken finger fried",
+    "role": "main",
+    "zh": "炸鸡柳"
+  },
   "Kasvis-kaalilaatikkoa": {
     "en_search": "vegetable cabbage casserole",
     "role": "main",
     "zh": "蔬菜卷心菜砂锅"
+  },
+  "Kasvis-kvinoa arrabiattaa ( tomaattinen kastike ), höyrytettyä riisiä, lämpimiä kasviksia": {
+    "en_search": "quinoa arrabiata bowl",
+    "role": "main",
+    "zh": "蔬菜藜麦辣番茄"
   },
   "Kasvis-kvinoa arrabiattaa ( tomaattinen kastike ), pennepastaa, lämpimiä kasviksia": {
     "en_search": "vegetable quinoa arrabiata",
@@ -499,6 +539,11 @@
     "role": "main",
     "zh": "扁豆蔬菜咖喱"
   },
+  "Linssi-kasvismakaronilaatikkoa": {
+    "en_search": "lentil macaroni casserole",
+    "role": "main",
+    "zh": "扁豆蔬菜通心粉盒"
+  },
   "Linssi-kasvispaistikkaat": {
     "en_search": "lentil vegetable patties, vegetarian fritters, fried patties",
     "role": "main",
@@ -558,6 +603,11 @@
     "en_search": "berry fruit mousse",
     "role": "dessert",
     "zh": "浆果慕斯"
+  },
+  "Marjapiirakkaa ja mascarponemoussea": {
+    "en_search": "berry pie mousse",
+    "role": "dessert",
+    "zh": "浆果派配马斯卡彭慕斯"
   },
   "Marjaunelma": {
     "en_search": "Berry dessert, fruit compote, whipped cream",
@@ -709,6 +759,11 @@
     "role": "sauce",
     "zh": "棕色肉汁"
   },
+  "Savuriista-kantarellikeitto": {
+    "en_search": "game meat mushroom soup",
+    "role": "main",
+    "zh": "烟熏野味鸡油菌汤"
+  },
   "Sinappista uunimakkaraa": {
     "en_search": "Baked sausage, mustard sausage",
     "role": "main",
@@ -743,6 +798,11 @@
     "en_search": "Soy vegetable hash, potato fry",
     "role": "main",
     "zh": "豆制蔬菜炒土豆"
+  },
+  "Soija-kasvispyttipannua G, M, VEG, *, SIS.LUOMUA": {
+    "en_search": "vegetable hash skillet",
+    "role": "main",
+    "zh": "酱油蔬菜杂烩"
   },
   "Soija-kasvisstroganoffia": {
     "en_search": "Soy vegetable stroganoff, stew",
@@ -846,6 +906,11 @@
   },
   "Uunimakkaraa": {
     "en_search": "baked sausage, oven sausage",
+    "role": "main",
+    "zh": "烤香肠"
+  },
+  "Uunimakkaraa, talon perunamuusia ja uunikasviksia": {
+    "en_search": "baked sausage plate",
     "role": "main",
     "zh": "烤香肠"
   },
