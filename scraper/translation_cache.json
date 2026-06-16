@@ -69,6 +69,11 @@
     "role": "main",
     "zh": "鸡肉蔬菜酱"
   },
+  "Broilerikiusausta Tikka Masala": {
+    "en_search": "Tikka Masala chicken, creamy casserole, orange sauce",
+    "role": "main",
+    "zh": "提卡马萨拉鸡肉砂锅"
+  },
   "Broilerikiusausta ja uunikasviksia": {
     "en_search": "chicken casserole, roasted vegetables, baked dish",
     "role": "main",
@@ -439,6 +444,11 @@
     "role": "main",
     "zh": "蔬菜烩饭"
   },
+  "Kebab-kasvispataa": {
+    "en_search": "Kebab stew, meat and vegetable, hearty dish",
+    "role": "main",
+    "zh": "烤肉蔬菜炖菜"
+  },
   "Kebabkiusausta": {
     "en_search": "kebab casserole baked",
     "role": "main",
@@ -618,6 +628,11 @@
     "en_search": "Salmon noodle casserole",
     "role": "main",
     "zh": "烤三文鱼面条"
+  },
+  "Maapähkinä-tofuwokkia, höyrytettyä riisiä ja uunikasviksia": {
+    "en_search": "Tofu stir-fry, peanut sauce, colorful vegetables",
+    "role": "main",
+    "zh": "花生豆腐炒菜"
   },
   "Maapähkinä-tofuwokkia, riisiä ja uunikasviksia": {
     "en_search": "peanut tofu wok, rice, stir-fried vegetables",
