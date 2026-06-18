@@ -4,6 +4,11 @@
     "role": "main",
     "zh": "亚洲风味炖猪肉"
   },
+  "Appelsiini-jogurttipannacottaa": {
+    "en_search": "orange yogurt panna cotta, dessert",
+    "role": "dessert",
+    "zh": "橙子酸奶意式奶冻"
+  },
   "Appelsiini-porkkanasosekeittoa": {
     "en_search": "orange carrot soup",
     "role": "main",
@@ -354,6 +359,11 @@
     "role": "main",
     "zh": "炸鱼条配土豆泥"
   },
+  "Kalastajanpyörykkä": {
+    "en_search": "fish balls, fish cakes",
+    "role": "main",
+    "zh": "渔夫鱼丸"
+  },
   "Kalkkuna-kasviskastiketta": {
     "en_search": "Turkey vegetable stew",
     "role": "main",
@@ -569,6 +579,11 @@
     "role": "main",
     "zh": "温和香料炖鱼"
   },
+  "Lihakeittoa": {
+    "en_search": "meat soup, broth",
+    "role": "main",
+    "zh": "肉汤"
+  },
   "Lihapullia, tomaatti-yrttikastiketta, pastaa ja uunikasviksia": {
     "en_search": "meatballs, tomato herb sauce, pasta, roasted vegetables",
     "role": "main",
@@ -578,6 +593,11 @@
     "en_search": "meatballs, brown meatballs, round meat",
     "role": "main",
     "zh": "肉丸"
+  },
+  "Lihapyöryköitä, BBQ-kastiketta, kermaperunaa ja uunikasviksia": {
+    "en_search": "meatballs, creamed potatoes, roasted vegetables",
+    "role": "main",
+    "zh": "肉丸奶油土豆烤蔬菜"
   },
   "Linssi-bataattimuhennosta": {
     "en_search": "lentil sweet potato mash, orange puree, creamy mash",
@@ -984,6 +1004,11 @@
     "role": "sauce",
     "zh": "番茄奶油酱"
   },
+  "Tonnikala-pastapaistosta": {
+    "en_search": "tuna pasta bake, casserole",
+    "role": "main",
+    "zh": "金枪鱼意面焗烤"
+  },
   "Tonnikalalasagnettea": {
     "en_search": "Tuna lasagna, pasta bake",
     "role": "main",
@@ -1023,6 +1048,11 @@
     "en_search": "Spinach pancakes, green crepes",
     "role": "main",
     "zh": "菠菜薄饼"
+  },
+  "Unkarilaista peruna-kasvispataa": {
+    "en_search": "potato vegetable stew, goulash",
+    "role": "main",
+    "zh": "匈牙利土豆蔬菜炖菜"
   },
   "Uunimakkaraa": {
     "en_search": "baked sausage, oven sausage",
