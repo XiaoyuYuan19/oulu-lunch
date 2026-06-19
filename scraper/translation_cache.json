@@ -399,6 +399,11 @@
     "role": "main",
     "zh": "炸鸡柳"
   },
+  "Kasvis-hernekeittoa": {
+    "en_search": "pea soup, vegetable soup, green soup",
+    "role": "main",
+    "zh": "蔬菜豌豆汤"
+  },
   "Kasvis-kaalilaatikkoa": {
     "en_search": "vegetable cabbage casserole",
     "role": "main",
@@ -719,6 +724,11 @@
     "role": "dessert",
     "zh": "浆果甜点"
   },
+  "Mausteista tomaattikastiketta": {
+    "en_search": "red sauce, tomato sauce, dipping sauce",
+    "role": "sauce",
+    "zh": "意式番茄酱"
+  },
   "Meillä tehtyä perunamuusia": {
     "en_search": "mashed potatoes, potato puree",
     "role": "staple",
@@ -768,6 +778,11 @@
     "en_search": "roasted vegetables, mixed vegetables",
     "role": "side",
     "zh": "烤蔬菜"
+  },
+  "Pannukakku": {
+    "en_search": "pancake, flat cake, dessert",
+    "role": "dessert",
+    "zh": "芬兰煎饼"
   },
   "Pannukakkua": {
     "en_search": "Finnish pancake dessert",
@@ -1123,6 +1138,11 @@
     "en_search": "Mediterranean fish soup, seafood broth",
     "role": "main",
     "zh": "地中海鱼汤"
+  },
+  "Välimeren lohimureketta": {
+    "en_search": "salmon loaf, fish cake, baked fish",
+    "role": "main",
+    "zh": "地中海三文鱼肉饼"
   },
   "Yrttiriisiä": {
     "en_search": "herb rice, white rice",
