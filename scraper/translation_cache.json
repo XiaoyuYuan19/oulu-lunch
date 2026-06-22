@@ -314,6 +314,11 @@
     "role": "main",
     "zh": "根菜姜泥汤"
   },
+  "Juustoista kanakeittoa": {
+    "en_search": "chicken soup cheese",
+    "role": "main",
+    "zh": "芝士鸡肉汤"
+  },
   "Juustoista kirjolohikeittoa": {
     "en_search": "Cheesy rainbow trout soup",
     "role": "main",
@@ -463,6 +468,11 @@
     "en_search": "Kebab stew, meat and vegetable, hearty dish",
     "role": "main",
     "zh": "烤肉蔬菜炖菜"
+  },
+  "Kebab-kasvispataa G, M, Mu, *, sis. LUOMU": {
+    "en_search": "kebab vegetable stew",
+    "role": "main",
+    "zh": "烤肉蔬菜炖锅"
   },
   "Kebabkiusausta": {
     "en_search": "kebab casserole baked",
@@ -928,6 +938,11 @@
     "en_search": "lemon dill cream sauce",
     "role": "sauce",
     "zh": "柠檬莳萝奶油酱"
+  },
+  "Sitruunarahkaa": {
+    "en_search": "lemon quark dessert",
+    "role": "dessert",
+    "zh": "柠檬夸克甜点"
   },
   "Soija-kaalilaatikkoa, puolukkasurvosta ja uunikasviksia": {
     "en_search": "cabbage casserole lingonberry",
