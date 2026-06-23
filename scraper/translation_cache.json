@@ -589,6 +589,11 @@
     "role": "main",
     "zh": "冷熏三文鱼细面焗饭"
   },
+  "Lempeän mausteinen kalapata": {
+    "en_search": "fish stew bowl",
+    "role": "main",
+    "zh": "温和香料鱼锅"
+  },
   "Lempeän mausteista kalapataa": {
     "en_search": "fish stew, mild spice, seafood",
     "role": "main",
@@ -803,6 +808,11 @@
     "en_search": "Pancakes, fruit jam, dessert",
     "role": "dessert",
     "zh": "煎饼配果酱"
+  },
+  "Papumuhennosta": {
+    "en_search": "bean stew bowl",
+    "role": "main",
+    "zh": "豆子炖菜"
   },
   "Parsakaali-kukkakaalikeittoa": {
     "en_search": "broccoli cauliflower soup",
@@ -1099,6 +1109,11 @@
     "role": "dessert",
     "zh": "覆盆子甘草慕斯"
   },
+  "Vadelmainen kauracrumblepaistos": {
+    "en_search": "raspberry crumble dessert",
+    "role": "dessert",
+    "zh": "覆盆子燕麦酥"
+  },
   "Vadelmarahkaa": {
     "en_search": "raspberry quark, fruit dessert, creamy",
     "role": "dessert",
@@ -1118,6 +1133,11 @@
     "en_search": "white chocolate pudding, creamy dessert",
     "role": "dessert",
     "zh": "白巧克力布丁"
+  },
+  "Vanilja-kermavanukasta": {
+    "en_search": "vanilla pudding dessert",
+    "role": "dessert",
+    "zh": "香草奶油布丁"
   },
   "Vaniljakastiketta": {
     "en_search": "vanilla sauce, dessert sauce",
