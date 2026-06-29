@@ -794,6 +794,11 @@
     "role": "staple",
     "zh": "自制土豆泥"
   },
+  "Metsäsienikeittoa": {
+    "en_search": "mushroom soup bowl",
+    "role": "main",
+    "zh": "野蘑菇汤"
+  },
   "Mustaherukkarahkaa": {
     "en_search": "blackcurrant quark, berry dessert",
     "role": "dessert",
@@ -929,10 +934,20 @@
     "role": "main",
     "zh": "猪肉蔬菜炒面配烤蔬菜"
   },
+  "Possua currykastikkeessa": {
+    "en_search": "curry pork dish",
+    "role": "main",
+    "zh": "咖喱猪肉"
+  },
   "Punajuurisosekeittoa": {
     "en_search": "beetroot puree soup",
     "role": "main",
     "zh": "甜菜根浓汤"
+  },
+  "Puolukka-kinuskiherkku": {
+    "en_search": "lingonberry caramel dessert",
+    "role": "dessert",
+    "zh": "越橘焦糖甜点"
   },
   "Puolukkahilloa": {
     "en_search": "lingonberry jam",
