@@ -219,6 +219,11 @@
     "role": "main",
     "zh": "水果鸡肉酱"
   },
+  "Herkkusienikeittoa": {
+    "en_search": "mushroom soup, creamy soup",
+    "role": "main",
+    "zh": "蘑菇汤"
+  },
   "Hernekeittoa": {
     "en_search": "pea soup",
     "role": "main",
@@ -283,6 +288,11 @@
     "en_search": "Minced meat macaroni casserole",
     "role": "main",
     "zh": "肉末通心粉盒"
+  },
+  "Jauheliha-perunapaistosta": {
+    "en_search": "meat potato casserole, baked dish",
+    "role": "main",
+    "zh": "肉末土豆砂锅"
   },
   "Jauheliha-perunasoselaatikkoa": {
     "en_search": "Minced meat potato",
@@ -594,6 +604,11 @@
     "role": "main",
     "zh": "虹鳟海鲜饭"
   },
+  "Kirjolohipyöryköitä": {
+    "en_search": "fish balls, fish patties",
+    "role": "main",
+    "zh": "虹鳟鱼丸"
+  },
   "Kookos-broilerkeittoa": {
     "en_search": "coconut chicken soup, creamy chicken soup",
     "role": "main",
@@ -633,6 +648,11 @@
     "en_search": "meat soup, broth",
     "role": "main",
     "zh": "肉汤"
+  },
+  "Lihapullat texmex-kastikkeessa": {
+    "en_search": "meatballs texmex, saucy meatballs",
+    "role": "main",
+    "zh": "墨西哥风味肉丸"
   },
   "Lihapullia, tomaatti-yrttikastiketta, pastaa ja uunikasviksia": {
     "en_search": "meatballs, tomato herb sauce, pasta, roasted vegetables",
@@ -924,6 +944,11 @@
     "role": "sauce",
     "zh": "胡萝卜豌豆酱"
   },
+  "Porkkana-linssikeittoa": {
+    "en_search": "carrot lentil soup, vegetable soup",
+    "role": "main",
+    "zh": "胡萝卜扁豆汤"
+  },
   "Porkkanaohukaisia": {
     "en_search": "Carrot fritters, savory pancakes",
     "role": "main",
@@ -958,6 +983,11 @@
     "en_search": "lingonberry jam, red berry sauce, fruit preserve",
     "role": "dessert",
     "zh": "越橘酱"
+  },
+  "Purjo-perunasosekeittoa": {
+    "en_search": "leek potato soup, creamy soup",
+    "role": "main",
+    "zh": "韭葱土豆泥汤"
   },
   "Pyttipannua": {
     "en_search": "Pyttipanna hash",
@@ -1168,6 +1198,11 @@
     "en_search": "potato vegetable stew, goulash",
     "role": "main",
     "zh": "匈牙利土豆蔬菜炖菜"
+  },
+  "Uunikalaa kasviksilla": {
+    "en_search": "baked fish, roasted vegetables",
+    "role": "main",
+    "zh": "烤鱼配蔬菜"
   },
   "Uunimakkaraa": {
     "en_search": "baked sausage, oven sausage",
