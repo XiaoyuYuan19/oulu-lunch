@@ -809,6 +809,11 @@
     "role": "sauce",
     "zh": "意式番茄酱"
   },
+  "Mehukeittoa": {
+    "en_search": "fruit soup bowl",
+    "role": "dessert",
+    "zh": "水果汤"
+  },
   "Meillä tehtyä perunamuusia": {
     "en_search": "mashed potatoes, potato puree",
     "role": "staple",
@@ -999,6 +1004,11 @@
     "role": "main",
     "zh": "芬兰炒杂烩和烤蔬菜"
   },
+  "Pähkinäiset selleri-hernepihvit": {
+    "en_search": "celery pea patties",
+    "role": "main",
+    "zh": "坚果芹菜豌豆饼"
+  },
   "Quorn-linssi-kasviscurrya": {
     "en_search": "Quorn lentil curry",
     "role": "main",
@@ -1018,6 +1028,11 @@
     "en_search": "crispy fish pieces",
     "role": "main",
     "zh": "脆皮鱼块"
+  },
+  "Riisipuuroa": {
+    "en_search": "rice porridge bowl",
+    "role": "staple",
+    "zh": "米粥"
   },
   "Ruskeaa kastiketta": {
     "en_search": "brown gravy, meat sauce, savory sauce",
