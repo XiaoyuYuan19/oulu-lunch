@@ -554,6 +554,11 @@
     "role": "main",
     "zh": "奶油三文鱼砂锅配烤蔬菜"
   },
+  "Kermaista pippuripossupataa": {
+    "en_search": "creamy pork stew",
+    "role": "main",
+    "zh": "奶油胡椒炖猪肉"
+  },
   "Kermaista porkkana-basilikakeittoa": {
     "en_search": "creamy carrot basil soup",
     "role": "main",
@@ -1183,6 +1188,11 @@
     "en_search": "tuna lasagna",
     "role": "main",
     "zh": "金枪鱼千层面"
+  },
+  "Tulista currykastiketta": {
+    "en_search": "spicy curry sauce",
+    "role": "sauce",
+    "zh": "辣味咖喱酱"
   },
   "Tuplajuustoburger": {
     "en_search": "double cheese burger, beef patty",
