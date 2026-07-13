@@ -379,6 +379,11 @@
     "role": "main",
     "zh": "鱼汤"
   },
+  "Kalakiusausta": {
+    "en_search": "Fish casserole baked",
+    "role": "main",
+    "zh": "芬兰鱼肉砂锅"
+  },
   "Kalapuikkoja": {
     "en_search": "fish sticks, fried fish",
     "role": "main",
@@ -1293,6 +1298,11 @@
     "en_search": "vegan casserole, potato bake",
     "role": "main",
     "zh": "素肉土豆泥砂锅"
+  },
+  "Vegaanista välimeren mureketta": {
+    "en_search": "Vegan loaf slice",
+    "role": "main",
+    "zh": "地中海素肉饼"
   },
   "Vegepuikkoja, chimichurrikastiketta, höyrytettyä riisiä ja uunikasviksia": {
     "en_search": "Vegetable sticks, chimichurri, steamed rice",
