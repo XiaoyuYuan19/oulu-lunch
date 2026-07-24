@@ -604,6 +604,11 @@
     "role": "main",
     "zh": "火腿焗土豆"
   },
+  "Kinkkupaellaa": {
+    "en_search": "ham paella, rice",
+    "role": "main",
+    "zh": "火腿海鲜饭"
+  },
   "Kirjolohikiusausta": {
     "en_search": "rainbow trout casserole, fish bake",
     "role": "main",
@@ -758,6 +763,11 @@
     "en_search": "sausage soup",
     "role": "main",
     "zh": "香肠汤"
+  },
+  "Makkarastroganoff": {
+    "en_search": "sausage stroganoff, creamy",
+    "role": "main",
+    "zh": "香肠俄式烩饭"
   },
   "Mango-soijajogurttikastiketta": {
     "en_search": "mango soy yogurt sauce",
@@ -978,6 +988,11 @@
     "en_search": "curry pork dish",
     "role": "main",
     "zh": "咖喱猪肉"
+  },
+  "Punajuuri-aurajuustokiusausta": {
+    "en_search": "beetroot casserole, blue cheese",
+    "role": "main",
+    "zh": "甜菜蓝纹奶酪砂锅"
   },
   "Punajuurisosekeittoa": {
     "en_search": "beetroot puree soup",
