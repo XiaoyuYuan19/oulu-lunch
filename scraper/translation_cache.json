@@ -569,6 +569,11 @@
     "role": "main",
     "zh": "奶油胡萝卜罗勒汤"
   },
+  "Kermaista sinappikastiketta": {
+    "en_search": "creamy mustard sauce",
+    "role": "sauce",
+    "zh": "奶油芥末酱"
+  },
   "Kermavaahtoa": {
     "en_search": "whipped cream, white cream, dessert topping",
     "role": "dessert",
@@ -1109,6 +1114,11 @@
     "role": "main",
     "zh": "豆制品蔬菜焗烤"
   },
+  "Soija-kasvispaistosta": {
+    "en_search": "vegetable stir-fry, soy dish",
+    "role": "main",
+    "zh": "炒素菜"
+  },
   "Soija-kasvispyttipannua": {
     "en_search": "Soy vegetable hash, potato fry",
     "role": "main",
@@ -1154,6 +1164,11 @@
     "role": "main",
     "zh": "招牌鸡肉蔬菜饼"
   },
+  "Talon jauhelihapihvi": {
+    "en_search": "meat patty, beef patty",
+    "role": "main",
+    "zh": "肉饼"
+  },
   "Talon tonnikala-makaronilaatikkoa": {
     "en_search": "tuna macaroni casserole, pasta bake, baked dish",
     "role": "main",
@@ -1188,6 +1203,11 @@
     "en_search": "Tomato sauce, red sauce",
     "role": "sauce",
     "zh": "番茄酱"
+  },
+  "Tomaattista kalakeittoa": {
+    "en_search": "fish soup, tomato broth",
+    "role": "main",
+    "zh": "番茄鱼汤"
   },
   "Tomaattista kermakastiketta": {
     "en_search": "tomato cream sauce, red sauce, creamy sauce",
