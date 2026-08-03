@@ -1354,6 +1354,11 @@
     "role": "main",
     "zh": "咖喱鸡肉炖菜"
   },
+  "Vispikerma": {
+    "en_search": "whipped cream, dessert topping, fluffy",
+    "role": "dessert",
+    "zh": "打发奶油"
+  },
   "Välimeren kalakeitto": {
     "en_search": "Mediterranean fish soup, seafood broth",
     "role": "main",
