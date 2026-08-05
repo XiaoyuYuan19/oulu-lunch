@@ -284,6 +284,11 @@
     "role": "main",
     "zh": "肉末蔬菜肉酱"
   },
+  "Jauheliha-kasvisbolognesea G, M, Mu, *, SIS.LUOMUA": {
+    "en_search": "bolognese sauce meat",
+    "role": "main",
+    "zh": "肉末蔬菜肉酱"
+  },
   "Jauheliha-makaronilaatikko": {
     "en_search": "Minced meat macaroni casserole",
     "role": "main",
@@ -633,6 +638,11 @@
     "en_search": "coconut chicken soup, creamy chicken soup",
     "role": "main",
     "zh": "椰香鸡肉汤"
+  },
+  "Kookosmousse": {
+    "en_search": "coconut mousse dessert",
+    "role": "dessert",
+    "zh": "椰子慕斯"
   },
   "Kukkakaali-aurajuustokeittoa": {
     "en_search": "cauliflower blue cheese soup, creamy soup, white soup",
@@ -1188,6 +1198,11 @@
     "en_search": "tofu patties, chickpea fritters",
     "role": "main",
     "zh": "豆腐鹰嘴豆饼"
+  },
+  "Tomaatti-basilikakeittoa": {
+    "en_search": "tomato basil soup",
+    "role": "main",
+    "zh": "番茄罗勒汤"
   },
   "Tomaatti-korianteri salsaa": {
     "en_search": "Tomato cilantro salsa",
