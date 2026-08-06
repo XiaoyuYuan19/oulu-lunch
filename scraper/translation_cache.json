@@ -79,6 +79,11 @@
     "role": "main",
     "zh": "鸡肉蔬菜酱"
   },
+  "Broileria kookos-kasviskastikkeessa": {
+    "en_search": "chicken curry, coconut sauce, vegetable stew",
+    "role": "main",
+    "zh": "椰汁蔬菜炖鸡"
+  },
   "Broilerikiusausta Tikka Masala": {
     "en_search": "Tikka Masala chicken, creamy casserole, orange sauce",
     "role": "main",
@@ -293,6 +298,11 @@
     "en_search": "Minced meat macaroni casserole",
     "role": "main",
     "zh": "肉末通心粉盒"
+  },
+  "Jauheliha-makaronilaatikko *, SIS.LUOMUA": {
+    "en_search": "macaroni casserole, baked pasta, ground beef pasta",
+    "role": "main",
+    "zh": "肉末通心粉烤箱菜"
   },
   "Jauheliha-perunapaistosta": {
     "en_search": "meat potato casserole, baked dish",
@@ -738,6 +748,11 @@
     "en_search": "lentil vegetable patties, vegetarian fritters, fried patties",
     "role": "main",
     "zh": "扁豆蔬菜饼"
+  },
+  "Linssi-masalakeittoa": {
+    "en_search": "lentil soup, masala stew, vegetarian curry",
+    "role": "main",
+    "zh": "扁豆玛莎拉汤"
   },
   "Linssi-munakoisokormaa, yrttikauraa ja lämmintä kasvislisäkettä": {
     "en_search": "Lentil eggplant korma, curry",
