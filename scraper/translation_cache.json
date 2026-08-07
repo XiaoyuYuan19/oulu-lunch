@@ -49,6 +49,11 @@
     "role": "main",
     "zh": "红薯花椰菜汤"
   },
+  "Bataatti-parsakaalikeittoa": {
+    "en_search": "sweet potato soup, broccoli soup",
+    "role": "main",
+    "zh": "红薯西兰花汤"
+  },
   "Bataatti-tuorejuustokeittoa": {
     "en_search": "Sweet potato cream cheese soup",
     "role": "main",
@@ -173,6 +178,11 @@
     "en_search": "chili minced meat pasta bake, pasta casserole",
     "role": "main",
     "zh": "辣味肉酱意面焗烤"
+  },
+  "Chilimausteista porkkanasosekeittoa": {
+    "en_search": "carrot soup, spicy soup",
+    "role": "main",
+    "zh": "辣胡萝卜泥汤"
   },
   "Chilimausteista tomaattikastiketta": {
     "en_search": "chili tomato sauce, red sauce",
@@ -529,6 +539,11 @@
     "role": "main",
     "zh": "烤肉串砂锅"
   },
+  "Keitetty kananmuna": {
+    "en_search": "boiled egg, whole egg",
+    "role": "main",
+    "zh": "煮鸡蛋"
+  },
   "Keitettyjä perunoita": {
     "en_search": "boiled potatoes, whole potatoes",
     "role": "staple",
@@ -628,6 +643,11 @@
     "en_search": "ham paella, rice",
     "role": "main",
     "zh": "火腿海鲜饭"
+  },
+  "Kirjolohikastiketta": {
+    "en_search": "fish sauce, creamy sauce",
+    "role": "main",
+    "zh": "虹鳟鱼酱"
   },
   "Kirjolohikiusausta": {
     "en_search": "rainbow trout casserole, fish bake",
@@ -893,6 +913,11 @@
     "en_search": "Blueberry quark dessert",
     "role": "dessert",
     "zh": "蓝莓夸克甜点"
+  },
+  "Myskikurpitsa-kookoskeittoa": {
+    "en_search": "squash soup, coconut soup",
+    "role": "main",
+    "zh": "奶油南瓜椰子汤"
   },
   "Nakki-pekonistroganoffia": {
     "en_search": "sausage stroganoff, bacon, creamy stew",
@@ -1204,6 +1229,11 @@
     "role": "sauce",
     "zh": "莳萝奶油酱"
   },
+  "Tilliperunat": {
+    "en_search": "dill potatoes, boiled potatoes",
+    "role": "staple",
+    "zh": "莳萝土豆"
+  },
   "Tofu-kasviskeittoa": {
     "en_search": "Tofu soup, vegetable broth",
     "role": "main",
@@ -1263,6 +1293,11 @@
     "en_search": "spicy curry sauce",
     "role": "sauce",
     "zh": "辣味咖喱酱"
+  },
+  "Tuorejuusto-perunasosekeittoa": {
+    "en_search": "potato soup, creamy soup",
+    "role": "main",
+    "zh": "奶油土豆泥汤"
   },
   "Tuplajuustoburger": {
     "en_search": "double cheese burger, beef patty",
