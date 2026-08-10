@@ -4,6 +4,11 @@
     "role": "main",
     "zh": "亚洲风味炖猪肉"
   },
+  "Aiolia": {
+    "en_search": "aioli sauce, creamy dip",
+    "role": "sauce",
+    "zh": "蒜泥蛋黄酱"
+  },
   "Appelsiini-jogurttipannacottaa": {
     "en_search": "orange yogurt panna cotta, dessert",
     "role": "dessert",
@@ -83,6 +88,11 @@
     "en_search": "Chicken vegetable stew, creamy sauce",
     "role": "main",
     "zh": "鸡肉蔬菜酱"
+  },
+  "Broileria kermaisessa pippurikastikkeessa": {
+    "en_search": "creamy chicken, pepper sauce",
+    "role": "main",
+    "zh": "奶油胡椒鸡"
   },
   "Broileria kookos-kasviskastikkeessa": {
     "en_search": "chicken curry, coconut sauce, vegetable stew",
@@ -208,6 +218,11 @@
     "en_search": "Curry sauce bowl",
     "role": "sauce",
     "zh": "咖喱酱"
+  },
+  "Espanjalaisia kasvispihvejä": {
+    "en_search": "vegetable patties, fried fritters",
+    "role": "main",
+    "zh": "西班牙蔬菜饼"
   },
   "Fajitaspataa naudanlihasta ja härkiksestä": {
     "en_search": "fajita beef stew",
@@ -483,6 +498,11 @@
     "en_search": "vegetable bean croquettes, tomato salsa, steamed barley, roasted vegetables",
     "role": "main",
     "zh": "蔬菜豆丸番茄莎莎蒸大麦和烤蔬菜"
+  },
+  "Kasvis-riisinuudelikeittoa": {
+    "en_search": "noodle soup, vegetable broth",
+    "role": "main",
+    "zh": "蔬菜米粉汤"
   },
   "Kasvisbolognesea, höyrytettyä ohraa ja uunikasviksia": {
     "en_search": "Vegetable bolognese barley",
