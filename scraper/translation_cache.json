@@ -1274,6 +1274,11 @@
     "role": "sauce",
     "zh": "番茄香菜莎莎酱"
   },
+  "Tomaatti-tuorejuustokeittoa": {
+    "en_search": "Tomato soup, creamy soup, red soup",
+    "role": "main",
+    "zh": "番茄奶油芝士汤"
+  },
   "Tomaatti-vuohenjuustokeittoa": {
     "en_search": "Tomato goat cheese soup",
     "role": "main",
