@@ -44,6 +44,11 @@
     "role": "dessert",
     "zh": "香蕉浆果冰沙"
   },
+  "Banaani-marjasmoothieta": {
+    "en_search": "banana berry smoothie",
+    "role": "dessert",
+    "zh": "香蕉浆果冰沙"
+  },
   "Basilika-kermaviilipiimäkastiketta": {
     "en_search": "basil sour cream sauce, white sauce, creamy dressing",
     "role": "sauce",
@@ -138,6 +143,11 @@
     "en_search": "chicken lasagna, baked pasta, layered pasta",
     "role": "main",
     "zh": "鸡肉千层面"
+  },
+  "Broilermakkaralaatikkoa": {
+    "en_search": "chicken sausage casserole",
+    "role": "main",
+    "zh": "鸡肉香肠砂锅"
   },
   "Broilerpyöryköitä": {
     "en_search": "chicken meatballs, poultry balls",
@@ -1249,6 +1259,11 @@
     "role": "main",
     "zh": "招牌金枪鱼通心粉焗烤"
   },
+  "Thaimaalaista kasviskeittoa": {
+    "en_search": "Thai vegetable soup",
+    "role": "main",
+    "zh": "泰式蔬菜汤"
+  },
   "Tilli-kermakastiketta": {
     "en_search": "dill cream sauce, white sauce",
     "role": "sauce",
@@ -1398,6 +1413,11 @@
     "en_search": "Panna cotta, white chocolate, lime dessert",
     "role": "dessert",
     "zh": "白巧克力青柠奶冻"
+  },
+  "Valkosuklaa-mascarponemousse": {
+    "en_search": "white chocolate mousse",
+    "role": "dessert",
+    "zh": "白巧克力马斯卡彭慕斯"
   },
   "Valkosuklaa-ruusunmarjamoussea": {
     "en_search": "white chocolate mousse, rosehip dessert, creamy dessert",
