@@ -684,6 +684,11 @@
     "role": "main",
     "zh": "虹鳟鱼砂锅"
   },
+  "Kirjolohimureke": {
+    "en_search": "fish loaf trout",
+    "role": "main",
+    "zh": "虹鳟鱼肉糕"
+  },
   "Kirjolohipaellaa": {
     "en_search": "salmon paella rice",
     "role": "main",
@@ -818,6 +823,11 @@
     "en_search": "Salmon noodle casserole",
     "role": "main",
     "zh": "烤三文鱼面条"
+  },
+  "Luumurahkaa": {
+    "en_search": "plum dessert quark",
+    "role": "dessert",
+    "zh": "李子夸克甜点"
   },
   "Maapähkinä-tofuwokkia, höyrytettyä riisiä ja uunikasviksia": {
     "en_search": "Tofu stir-fry, peanut sauce, colorful vegetables",
@@ -1169,6 +1179,11 @@
     "role": "sauce",
     "zh": "柠檬酸豆酱"
   },
+  "Sitruuna-kermaviilikastiketta": {
+    "en_search": "lemon cream sauce",
+    "role": "sauce",
+    "zh": "柠檬酸奶油酱"
+  },
   "Sitruuna-tilli-kermakastiketta": {
     "en_search": "lemon dill cream sauce",
     "role": "sauce",
@@ -1443,6 +1458,11 @@
     "en_search": "Potato casserole, meat casserole",
     "role": "main",
     "zh": "烤肉土豆砂锅"
+  },
+  "Vegaaninen punajuuri-jauhis-juustokiusaus CHEF": {
+    "en_search": "vegan casserole beetroot",
+    "role": "main",
+    "zh": "纯素甜菜肉末奶酪砂锅"
   },
   "Vegaanista jauhis-perunasosevuokaa": {
     "en_search": "vegan casserole, potato bake",
