@@ -459,6 +459,11 @@
     "role": "main",
     "zh": "火鸡炒面"
   },
+  "Kalkkunaa kookos-vihanneskastikkeessa": {
+    "en_search": "turkey stew, coconut sauce, vegetable curry",
+    "role": "main",
+    "zh": "椰香蔬菜火鸡"
+  },
   "Kananmuna": {
     "en_search": "boiled egg, hard-boiled egg, single egg",
     "role": "side",
@@ -729,6 +734,11 @@
     "role": "main",
     "zh": "冷熏三文鱼细面焗饭"
   },
+  "Lakkapannacottaa": {
+    "en_search": "pannacotta, berry dessert, creamy dessert",
+    "role": "dessert",
+    "zh": "云莓奶冻"
+  },
   "Lempeän mausteinen kalapata": {
     "en_search": "fish stew bowl",
     "role": "main",
@@ -928,6 +938,11 @@
     "en_search": "mashed potatoes, potato puree",
     "role": "staple",
     "zh": "自制土豆泥"
+  },
+  "Metsäsieni-murekepihvi (anammasta) CHEF": {
+    "en_search": "mushroom patty, brown patty, baked patty",
+    "role": "main",
+    "zh": "森林蘑菇肉饼"
   },
   "Metsäsienikeittoa": {
     "en_search": "mushroom soup bowl",
@@ -1354,6 +1369,11 @@
     "role": "sauce",
     "zh": "辣味咖喱酱"
   },
+  "Tummaa rosmariinikastiketta": {
+    "en_search": "dark sauce, rosemary sauce, brown gravy",
+    "role": "sauce",
+    "zh": "深色迷迭香酱"
+  },
   "Tuorejuusto-perunasosekeittoa": {
     "en_search": "potato soup, creamy soup",
     "role": "main",
@@ -1478,6 +1498,11 @@
     "en_search": "Vegetable sticks, chimichurri, steamed rice",
     "role": "main",
     "zh": "素食棒配香辣酱和米饭"
+  },
+  "Vihannes-nuudelivuokaa": {
+    "en_search": "noodle casserole, vegetable bake, pasta gratin",
+    "role": "main",
+    "zh": "蔬菜面条砂锅"
   },
   "Viherpippurihärkää": {
     "en_search": "Green pepper beef",
