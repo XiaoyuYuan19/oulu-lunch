@@ -1119,6 +1119,11 @@
     "role": "dessert",
     "zh": "越橘焦糖甜点"
   },
+  "Puolukka-kinuskirahkaa": {
+    "en_search": "lingonberry dessert, caramel quark",
+    "role": "dessert",
+    "zh": "越橘焦糖奶酪"
+  },
   "Puolukkahilloa": {
     "en_search": "lingonberry jam",
     "role": "dessert",
