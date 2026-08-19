@@ -644,6 +644,11 @@
     "role": "dessert",
     "zh": "打发奶油"
   },
+  "Kikherne-kasviskastiketta": {
+    "en_search": "chickpea vegetable stew",
+    "role": "main",
+    "zh": "鹰嘴豆蔬菜炖菜"
+  },
   "Kikherne-kasvistaginea": {
     "en_search": "chickpea vegetable tagine, Moroccan stew, hearty stew",
     "role": "main",
@@ -1393,6 +1398,11 @@
     "en_search": "Turkish yogurt, honey, muesli, breakfast bowl",
     "role": "dessert",
     "zh": "土耳其酸奶蜂蜜麦片"
+  },
+  "Tyrnirahkaa": {
+    "en_search": "orange dessert, quark",
+    "role": "dessert",
+    "zh": "沙棘夸克"
   },
   "Täysjyväpastaa": {
     "en_search": "whole grain pasta, brown pasta",
