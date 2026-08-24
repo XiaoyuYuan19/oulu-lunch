@@ -484,6 +484,11 @@
     "role": "main",
     "zh": "椰香蔬菜火鸡"
   },
+  "Kana-cheddar-jalapenoburger": {
+    "en_search": "chicken cheddar burger",
+    "role": "main",
+    "zh": "鸡肉切达墨西哥辣椒汉堡"
+  },
   "Kananmuna": {
     "en_search": "boiled egg, hard-boiled egg, single egg",
     "role": "side",
@@ -579,6 +584,11 @@
     "role": "main",
     "zh": "蔬菜烩饭"
   },
+  "Kasvisseljankakeittoa": {
+    "en_search": "vegetable solyanka soup",
+    "role": "main",
+    "zh": "蔬菜罗宋汤"
+  },
   "Kebab-kasvispataa": {
     "en_search": "Kebab stew, meat and vegetable, hearty dish",
     "role": "main",
@@ -608,6 +618,11 @@
     "en_search": "Boiled potatoes, white potatoes",
     "role": "staple",
     "zh": "煮土豆"
+  },
+  "Kermaista basilikakastiketta": {
+    "en_search": "creamy basil sauce",
+    "role": "sauce",
+    "zh": "奶油罗勒酱"
   },
   "Kermaista broilerkeittoa": {
     "en_search": "creamy chicken soup",
@@ -999,6 +1014,11 @@
     "role": "main",
     "zh": "黑豆通心粉焗饭"
   },
+  "Mustikka-banaani smoothieta": {
+    "en_search": "blueberry banana smoothie",
+    "role": "dessert",
+    "zh": "蓝莓香蕉冰沙"
+  },
   "Mustikkarahkaa": {
     "en_search": "Blueberry quark dessert",
     "role": "dessert",
@@ -1043,6 +1063,11 @@
     "en_search": "ham chicken paella",
     "role": "main",
     "zh": "烟熏火腿鸡肉海鲜饭"
+  },
+  "Paistettua lohta": {
+    "en_search": "fried salmon fillet",
+    "role": "main",
+    "zh": "煎三文鱼"
   },
   "Palsternakkasosekeittoa": {
     "en_search": "creamy parsnip soup",
@@ -1158,6 +1183,11 @@
     "en_search": "beetroot casserole, blue cheese",
     "role": "main",
     "zh": "甜菜蓝纹奶酪砂锅"
+  },
+  "Punajuuri-tuorejuustokeittoa": {
+    "en_search": "beetroot cream soup",
+    "role": "main",
+    "zh": "甜菜根奶油芝士汤"
   },
   "Punajuurisosekeittoa": {
     "en_search": "beetroot puree soup",
@@ -1358,6 +1388,11 @@
     "en_search": "Thai vegetable soup",
     "role": "main",
     "zh": "泰式蔬菜汤"
+  },
+  "Tikkuperunoita": {
+    "en_search": "french fries, potato sticks",
+    "role": "staple",
+    "zh": "炸薯条"
   },
   "Tilli-kermakastiketta": {
     "en_search": "dill cream sauce, white sauce",
