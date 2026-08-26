@@ -194,6 +194,11 @@
     "role": "main",
     "zh": "素辣椒"
   },
+  "Chili-ananaskastiketta": {
+    "en_search": "chili pineapple sauce",
+    "role": "sauce",
+    "zh": "辣椒菠萝酱"
+  },
   "Chili-kebabpaistosta": {
     "en_search": "chili kebab bake, baked dish, meat casserole",
     "role": "main",
@@ -273,6 +278,11 @@
     "en_search": "Chicken sauce, fruit chicken, stew",
     "role": "main",
     "zh": "水果鸡肉酱"
+  },
+  "Herkkusienikastiketta": {
+    "en_search": "mushroom sauce creamy",
+    "role": "sauce",
+    "zh": "蘑菇酱"
   },
   "Herkkusienikeittoa": {
     "en_search": "mushroom soup, creamy soup",
@@ -814,6 +824,11 @@
     "role": "main",
     "zh": "肉丸奶油土豆烤蔬菜"
   },
+  "Lime-tillikastiketta": {
+    "en_search": "lime dill sauce",
+    "role": "sauce",
+    "zh": "青柠莳萝酱"
+  },
   "Linssi-bataattimuhennosta": {
     "en_search": "lentil sweet potato mash, orange puree, creamy mash",
     "role": "main",
@@ -908,6 +923,11 @@
     "en_search": "sausage soup",
     "role": "main",
     "zh": "香肠汤"
+  },
+  "Makkararisottoa": {
+    "en_search": "sausage risotto rice",
+    "role": "main",
+    "zh": "香肠烩饭"
   },
   "Makkarastroganoff": {
     "en_search": "sausage stroganoff, creamy",
@@ -1059,6 +1079,11 @@
     "role": "side",
     "zh": "烤蔬菜"
   },
+  "Paahdettuja peruna ja bataattilohkoja": {
+    "en_search": "roasted potato sweetpotato",
+    "role": "staple",
+    "zh": "烤土豆红薯块"
+  },
   "Paella palvikinkusta ja kananpojasta": {
     "en_search": "ham chicken paella",
     "role": "main",
@@ -1103,6 +1128,11 @@
     "en_search": "bean stew bowl",
     "role": "main",
     "zh": "炖豆子"
+  },
+  "Parsakaali-aurajuustokeitto": {
+    "en_search": "broccoli blue cheese soup",
+    "role": "main",
+    "zh": "西兰花蓝纹奶酪汤"
   },
   "Parsakaali-kukkakaalikeittoa": {
     "en_search": "broccoli cauliflower soup",
@@ -1274,6 +1304,11 @@
     "role": "staple",
     "zh": "瑞士薯饼"
   },
+  "Röstiperuna G.L.": {
+    "en_search": "rosti potato pancake",
+    "role": "staple",
+    "zh": "瑞士薯饼"
+  },
   "Savuriista-kantarellikeitto": {
     "en_search": "game meat mushroom soup",
     "role": "main",
@@ -1348,6 +1383,11 @@
     "en_search": "Soy bolognese sauce",
     "role": "main",
     "zh": "大豆肉酱"
+  },
+  "Suklaa-lakritsiherkku": {
+    "en_search": "chocolate licorice dessert",
+    "role": "dessert",
+    "zh": "巧克力甘草甜点"
   },
   "Suklaaherkku": {
     "en_search": "chocolate dessert, sweet treat",
@@ -1509,6 +1549,11 @@
     "role": "dessert",
     "zh": "土耳其酸奶蜂蜜麦片"
   },
+  "Turkkilaista jogurttia, hunajaa ja saksanpähkinää": {
+    "en_search": "yogurt honey walnuts",
+    "role": "dessert",
+    "zh": "土耳其酸奶蜂蜜核桃"
+  },
   "Tyrnirahkaa": {
     "en_search": "orange dessert, quark",
     "role": "dessert",
@@ -1568,6 +1613,11 @@
     "en_search": "raspberry quark, fruit dessert, creamy",
     "role": "dessert",
     "zh": "覆盆子夸克甜点"
+  },
+  "Valkosipuli-kermaperunoita": {
+    "en_search": "garlic cream potatoes",
+    "role": "staple",
+    "zh": "蒜香奶油土豆"
   },
   "Valkosuklaa-limepannacottaa tai omenapaistosta ja vaniljakastiketta": {
     "en_search": "Panna cotta, white chocolate, lime dessert",
