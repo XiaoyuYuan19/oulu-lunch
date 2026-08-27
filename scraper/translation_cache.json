@@ -394,6 +394,11 @@
     "role": "main",
     "zh": "肉末卷"
   },
+  "Jauhelihapihvejä": {
+    "en_search": "meat patty brown",
+    "role": "main",
+    "zh": "肉饼"
+  },
   "Jauhelihapihvit, rosmariini-tomaattikastiketta, persiljaperunaa ja uunikasviksia": {
     "en_search": "minced meat patty",
     "role": "main",
@@ -503,6 +508,11 @@
     "en_search": "boiled egg, hard-boiled egg, single egg",
     "role": "side",
     "zh": "鸡蛋"
+  },
+  "Kananmunakastike": {
+    "en_search": "egg sauce white",
+    "role": "sauce",
+    "zh": "鸡蛋酱"
   },
   "Kananpoikaa currykastikkeessa": {
     "en_search": "chicken curry, curry dish",
@@ -763,6 +773,11 @@
     "en_search": "coconut mousse dessert",
     "role": "dessert",
     "zh": "椰子慕斯"
+  },
+  "Korianteri-minttukastike": {
+    "en_search": "green herb sauce",
+    "role": "sauce",
+    "zh": "香菜薄荷酱"
   },
   "Kukkakaali-aurajuustokeittoa": {
     "en_search": "cauliflower blue cheese soup, creamy soup, white soup",
@@ -1168,6 +1183,11 @@
     "en_search": "pilaf rice, rice dish, fluffy rice",
     "role": "staple",
     "zh": "抓饭"
+  },
+  "Pinaatti-juustotäytteisiä kalarullia": {
+    "en_search": "fish roll spinach cheese",
+    "role": "main",
+    "zh": "菠菜奶酪鱼卷"
   },
   "Pinaattikeittoa": {
     "en_search": "spinach soup, creamy soup, green soup",
