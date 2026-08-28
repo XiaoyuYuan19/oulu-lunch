@@ -54,6 +54,11 @@
     "role": "sauce",
     "zh": "罗勒酸奶油酪乳酱"
   },
+  "Basmatiriisiä": {
+    "en_search": "basmati rice grains",
+    "role": "staple",
+    "zh": "印度香米饭"
+  },
   "Bataatti-kukkakaalikeittoa": {
     "en_search": "sweet potato cauliflower soup, creamy vegetable soup",
     "role": "main",
@@ -134,6 +139,11 @@
     "role": "main",
     "zh": "蔬菜酱烤鸡"
   },
+  "Broilerin paistia kermaisessa paholaisenkastikkeessa": {
+    "en_search": "roasted chicken creamy sauce",
+    "role": "main",
+    "zh": "奶油魔鬼酱烤鸡"
+  },
   "Broileripastapaistosta": {
     "en_search": "chicken pasta bake casserole",
     "role": "main",
@@ -198,6 +208,11 @@
     "en_search": "chili pineapple sauce",
     "role": "sauce",
     "zh": "辣椒菠萝酱"
+  },
+  "Chili-appelsiini pannacottaa": {
+    "en_search": "chili orange panna cotta",
+    "role": "dessert",
+    "zh": "辣椒橙子意式奶冻"
   },
   "Chili-kebabpaistosta": {
     "en_search": "chili kebab bake, baked dish, meat casserole",
@@ -769,7 +784,17 @@
     "role": "main",
     "zh": "椰香鸡肉汤"
   },
+  "Kookos-kasvissosekeittoa": {
+    "en_search": "coconut vegetable soup",
+    "role": "main",
+    "zh": "椰子蔬菜浓汤"
+  },
   "Kookosmousse": {
+    "en_search": "coconut mousse dessert",
+    "role": "dessert",
+    "zh": "椰子慕斯"
+  },
+  "Kookosmoussea": {
     "en_search": "coconut mousse dessert",
     "role": "dessert",
     "zh": "椰子慕斯"
