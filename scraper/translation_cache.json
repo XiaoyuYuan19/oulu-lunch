@@ -979,6 +979,11 @@
     "role": "sauce",
     "zh": "芒果豆乳酸奶酱"
   },
+  "Mangomoussea": {
+    "en_search": "mango mousse, dessert cup, creamy dessert",
+    "role": "dessert",
+    "zh": "芒果慕斯"
+  },
   "Mangorahkaa": {
     "en_search": "mango quark, dairy dessert, fruit dessert",
     "role": "dessert",
@@ -1123,6 +1128,11 @@
     "en_search": "roasted potato sweetpotato",
     "role": "staple",
     "zh": "烤土豆红薯块"
+  },
+  "Paahdettuja perunoita": {
+    "en_search": "roasted potatoes, crispy potatoes",
+    "role": "staple",
+    "zh": "烤土豆"
   },
   "Paella palvikinkusta ja kananpojasta": {
     "en_search": "ham chicken paella",
@@ -1643,6 +1653,11 @@
     "en_search": "baked sausage plate",
     "role": "main",
     "zh": "烤香肠"
+  },
+  "Uuniperunat kasvistäytteellä": {
+    "en_search": "baked potato, stuffed potato, vegetable filling",
+    "role": "staple",
+    "zh": "蔬菜馅烤土豆"
   },
   "Vadelma-salmiakkimoussea": {
     "en_search": "raspberry mousse, dessert mousse, sweet dessert",
