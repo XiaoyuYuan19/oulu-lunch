@@ -1509,6 +1509,11 @@
     "role": "main",
     "zh": "豆腐鹰嘴豆饼"
   },
+  "Tofu-teriyakikastiketta": {
+    "en_search": "tofu teriyaki sauce",
+    "role": "main",
+    "zh": "照烧豆腐"
+  },
   "Tomaatti-basilikakeittoa": {
     "en_search": "tomato basil soup",
     "role": "main",
@@ -1698,6 +1703,11 @@
     "en_search": "white chocolate pudding, creamy dessert",
     "role": "dessert",
     "zh": "白巧克力布丁"
+  },
+  "Vanilja cup cake": {
+    "en_search": "vanilla cupcake dessert",
+    "role": "dessert",
+    "zh": "香草杯子蛋糕"
   },
   "Vanilja-kermavanukasta": {
     "en_search": "vanilla pudding dessert",
