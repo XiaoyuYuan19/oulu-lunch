@@ -569,6 +569,11 @@
     "role": "main",
     "zh": "蔬菜藜麦辣番茄酱"
   },
+  "Kasvis-papukroketteja": {
+    "en_search": "vegetable croquettes, bean patties",
+    "role": "main",
+    "zh": "蔬菜豆角可乐饼"
+  },
   "Kasvis-papukroketteja, tomaattisalsaa, höyrytettyä ohraa ja uunikasviksia": {
     "en_search": "vegetable bean croquettes, tomato salsa, steamed barley, roasted vegetables",
     "role": "main",
@@ -693,6 +698,11 @@
     "en_search": "Salmon casserole, creamy, roasted vegetables",
     "role": "main",
     "zh": "奶油三文鱼砂锅配烤蔬菜"
+  },
+  "Kermaista parsakaalikeittoa": {
+    "en_search": "creamy broccoli soup, green vegetable soup",
+    "role": "main",
+    "zh": "奶油西兰花汤"
   },
   "Kermaista pippuripossupataa": {
     "en_search": "creamy pork stew",
@@ -1363,6 +1373,11 @@
     "en_search": "rosti potato pancake",
     "role": "staple",
     "zh": "瑞士薯饼"
+  },
+  "Samettista inkivääri- juuressosekeittoa": {
+    "en_search": "ginger root soup, creamy vegetable soup",
+    "role": "main",
+    "zh": "姜汁根菜浓汤"
   },
   "Savuriista-kantarellikeitto": {
     "en_search": "game meat mushroom soup",
