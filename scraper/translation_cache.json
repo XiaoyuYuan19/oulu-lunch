@@ -1124,6 +1124,11 @@
     "role": "dessert",
     "zh": "苹果燕麦烤点"
   },
+  "Omenaherkku": {
+    "en_search": "apple dessert crumble",
+    "role": "dessert",
+    "zh": "苹果甜点"
+  },
   "PIZZA": {
     "en_search": "pizza slice, cheese pizza",
     "role": "main",
@@ -1173,6 +1178,11 @@
     "en_search": "Pancakes, fruit jam, dessert",
     "role": "dessert",
     "zh": "煎饼配果酱"
+  },
+  "Pannukakkua ja vadelmakermavaahtoa": {
+    "en_search": "pancake raspberry cream",
+    "role": "dessert",
+    "zh": "煎饼配覆盆子奶油"
   },
   "Pannupihvi": {
     "en_search": "pan fried steak, beef patty, brown patty",
@@ -1388,6 +1398,11 @@
     "en_search": "Baked sausage, mustard sausage",
     "role": "main",
     "zh": "芥末烤香肠"
+  },
+  "Sipulikeittoa": {
+    "en_search": "onion soup bowl",
+    "role": "main",
+    "zh": "洋葱汤"
   },
   "Sitruuna-kapriskastiketta": {
     "en_search": "lemon caper sauce",
@@ -1733,6 +1748,11 @@
     "en_search": "vanilla sauce, dessert sauce",
     "role": "sauce",
     "zh": "香草酱"
+  },
+  "Vaniljakermarahkaa": {
+    "en_search": "vanilla quark cream",
+    "role": "dessert",
+    "zh": "香草奶酪甜点"
   },
   "Vebab-perunavuokaa ja uunikasviksia": {
     "en_search": "Potato casserole, meat casserole",
