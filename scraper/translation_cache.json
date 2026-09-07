@@ -39,6 +39,11 @@
     "role": "sauce",
     "zh": "烧烤酱"
   },
+  "BURGER POP UP": {
+    "en_search": "burger patty, hamburger bun",
+    "role": "main",
+    "zh": "汉堡快闪"
+  },
   "Banaani-marjasmoothie": {
     "en_search": "Banana smoothie, berry drink",
     "role": "dessert",
@@ -313,6 +318,11 @@
     "en_search": "pea soup, green soup, creamy soup",
     "role": "main",
     "zh": "豌豆泥汤"
+  },
+  "Hollandaisekastiketta": {
+    "en_search": "hollandaise sauce, yellow sauce",
+    "role": "sauce",
+    "zh": "荷兰酱"
   },
   "Härkäpapu-Mac&cheese": {
     "en_search": "mac and cheese, broad beans, pasta",
@@ -719,10 +729,20 @@
     "role": "sauce",
     "zh": "奶油芥末酱"
   },
+  "Kermaista-pippurikastiketta": {
+    "en_search": "creamy pepper sauce, white sauce",
+    "role": "sauce",
+    "zh": "奶油胡椒酱"
+  },
   "Kermavaahtoa": {
     "en_search": "whipped cream, white cream, dessert topping",
     "role": "dessert",
     "zh": "打发奶油"
+  },
+  "Kermaviipaleperunoita": {
+    "en_search": "cream sliced potatoes, potato gratin",
+    "role": "staple",
+    "zh": "奶油切片土豆"
   },
   "Kikherne-kasviskastiketta": {
     "en_search": "chickpea vegetable stew",
@@ -839,6 +859,11 @@
     "role": "dessert",
     "zh": "云莓奶冻"
   },
+  "Lankkuperuna": {
+    "en_search": "thick cut fries, potato planks",
+    "role": "staple",
+    "zh": "厚切薯条"
+  },
   "Lempeän mausteinen kalapata": {
     "en_search": "fish stew bowl",
     "role": "main",
@@ -878,6 +903,11 @@
     "en_search": "lime dill sauce",
     "role": "sauce",
     "zh": "青柠莳萝酱"
+  },
+  "Lime-vaniljaposset": {
+    "en_search": "lime vanilla posset, creamy dessert",
+    "role": "dessert",
+    "zh": "柠檬香草布丁"
   },
   "Linssi-bataattimuhennosta": {
     "en_search": "lentil sweet potato mash, orange puree, creamy mash",
@@ -938,6 +968,11 @@
     "en_search": "Salmon noodle casserole",
     "role": "main",
     "zh": "烤三文鱼面条"
+  },
+  "Lohilaatikkoa": {
+    "en_search": "salmon casserole, fish bake",
+    "role": "main",
+    "zh": "鲑鱼焗烤"
   },
   "Lohkoperunat": {
     "en_search": "potato wedges, roasted potatoes, crispy potatoes",
@@ -1074,6 +1109,11 @@
     "role": "main",
     "zh": "野蘑菇汤"
   },
+  "Mexicansalsaa": {
+    "en_search": "red salsa, tomato dip",
+    "role": "sauce",
+    "zh": "墨西哥莎莎酱"
+  },
   "Mustaherukkarahkaa": {
     "en_search": "blackcurrant quark, berry dessert",
     "role": "dessert",
@@ -1134,6 +1174,11 @@
     "role": "main",
     "zh": "披萨"
   },
+  "Paahdettuja basilikalohkoperunoita": {
+    "en_search": "roasted potato wedges, basil potatoes",
+    "role": "staple",
+    "zh": "罗勒烤土豆角"
+  },
   "Paahdettuja kasviksia": {
     "en_search": "roasted vegetables, mixed vegetables",
     "role": "side",
@@ -1158,6 +1203,11 @@
     "en_search": "fried salmon fillet",
     "role": "main",
     "zh": "煎三文鱼"
+  },
+  "Palermon broilerpastavuokaa": {
+    "en_search": "chicken pasta bake, casserole dish",
+    "role": "main",
+    "zh": "巴勒莫鸡肉意面焗烤"
   },
   "Palsternakkasosekeittoa": {
     "en_search": "creamy parsnip soup",
@@ -1274,6 +1324,11 @@
     "role": "main",
     "zh": "胡萝卜薄饼"
   },
+  "Porsaan fileeleikettä": {
+    "en_search": "pork fillet, pork cutlet",
+    "role": "main",
+    "zh": "猪里脊肉排"
+  },
   "Possu-kasvis-nuudeliwokkia ja uunikasviksia": {
     "en_search": "pork noodle wok",
     "role": "main",
@@ -1354,6 +1409,16 @@
     "role": "staple",
     "zh": "炸薯条"
   },
+  "Ranskankermaa": {
+    "en_search": "creme fraiche, sour cream",
+    "role": "sauce",
+    "zh": "法式酸奶油"
+  },
+  "Rapeaa kalaleikettä": {
+    "en_search": "crispy fish fillet, fried fish",
+    "role": "main",
+    "zh": "香脆炸鱼排"
+  },
   "Rapeat kalapalat": {
     "en_search": "crispy fish pieces",
     "role": "main",
@@ -1428,6 +1493,11 @@
     "en_search": "lemon dill cream sauce",
     "role": "sauce",
     "zh": "柠檬莳萝奶油酱"
+  },
+  "Sitruunaista tilli-kermaviilikastiketta": {
+    "en_search": "lemon dill sauce, creamy sauce",
+    "role": "sauce",
+    "zh": "柠檬莳萝酸奶油酱"
   },
   "Sitruunarahkaa": {
     "en_search": "lemon quark dessert",
@@ -1593,6 +1663,11 @@
     "en_search": "tuna lasagna",
     "role": "main",
     "zh": "金枪鱼千层面"
+  },
+  "Tortillat jauheliha-maissitäytteellä": {
+    "en_search": "beef corn tortilla, filled tortilla",
+    "role": "main",
+    "zh": "玉米牛肉馅饼"
   },
   "Tulista currykastiketta": {
     "en_search": "spicy curry sauce",
@@ -1808,6 +1883,11 @@
     "en_search": "salmon loaf, fish cake, baked fish",
     "role": "main",
     "zh": "地中海三文鱼肉饼"
+  },
+  "Ylikypsää naudan niskaa": {
+    "en_search": "slow cooked beef, braised beef",
+    "role": "main",
+    "zh": "慢炖牛颈肉"
   },
   "Yrttiriisiä": {
     "en_search": "herb rice, white rice",
