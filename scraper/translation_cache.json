@@ -149,6 +149,11 @@
     "role": "main",
     "zh": "奶油魔鬼酱烤鸡"
   },
+  "Broilerin paneroitua paistileikettä": {
+    "en_search": "breaded chicken cutlet, fried chicken",
+    "role": "main",
+    "zh": "炸鸡排"
+  },
   "Broileripastapaistosta": {
     "en_search": "chicken pasta bake casserole",
     "role": "main",
@@ -719,6 +724,11 @@
     "role": "main",
     "zh": "奶油胡椒炖猪肉"
   },
+  "Kermaista pippuripossupataa G, L, Mu, *, SIS.LUOMU": {
+    "en_search": "creamy pepper pork stew, meat stew",
+    "role": "main",
+    "zh": "奶油胡椒炖猪肉"
+  },
   "Kermaista porkkana-basilikakeittoa": {
     "en_search": "creamy carrot basil soup",
     "role": "main",
@@ -1179,6 +1189,11 @@
     "role": "staple",
     "zh": "罗勒烤土豆角"
   },
+  "Paahdettuja chiliperunoita": {
+    "en_search": "roasted chili potatoes, potato wedges",
+    "role": "staple",
+    "zh": "烤辣椒土豆"
+  },
   "Paahdettuja kasviksia": {
     "en_search": "roasted vegetables, mixed vegetables",
     "role": "side",
@@ -1238,6 +1253,11 @@
     "en_search": "pan fried steak, beef patty, brown patty",
     "role": "main",
     "zh": "香煎肉饼"
+  },
+  "Papu-kaura-kaalilaatikkoa": {
+    "en_search": "bean oat cabbage casserole, vegetable gratin",
+    "role": "main",
+    "zh": "豆燕麦卷心菜砂锅"
   },
   "Papumuhennosta": {
     "en_search": "bean stew bowl",
@@ -1306,6 +1326,11 @@
   },
   "Pippuri-kermakastiketta": {
     "en_search": "pepper cream sauce, white sauce, creamy sauce",
+    "role": "sauce",
+    "zh": "胡椒奶油酱"
+  },
+  "Pippurista kermakastiketta": {
+    "en_search": "pepper cream sauce, white sauce",
     "role": "sauce",
     "zh": "胡椒奶油酱"
   },
@@ -1539,6 +1564,11 @@
     "role": "main",
     "zh": "大豆肉酱"
   },
+  "Srirachamajoneesia": {
+    "en_search": "sriracha mayonnaise, red sauce",
+    "role": "sauce",
+    "zh": "是拉差蛋黄酱"
+  },
   "Suklaa-lakritsiherkku": {
     "en_search": "chocolate licorice dessert",
     "role": "dessert",
@@ -1718,6 +1748,11 @@
     "en_search": "yogurt honey walnuts",
     "role": "dessert",
     "zh": "土耳其酸奶蜂蜜核桃"
+  },
+  "Tyrnipannacottaa": {
+    "en_search": "sea buckthorn panna cotta, orange dessert",
+    "role": "dessert",
+    "zh": "沙棘意式奶冻"
   },
   "Tyrnirahkaa": {
     "en_search": "orange dessert, quark",
