@@ -204,6 +204,11 @@
     "role": "dessert",
     "zh": "卡布奇诺慕斯"
   },
+  "Cheddarkastiketta": {
+    "en_search": "cheddar cheese sauce",
+    "role": "sauce",
+    "zh": "切达奶酪酱"
+  },
   "Chili con carne": {
     "en_search": "chili stew bowl",
     "role": "main",
@@ -1224,6 +1229,11 @@
     "role": "main",
     "zh": "巴勒莫鸡肉意面焗烤"
   },
+  "Palsternakka-kookoskeittoa": {
+    "en_search": "parsnip coconut soup",
+    "role": "main",
+    "zh": "防风草椰子汤"
+  },
   "Palsternakkasosekeittoa": {
     "en_search": "creamy parsnip soup",
     "role": "main",
@@ -1574,6 +1584,11 @@
     "role": "dessert",
     "zh": "巧克力甘草甜点"
   },
+  "Suklaa-vadelmamoussea": {
+    "en_search": "chocolate raspberry mousse",
+    "role": "dessert",
+    "zh": "巧克力覆盆子慕斯"
+  },
   "Suklaaherkku": {
     "en_search": "chocolate dessert, sweet treat",
     "role": "dessert",
@@ -1698,6 +1713,11 @@
     "en_search": "beef corn tortilla, filled tortilla",
     "role": "main",
     "zh": "玉米牛肉馅饼"
+  },
+  "Tortillat kebabtäytteellä": {
+    "en_search": "kebab tortilla wrap",
+    "role": "main",
+    "zh": "烤肉卷饼"
   },
   "Tulista currykastiketta": {
     "en_search": "spicy curry sauce",
