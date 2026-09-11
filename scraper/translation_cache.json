@@ -424,6 +424,11 @@
     "role": "main",
     "zh": "肉酱千层面和烤蔬菜"
   },
+  "Jauhelihamakaronilaatikko": {
+    "en_search": "macaroni meat casserole",
+    "role": "main",
+    "zh": "肉末通心粉砂锅"
+  },
   "Jauhelihamureketta": {
     "en_search": "meatloaf, baked meat, sliced meat",
     "role": "main",
@@ -799,6 +804,11 @@
     "role": "main",
     "zh": "火腿海鲜饭"
   },
+  "Kiovan kanaa": {
+    "en_search": "chicken kiev dish",
+    "role": "main",
+    "zh": "基辅鸡"
+  },
   "Kirjolohikastiketta": {
     "en_search": "fish sauce, creamy sauce",
     "role": "main",
@@ -1039,6 +1049,11 @@
     "role": "sauce",
     "zh": "芒果豆乳酸奶酱"
   },
+  "Mangomajoneesia": {
+    "en_search": "mango mayonnaise sauce",
+    "role": "sauce",
+    "zh": "芒果蛋黄酱"
+  },
   "Mangomoussea": {
     "en_search": "mango mousse, dessert cup, creamy dessert",
     "role": "dessert",
@@ -1093,6 +1108,11 @@
     "en_search": "Berry dessert, fruit compote, whipped cream",
     "role": "dessert",
     "zh": "浆果甜点"
+  },
+  "Mausteinen tomaattikastike kela": {
+    "en_search": "spicy tomato sauce",
+    "role": "sauce",
+    "zh": "辣番茄酱"
   },
   "Mausteista tomaattikastiketta": {
     "en_search": "red sauce, tomato sauce, dipping sauce",
@@ -1399,6 +1419,11 @@
     "role": "dessert",
     "zh": "越橘焦糖奶酪"
   },
+  "Puolukkaa": {
+    "en_search": "lingonberry fruit",
+    "role": "side",
+    "zh": "越橘"
+  },
   "Puolukkahilloa": {
     "en_search": "lingonberry jam",
     "role": "dessert",
@@ -1428,6 +1453,11 @@
     "en_search": "celery pea patties",
     "role": "main",
     "zh": "坚果芹菜豌豆饼"
+  },
+  "Pähkinäistä kalkkuna-kasviscurrya": {
+    "en_search": "turkey vegetable curry",
+    "role": "main",
+    "zh": "坚果火鸡蔬菜咖喱"
   },
   "Quorn-linssi-kasviscurrya": {
     "en_search": "Quorn lentil curry",
