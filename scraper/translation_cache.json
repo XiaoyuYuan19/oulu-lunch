@@ -464,6 +464,11 @@
     "role": "main",
     "zh": "根菜姜泥汤"
   },
+  "Juuressosekeittoa": {
+    "en_search": "root vegetable soup",
+    "role": "main",
+    "zh": "根茎蔬菜浓汤"
+  },
   "Juustoista kanakeittoa": {
     "en_search": "chicken soup cheese",
     "role": "main",
@@ -1239,6 +1244,11 @@
     "role": "main",
     "zh": "烟熏火腿鸡肉海鲜饭"
   },
+  "Paistettua kirjolohta": {
+    "en_search": "fried salmon fillet",
+    "role": "main",
+    "zh": "煎三文鱼"
+  },
   "Paistettua lohta": {
     "en_search": "fried salmon fillet",
     "role": "main",
@@ -1694,6 +1704,11 @@
     "role": "main",
     "zh": "番茄罗勒汤"
   },
+  "Tomaatti-basilikasalsaa": {
+    "en_search": "tomato basil salsa",
+    "role": "sauce",
+    "zh": "番茄罗勒莎莎酱"
+  },
   "Tomaatti-korianteri salsaa": {
     "en_search": "Tomato cilantro salsa",
     "role": "sauce",
@@ -1973,6 +1988,11 @@
     "en_search": "slow cooked beef, braised beef",
     "role": "main",
     "zh": "慢炖牛颈肉"
+  },
+  "Yrttilohkoperunoita": {
+    "en_search": "roasted potato wedges",
+    "role": "staple",
+    "zh": "香草烤土豆块"
   },
   "Yrttiriisiä": {
     "en_search": "herb rice, white rice",
