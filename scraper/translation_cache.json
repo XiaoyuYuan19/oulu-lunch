@@ -274,6 +274,11 @@
     "role": "sauce",
     "zh": "咖喱酱"
   },
+  "Dijonsinappi-kermakastiketta": {
+    "en_search": "dijon mustard sauce",
+    "role": "sauce",
+    "zh": "第戎芥末奶油酱"
+  },
   "Espanjalaisia kasvispihvejä": {
     "en_search": "vegetable patties, fried fritters",
     "role": "main",
@@ -288,6 +293,11 @@
     "en_search": "fajita beef stew",
     "role": "main",
     "zh": "牛肉蚕豆法士达烩菜"
+  },
+  "Grilliperunoita": {
+    "en_search": "grilled potatoes roasted",
+    "role": "staple",
+    "zh": "烤土豆"
   },
   "Halloumiburger": {
     "en_search": "halloumi burger, cheese patty",
@@ -1154,6 +1164,11 @@
     "role": "main",
     "zh": "野蘑菇汤"
   },
+  "Metsästäjän porsaanleike": {
+    "en_search": "pork cutlet schnitzel",
+    "role": "main",
+    "zh": "猎人风味猪排"
+  },
   "Mexicansalsaa": {
     "en_search": "red salsa, tomato dip",
     "role": "sauce",
@@ -1484,6 +1499,11 @@
     "role": "sauce",
     "zh": "茅屋芝士酸奶油酱"
   },
+  "Rakuuna-kermaviili-majoneesikastiketta": {
+    "en_search": "tarragon creamy sauce",
+    "role": "sauce",
+    "zh": "龙蒿酸奶油蛋黄酱"
+  },
   "Ranskalaisia perunoita": {
     "en_search": "french fries, fried potatoes",
     "role": "staple",
@@ -1628,6 +1648,11 @@
     "en_search": "chocolate licorice dessert",
     "role": "dessert",
     "zh": "巧克力甘草甜点"
+  },
+  "Suklaa-vadelmamousse G,L,Mu Saattaa sis pähkinää": {
+    "en_search": "chocolate raspberry mousse",
+    "role": "dessert",
+    "zh": "巧克力覆盆子慕斯"
   },
   "Suklaa-vadelmamoussea": {
     "en_search": "chocolate raspberry mousse",
