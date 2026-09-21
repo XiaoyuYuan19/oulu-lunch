@@ -194,6 +194,11 @@
     "role": "main",
     "zh": "鸡肉丸配咖喱酱和土豆"
   },
+  "Cappuccino moussea": {
+    "en_search": "cappuccino mousse dessert",
+    "role": "dessert",
+    "zh": "卡布奇诺慕斯"
+  },
   "Cappuccinomoussea": {
     "en_search": "cappuccino mousse dessert",
     "role": "dessert",
@@ -258,6 +263,11 @@
     "en_search": "chili smoked salmon stew, fish stew, creamy stew",
     "role": "main",
     "zh": "辣椒冷熏三文鱼炖菜"
+  },
+  "Crispy spicy wings": {
+    "en_search": "crispy chicken wings",
+    "role": "main",
+    "zh": "香辣脆皮鸡翅"
   },
   "Curry-ananaskastiketta": {
     "en_search": "curry pineapple sauce, yellow sauce",
@@ -673,6 +683,11 @@
     "en_search": "vegetable solyanka soup",
     "role": "main",
     "zh": "蔬菜罗宋汤"
+  },
+  "Kaura-omenapaistosta ja vaniljakastiketta": {
+    "en_search": "apple crumble vanilla",
+    "role": "dessert",
+    "zh": "燕麦苹果酥配香草酱"
   },
   "Kebab-kasvispataa": {
     "en_search": "Kebab stew, meat and vegetable, hearty dish",
@@ -1424,6 +1439,11 @@
     "role": "main",
     "zh": "咖喱猪肉"
   },
+  "Punaista currykastiketta": {
+    "en_search": "red curry sauce",
+    "role": "sauce",
+    "zh": "红咖喱酱"
+  },
   "Punajuuri-aurajuustokiusausta": {
     "en_search": "beetroot casserole, blue cheese",
     "role": "main",
@@ -1899,6 +1919,11 @@
     "role": "staple",
     "zh": "蔬菜馅烤土豆"
   },
+  "Uuniperunat katkaraputäytteellä": {
+    "en_search": "baked potato shrimp",
+    "role": "main",
+    "zh": "焗虾仁土豆"
+  },
   "Vadelma-salmiakkimoussea": {
     "en_search": "raspberry mousse, dessert mousse, sweet dessert",
     "role": "dessert",
@@ -1918,6 +1943,11 @@
     "en_search": "garlic cream potatoes",
     "role": "staple",
     "zh": "蒜香奶油土豆"
+  },
+  "Valkosipulimajoneesia": {
+    "en_search": "garlic mayonnaise sauce",
+    "role": "sauce",
+    "zh": "蒜味蛋黄酱"
   },
   "Valkosuklaa-limepannacottaa tai omenapaistosta ja vaniljakastiketta": {
     "en_search": "Panna cotta, white chocolate, lime dessert",
