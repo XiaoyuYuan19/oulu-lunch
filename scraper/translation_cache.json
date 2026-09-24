@@ -234,6 +234,16 @@
     "role": "dessert",
     "zh": "辣椒橙子意式奶冻"
   },
+  "Chili-appelsiinipannacotta": {
+    "en_search": "chili orange pannacotta",
+    "role": "dessert",
+    "zh": "辣椒橙子意式奶冻"
+  },
+  "Chili-appelsiinipannacottaa": {
+    "en_search": "chili orange pannacotta",
+    "role": "dessert",
+    "zh": "辣椒橙子意式奶冻"
+  },
   "Chili-kebabpaistosta": {
     "en_search": "chili kebab bake, baked dish, meat casserole",
     "role": "main",
@@ -1209,6 +1219,11 @@
     "role": "dessert",
     "zh": "蓝莓香蕉冰沙"
   },
+  "Mustikka-vadelmarahkaa": {
+    "en_search": "blueberry raspberry quark",
+    "role": "dessert",
+    "zh": "蓝莓树莓夸克"
+  },
   "Mustikkarahkaa": {
     "en_search": "Blueberry quark dessert",
     "role": "dessert",
@@ -1533,6 +1548,11 @@
     "en_search": "creme fraiche, sour cream",
     "role": "sauce",
     "zh": "法式酸奶油"
+  },
+  "Rapea kalaleike": {
+    "en_search": "crispy fish fillet",
+    "role": "main",
+    "zh": "脆皮鱼排"
   },
   "Rapeaa kalaleikettä": {
     "en_search": "crispy fish fillet, fried fish",
