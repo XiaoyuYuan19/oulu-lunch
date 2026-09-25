@@ -584,6 +584,11 @@
     "role": "main",
     "zh": "鸡肉切达墨西哥辣椒汉堡"
   },
+  "Kana-fetatortillat": {
+    "en_search": "chicken tortilla,feta wrap,soft taco",
+    "role": "main",
+    "zh": "鸡肉羊乳酪卷饼"
+  },
   "Kananmuna": {
     "en_search": "boiled egg, hard-boiled egg, single egg",
     "role": "side",
@@ -1069,6 +1074,11 @@
     "role": "main",
     "zh": "有机豆腐通心粉奶酪"
   },
+  "Maissipaneroitua broilerin fileetä": {
+    "en_search": "corn-crusted chicken,breaded chicken,fried chicken",
+    "role": "main",
+    "zh": "玉米脆皮鸡柳"
+  },
   "Makkarakastiketta": {
     "en_search": "sausage gravy sauce",
     "role": "main",
@@ -1253,6 +1263,11 @@
     "en_search": "Apple oat bake",
     "role": "dessert",
     "zh": "苹果燕麦烤点"
+  },
+  "Omena-kinuskiherkku": {
+    "en_search": "apple caramel dessert,sweet treat,fruit pudding",
+    "role": "dessert",
+    "zh": "苹果焦糖甜点"
   },
   "Omenaherkku": {
     "en_search": "apple dessert crumble",
@@ -1443,6 +1458,11 @@
     "en_search": "pork fillet, pork cutlet",
     "role": "main",
     "zh": "猪里脊肉排"
+  },
+  "Porsaan lehtipihviä": {
+    "en_search": "pork steak,thin cutlet,grilled pork",
+    "role": "main",
+    "zh": "猪薄片牛排"
   },
   "Possu-kasvis-nuudeliwokkia ja uunikasviksia": {
     "en_search": "pork noodle wok",
@@ -1714,6 +1734,11 @@
     "role": "main",
     "zh": "糖醋鸡肉酱"
   },
+  "Sweetchili majoneesia": {
+    "en_search": "sweet chili mayo,creamy sauce,condiment",
+    "role": "sauce",
+    "zh": "甜辣蛋黄酱"
+  },
   "Tacomausteista kalkkunapataa": {
     "en_search": "turkey stew, taco, casserole",
     "role": "main",
@@ -1924,6 +1949,11 @@
     "role": "main",
     "zh": "烤鱼配蔬菜"
   },
+  "Uunilohta smetanakastikkeessa": {
+    "en_search": "baked salmon,sour cream sauce,fish dish",
+    "role": "main",
+    "zh": "奶油酱烤三文鱼"
+  },
   "Uunimakkaraa": {
     "en_search": "baked sausage, oven sausage",
     "role": "main",
@@ -1933,6 +1963,11 @@
     "en_search": "baked sausage plate",
     "role": "main",
     "zh": "烤香肠"
+  },
+  "Uuniperunaa": {
+    "en_search": "baked potato,jacket potato,roasted potato",
+    "role": "staple",
+    "zh": "烤土豆"
   },
   "Uuniperunat kasvistäytteellä": {
     "en_search": "baked potato, stuffed potato, vegetable filling",
@@ -2023,6 +2058,11 @@
     "en_search": "vegan casserole, potato bake",
     "role": "main",
     "zh": "素肉土豆泥砂锅"
+  },
+  "Vegaanista punajuuri-jauhis-juustokiusausta": {
+    "en_search": "vegan casserole,beetroot gratin,plant-based bake",
+    "role": "main",
+    "zh": "纯素甜菜肉末芝士焗饭"
   },
   "Vegaanista välimeren mureketta": {
     "en_search": "Vegan loaf slice",
