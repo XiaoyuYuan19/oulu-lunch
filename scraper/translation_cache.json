@@ -84,6 +84,11 @@
     "role": "main",
     "zh": "红薯泥汤"
   },
+  "Bearnaisekastiketta": {
+    "en_search": "bearnaise sauce,yellow sauce,butter sauce",
+    "role": "sauce",
+    "zh": "法式伯那西酱"
+  },
   "Broiler-cheddarkastiketta": {
     "en_search": "Chicken cheddar sauce",
     "role": "main",
@@ -313,6 +318,11 @@
     "en_search": "fajita beef stew",
     "role": "main",
     "zh": "牛肉蚕豆法士达烩菜"
+  },
+  "Fish & Chips": {
+    "en_search": "fried fish,french fries,fish and chips",
+    "role": "main",
+    "zh": "炸鱼薯条"
   },
   "Grilliperunoita": {
     "en_search": "grilled potatoes roasted",
@@ -1759,6 +1769,11 @@
     "role": "main",
     "zh": "招牌金枪鱼通心粉焗烤"
   },
+  "Talon vegaaniset porkkanapihvit": {
+    "en_search": "carrot patty,vegan patty,vegetable fritter",
+    "role": "main",
+    "zh": "招牌素胡萝卜饼"
+  },
   "Thaimaalaista kasviskeittoa": {
     "en_search": "Thai vegetable soup",
     "role": "main",
@@ -1939,6 +1954,11 @@
     "role": "main",
     "zh": "菠菜薄饼"
   },
+  "Täällä tehtyjä tofu-kikhernepihvejä": {
+    "en_search": "tofu patty,chickpea fritter,vegan burger",
+    "role": "main",
+    "zh": "自制豆腐鹰嘴豆饼"
+  },
   "Unkarilaista peruna-kasvispataa": {
     "en_search": "potato vegetable stew, goulash",
     "role": "main",
@@ -1999,6 +2019,11 @@
     "role": "staple",
     "zh": "蒜香奶油土豆"
   },
+  "Valkosipulikermaviilikastiketta": {
+    "en_search": "garlic sauce,sour cream dip,white sauce",
+    "role": "sauce",
+    "zh": "蒜味酸奶油酱"
+  },
   "Valkosipulimajoneesia": {
     "en_search": "garlic mayonnaise sauce",
     "role": "sauce",
@@ -2033,6 +2058,11 @@
     "en_search": "vanilla pudding dessert",
     "role": "dessert",
     "zh": "香草奶油布丁"
+  },
+  "Vanilja-kookosmoussea": {
+    "en_search": "vanilla mousse,coconut dessert,creamy dessert",
+    "role": "dessert",
+    "zh": "香草椰子慕斯"
   },
   "Vaniljakastiketta": {
     "en_search": "vanilla sauce, dessert sauce",
