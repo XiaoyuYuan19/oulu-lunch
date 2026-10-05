@@ -89,6 +89,11 @@
     "role": "sauce",
     "zh": "法式伯那西酱"
   },
+  "Bolognese-kastiketta": {
+    "en_search": "bolognese sauce, meat sauce, pasta sauce",
+    "role": "main",
+    "zh": "意式肉酱"
+  },
   "Broiler-cheddarkastiketta": {
     "en_search": "Chicken cheddar sauce",
     "role": "main",
@@ -436,6 +441,11 @@
   },
   "Jauheliha-makaronilaatikko *, SIS.LUOMUA": {
     "en_search": "macaroni casserole, baked pasta, ground beef pasta",
+    "role": "main",
+    "zh": "肉末通心粉烤箱菜"
+  },
+  "Jauheliha-makaronilaatikkoa": {
+    "en_search": "macaroni casserole, meat pasta bake, baked pasta",
     "role": "main",
     "zh": "肉末通心粉烤箱菜"
   },
@@ -2038,6 +2048,11 @@
     "en_search": "garlic mayonnaise sauce",
     "role": "sauce",
     "zh": "蒜味蛋黄酱"
+  },
+  "Valkosuklaa-limepannacottaa": {
+    "en_search": "pannacotta dessert, white chocolate lime, creamy dessert",
+    "role": "dessert",
+    "zh": "白巧克力青柠奶冻"
   },
   "Valkosuklaa-limepannacottaa tai omenapaistosta ja vaniljakastiketta": {
     "en_search": "Panna cotta, white chocolate, lime dessert",
