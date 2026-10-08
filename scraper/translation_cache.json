@@ -359,6 +359,11 @@
     "role": "main",
     "zh": "水果鸡肉酱"
   },
+  "Hedelmäistä broilerpataa": {
+    "en_search": "chicken stew fruit",
+    "role": "main",
+    "zh": "水果鸡肉炖菜"
+  },
   "Herkkusienikastiketta": {
     "en_search": "mushroom sauce creamy",
     "role": "sauce",
@@ -1258,6 +1263,11 @@
     "en_search": "blueberry raspberry quark",
     "role": "dessert",
     "zh": "蓝莓树莓夸克"
+  },
+  "Mustikkapiirakka": {
+    "en_search": "blueberry pie dessert",
+    "role": "dessert",
+    "zh": "蓝莓派"
   },
   "Mustikkarahkaa": {
     "en_search": "Blueberry quark dessert",
