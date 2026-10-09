@@ -1239,6 +1239,11 @@
     "role": "sauce",
     "zh": "墨西哥莎莎酱"
   },
+  "Miedosti tulinen jauhelihakastike": {
+    "en_search": "minced meat sauce, ground beef",
+    "role": "main",
+    "zh": "微辣肉酱"
+  },
   "Mustaherukkarahkaa": {
     "en_search": "blackcurrant quark, berry dessert",
     "role": "dessert",
@@ -1408,6 +1413,11 @@
     "en_search": "bean stew bowl",
     "role": "main",
     "zh": "炖豆子"
+  },
+  "Papumuhennosta G, M, Mu, Veg,*, SIS.LUOMUA": {
+    "en_search": "bean stew, vegetable stew",
+    "role": "main",
+    "zh": "豆子炖菜"
   },
   "Parsakaali-aurajuustokeitto": {
     "en_search": "broccoli blue cheese soup",
