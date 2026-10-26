@@ -809,6 +809,11 @@
     "role": "main",
     "zh": "奶油西兰花汤"
   },
+  "Kermaista pippurikastiketta": {
+    "en_search": "creamy sauce, pepper sauce",
+    "role": "sauce",
+    "zh": "奶油胡椒酱"
+  },
   "Kermaista pippuripossupataa": {
     "en_search": "creamy pork stew",
     "role": "main",
@@ -1198,6 +1203,11 @@
     "en_search": "Berry dessert, fruit compote, whipped cream",
     "role": "dessert",
     "zh": "浆果甜点"
+  },
+  "Mausteinen tomaattikastike": {
+    "en_search": "spicy sauce, tomato sauce",
+    "role": "sauce",
+    "zh": "香辣番茄酱"
   },
   "Mausteinen tomaattikastike kela": {
     "en_search": "spicy tomato sauce",
