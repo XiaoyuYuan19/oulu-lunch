@@ -814,6 +814,11 @@
     "role": "main",
     "zh": "奶油三文鱼砂锅配烤蔬菜"
   },
+  "Kermaista mustapippurikastiketta": {
+    "en_search": "creamy sauce, black pepper",
+    "role": "sauce",
+    "zh": "奶油黑胡椒酱"
+  },
   "Kermaista parsakaalikeittoa": {
     "en_search": "creamy broccoli soup, green vegetable soup",
     "role": "main",
