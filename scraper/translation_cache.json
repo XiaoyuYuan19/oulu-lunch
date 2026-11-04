@@ -224,6 +224,11 @@
     "role": "sauce",
     "zh": "切达奶酪酱"
   },
+  "Chili con Härkis": {
+    "en_search": "chili stew,bean stew",
+    "role": "main",
+    "zh": "素肉末辣椒"
+  },
   "Chili con carne": {
     "en_search": "chili stew bowl",
     "role": "main",
